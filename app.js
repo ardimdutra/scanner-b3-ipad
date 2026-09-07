@@ -20,7 +20,7 @@ function card(item) {
       ${indicator('CONFIRMAÇÃO · 60 MIN', item.states.hourly_confirmation, `MACD hist. ${item.indicators.hourly_histogram}`, item.states.hourly_confirmation)}
       ${indicator('ESTOCÁSTICO · 14,3,3', `K ${item.indicators.stochastic_k} · D ${item.indicators.stochastic_d}`, item.indicators.stochastic_k > item.indicators.stochastic_d ? 'K acima de D' : 'K abaixo de D', item.states.hourly_confirmation)}
     </div>
-    <div class="charts"><figure><figcaption>DIÁRIO · 30 PREGÕES</figcaption><canvas data-ticker="${item.ticker}" data-frame="daily"></canvas></figure><figure><figcaption>60 MIN · 30 CANDLES</figcaption><canvas data-ticker="${item.ticker}" data-frame="hourly"></canvas></figure></div>
+    <div class="charts"><figure><figcaption>DIÁRIO · CANDLE + MACD + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="daily"></canvas></figure><figure><figcaption>60 MIN · CANDLE + MACD + ESTOCÁSTICO + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="hourly"></canvas></figure></div>
     <div class="levels"><div><small>STOP</small><b>${money(item.stop)}</b></div><div><small>ALVO</small><b>${money(item.target)}</b></div><div><small>VALOR JUSTO</small><b>${money(item.fair_value)}</b></div></div>
     <div class="reasons">${item.reasons.join(' · ')}</div>
     <div class="card-foot"><span class="budget">${budget}</span><button class="outline" data-ticker="${item.ticker}">Registrar</button></div>
@@ -29,15 +29,36 @@ function card(item) {
 
 function drawCandles(canvas, candles) {
   if (!candles?.length) return;
-  const ratio = window.devicePixelRatio || 1, width = canvas.clientWidth, height = 145, pad = 12;
+  const hourly = canvas.dataset.frame === 'hourly';
+  const ratio = window.devicePixelRatio || 1, width = canvas.clientWidth, height = hourly ? 390 : 320, pad = 12;
+  canvas.style.height = `${height}px`;
   canvas.width = width * ratio; canvas.height = height * ratio;
   const context = canvas.getContext('2d'); context.scale(ratio, ratio); context.clearRect(0, 0, width, height);
+  context.font = '9px -apple-system, sans-serif'; context.textBaseline = 'top';
+  const pricePanel = { top: 16, bottom: hourly ? 172 : 160 };
+  const macdPanel = { top: pricePanel.bottom + 22, bottom: pricePanel.bottom + 86 };
+  const stochPanel = hourly ? { top: macdPanel.bottom + 22, bottom: macdPanel.bottom + 82 } : null;
+  const volumePanel = { top: (stochPanel?.bottom || macdPanel.bottom) + 22, bottom: height - 8 };
+  const panelLine = (label, y) => { context.fillStyle = '#7890ad'; context.fillText(label, 3, y - 13); context.strokeStyle = '#20314a'; context.beginPath(); context.moveTo(0, y); context.lineTo(width, y); context.stroke(); };
+  panelLine('PREÇO', pricePanel.top); panelLine('MACD 12,26,9', macdPanel.top); if (stochPanel) panelLine('ESTOCÁSTICO 14,3,3', stochPanel.top); panelLine('VOLUME', volumePanel.top);
   const high = Math.max(...candles.map(row => row.high)), low = Math.min(...candles.map(row => row.low)), spread = high - low || 1;
-  const y = value => pad + (high - value) / spread * (height - pad * 2);
+  const y = value => pricePanel.top + (high - value) / spread * (pricePanel.bottom - pricePanel.top);
   context.strokeStyle = '#20314a';
-  [0.25, 0.5, 0.75].forEach(step => { context.beginPath(); context.moveTo(0, height * step); context.lineTo(width, height * step); context.stroke(); });
+  [0.25, 0.5, 0.75].forEach(step => { const gridY = pricePanel.top + (pricePanel.bottom-pricePanel.top)*step; context.beginPath(); context.moveTo(0, gridY); context.lineTo(width, gridY); context.stroke(); });
   const slot = width / candles.length, body = Math.max(2, slot * .55);
   candles.forEach((row, index) => { const x = slot * index + slot / 2, color = row.close >= row.open ? '#4bd6c5' : '#ff6e7a'; context.strokeStyle = color; context.fillStyle = color; context.beginPath(); context.moveTo(x, y(row.high)); context.lineTo(x, y(row.low)); context.stroke(); const top = Math.min(y(row.open), y(row.close)); context.fillRect(x - body / 2, top, body, Math.max(2, Math.abs(y(row.open) - y(row.close)))); });
+  const drawOscillator = (panel, keys, colors, fixedRange = null) => {
+    const values = candles.flatMap(row => keys.map(key => row[key])).filter(value => value !== null && Number.isFinite(value));
+    const min = fixedRange ? fixedRange[0] : Math.min(0, ...values), max = fixedRange ? fixedRange[1] : Math.max(0, ...values), range = max - min || 1;
+    const scaleY = value => panel.top + (max - value) / range * (panel.bottom - panel.top);
+    if (!fixedRange) { const zero = scaleY(0); context.strokeStyle = '#31445d'; context.beginPath(); context.moveTo(0, zero); context.lineTo(width, zero); context.stroke(); candles.forEach((row,index) => { const value=row.macd_histogram; context.fillStyle=value>=0?'#285f59':'#69313b'; const barY=scaleY(value); context.fillRect(index*slot+slot*.25,Math.min(zero,barY),slot*.5,Math.max(1,Math.abs(zero-barY))); }); }
+    if (fixedRange) [20,80].forEach(level => { context.setLineDash([3,3]); context.strokeStyle='#31445d'; context.beginPath(); context.moveTo(0,scaleY(level)); context.lineTo(width,scaleY(level)); context.stroke(); context.setLineDash([]); });
+    keys.forEach((key,keyIndex) => { context.strokeStyle=colors[keyIndex]; context.lineWidth=1.4; context.beginPath(); let started=false; candles.forEach((row,index) => { const value=row[key]; if(value===null||!Number.isFinite(value)) return; const x=index*slot+slot/2, pointY=scaleY(value); if(!started){context.moveTo(x,pointY);started=true;}else context.lineTo(x,pointY); }); context.stroke(); });
+  };
+  drawOscillator(macdPanel, ['macd','macd_signal'], ['#6ba8ff','#ffbf5f']);
+  if (stochPanel) drawOscillator(stochPanel, ['stochastic_k','stochastic_d'], ['#4bd6c5','#ffbf5f'], [0,100]);
+  const maxVolume = Math.max(...candles.map(row => row.volume || 0), 1);
+  candles.forEach((row,index) => { const barHeight=(row.volume||0)/maxVolume*(volumePanel.bottom-volumePanel.top); context.fillStyle=row.close>=row.open?'#285f59':'#69313b'; context.fillRect(index*slot+slot*.2,volumePanel.bottom-barHeight,slot*.6,barHeight); });
 }
 
 function renderCharts() {
