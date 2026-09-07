@@ -2,8 +2,11 @@ import json
 import math
 import os
 import time
+import io
 import urllib.request
+import zipfile
 from datetime import UTC, datetime
+from html.parser import HTMLParser
 from pathlib import Path
 
 
@@ -67,7 +70,8 @@ def stochastic_14_3_3(candles: list[dict]) -> tuple[float, float]:
     return smooth_k_series[-1], sma(smooth_k_series, 3)
 
 
-def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -> dict:
+def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | None, fundamental: dict | None = None) -> dict:
+    hourly = hourly or []
     closes = [row["close"] for row in daily]
     hourly_closes = [row["close"] for row in hourly]
     price = closes[-1]
@@ -75,8 +79,9 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
     ema21_series = ema_series(closes, 21)
     ema21 = ema21_series[-1]
     daily_line, daily_signal, daily_hist = macd_12_26_9(closes)
-    hour_line, hour_signal, hour_hist = macd_12_26_9(hourly_closes)
-    stoch_k, stoch_d = stochastic_14_3_3(hourly)
+    has_hourly = len(hourly) >= 30
+    hour_line, hour_signal, hour_hist = macd_12_26_9(hourly_closes) if has_hourly else (0, 0, 0)
+    stoch_k, stoch_d = stochastic_14_3_3(hourly) if has_hourly else (0, 0)
     volumes = [row.get("volume") or 0 for row in daily[-21:-1]]
     average_volume = sum(volumes) / max(1, len(volumes))
     volume_ratio = (daily[-1].get("volume") or average_volume) / max(1, average_volume)
@@ -85,17 +90,19 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
     daily_down = price < ema21 and ema9 < ema21 and ema21 < ema21_series[-4]
     daily_macd_buy = daily_line > daily_signal and daily_hist > 0
     daily_macd_sell = daily_line < daily_signal and daily_hist < 0
-    hourly_buy = hour_line > hour_signal and hour_hist > 0 and stoch_k > stoch_d and stoch_k < 85
-    hourly_sell = hour_line < hour_signal and hour_hist < 0 and stoch_k < stoch_d and stoch_k > 15
+    hourly_buy = has_hourly and hour_line > hour_signal and hour_hist > 0 and stoch_k > stoch_d and stoch_k < 85
+    hourly_sell = has_hourly and hour_line < hour_signal and hour_hist < 0 and stoch_k < stoch_d and stoch_k > 15
     volume_confirms = volume_ratio >= 1.10
 
-    if daily_up and daily_macd_buy and hourly_buy:
+    fundamental = fundamental or {}
+    fundamental_score = fundamental.get("score", 0)
+    if daily_up and daily_macd_buy and hourly_buy and fundamental_score >= -1:
         signal, score = "COMPRA", 5 + int(volume_confirms)
     elif daily_down and daily_macd_sell and hourly_sell:
         signal, score = "VENDA", -(5 + int(volume_confirms))
     else:
         signal = "AGUARDAR"
-        score = (int(daily_up) + int(daily_macd_buy) + int(hourly_buy)) - (int(daily_down) + int(daily_macd_sell) + int(hourly_sell))
+        score = (int(daily_up) + int(daily_macd_buy) + int(hourly_buy)) - (int(daily_down) + int(daily_macd_sell) + int(hourly_sell)) + max(-2, min(2, fundamental_score))
 
     changes = [abs(closes[i] / closes[i - 1] - 1) for i in range(max(1, len(closes) - 20), len(closes))]
     volatility = sum(changes) / max(1, len(changes))
@@ -106,7 +113,8 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
         f"Tendência diária: {'positiva' if daily_up else 'negativa' if daily_down else 'lateral'}",
         f"MACD diário 12,26,9: {'comprador' if daily_macd_buy else 'vendedor' if daily_macd_sell else 'neutro'}",
         f"Volume: {volume_ratio:.2f}x a média de 20 períodos",
-        f"60 min: {'confirma compra' if hourly_buy else 'confirma venda' if hourly_sell else 'não confirma entrada'}",
+        f"60 min: {'confirma compra' if hourly_buy else 'confirma venda' if hourly_sell else 'não confirma entrada' if has_hourly else 'histórico indisponível na fonte atual'}",
+        fundamental.get("interpretation", "Fundamentos: ainda não disponíveis para esta empresa"),
     ]
     def chart_rows(rows: list[dict], limit: int, include_stochastic: bool = False) -> list[dict]:
         chart_closes = [row["close"] for row in rows]
@@ -166,7 +174,7 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
         "price": round(price, 2),
         "signal": signal,
         "score": score,
-        "confidence": min(90, 55 + abs(score) * 6),
+        "confidence": min(90 if has_hourly else 72, 55 + abs(score) * 6),
         "stop": round(price * (1 - direction * risk), 2),
         "target": round(price * (1 + direction * risk * 2), 2),
         "fair_value": round(price * (1 + max(-0.12, min(0.18, trend_return * 2))), 2),
@@ -182,37 +190,116 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
         "states": {
             "daily_trend": "POSITIVA" if daily_up else "NEGATIVA" if daily_down else "LATERAL",
             "daily_macd": "COMPRADOR" if daily_macd_buy else "VENDEDOR" if daily_macd_sell else "NEUTRO",
-            "hourly_confirmation": "COMPRA" if hourly_buy else "VENDA" if hourly_sell else "NÃO CONFIRMA",
+            "hourly_confirmation": "COMPRA" if hourly_buy else "VENDA" if hourly_sell else "NÃO CONFIRMA" if has_hourly else "INDISPONÍVEL",
             "volume": "CONFIRMA" if volume_confirms else "ABAIXO DA MÉDIA",
         },
-        "charts": {"daily": chart_rows(daily, 30), "hourly": chart_rows(hourly, 30, True)},
+        "charts": {"daily": chart_rows(daily, 30), "hourly": chart_rows(hourly, 30, True) if has_hourly else []},
+        "fundamentals": fundamental,
+        "sources": {"daily": "B3 oficial", "hourly": "brapi" if has_hourly else "indisponível", "fundamentals": "Fundamentus" if fundamental else "indisponível"},
         "timeframe": "Diário + confirmação 60 min",
         "data_status": "DADOS ONLINE",
     }
 
 
-def available_assets() -> tuple[tuple[str, str], ...]:
-    if not TOKEN:
-        return ASSETS
-    url = "https://brapi.dev/api/quote/list?sortBy=volume&sortOrder=desc&limit=24&type=stock"
-    request = urllib.request.Request(url, headers={"Authorization": f"Bearer {TOKEN}", "User-Agent": "Scanner-B3-iPad/1.0"})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        stocks = json.load(response).get("stocks", [])
-    return tuple((row["stock"], row.get("name") or row["stock"]) for row in stocks if row.get("stock"))
+class FundamentalTableParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_body = self.in_row = self.in_cell = False
+        self.cell, self.row, self.rows = [], [], []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "tbody": self.in_body = True
+        elif self.in_body and tag == "tr": self.in_row, self.row = True, []
+        elif self.in_row and tag == "td": self.in_cell, self.cell = True, []
+
+    def handle_data(self, data):
+        if self.in_cell: self.cell.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "td" and self.in_cell:
+            self.row.append(" ".join("".join(self.cell).split()))
+            self.in_cell = False
+        elif tag == "tr" and self.in_row:
+            if self.row: self.rows.append(self.row)
+            self.in_row = False
+        elif tag == "tbody": self.in_body = False
 
 
-items = []
-errors = []
-universe = available_assets()
-for symbol, name in universe:
+def number_pt(value: str) -> float | None:
+    value = value.replace("R$", "").replace("%", "").replace(".", "").replace(",", ".").strip()
+    try: return float(value)
+    except ValueError: return None
+
+
+def fetch_fundamentals() -> dict[str, dict]:
+    request = urllib.request.Request("https://www.fundamentus.com.br/resultado.php", headers={"User-Agent": "Mozilla/5.0 Scanner-B3-iPad"})
+    with urllib.request.urlopen(request, timeout=45) as response:
+        html = response.read().decode("latin-1", errors="ignore")
+    parser = FundamentalTableParser(); parser.feed(html)
+    result = {}
+    for row in parser.rows:
+        if len(row) < 21: continue
+        ticker = row[0].upper()
+        pe, pvp, dy, evebitda, margin, liquidity, roic, roe, daily_liquidity, debt, growth = map(number_pt, (row[2], row[3], row[5], row[11], row[13], row[14], row[15], row[16], row[17], row[19], row[20]))
+        positives, cautions, score = [], [], 0
+        if pe is not None and 0 < pe <= 18: positives.append("P/L moderado"); score += 1
+        elif pe is not None and (pe <= 0 or pe > 35): cautions.append("P/L exige cautela"); score -= 1
+        if roe is not None and roe >= 12: positives.append("ROE consistente"); score += 1
+        elif roe is not None and roe < 5: cautions.append("ROE baixo"); score -= 1
+        if roic is not None and roic >= 10: positives.append("ROIC saudável"); score += 1
+        if liquidity is not None and liquidity >= 1.2: positives.append("liquidez corrente adequada"); score += 1
+        elif liquidity is not None and liquidity < 1: cautions.append("liquidez corrente inferior a 1"); score -= 1
+        if debt is not None and debt > 2: cautions.append("alavancagem elevada"); score -= 1
+        if growth is not None and growth > 5: positives.append("receita em crescimento"); score += 1
+        elif growth is not None and growth < -5: cautions.append("receita em retração"); score -= 1
+        reading = "; ".join(positives[:3]) if positives else "sem reforço fundamental claro"
+        if cautions: reading += "; atenção a " + ", ".join(cautions[:2])
+        result[ticker] = {"score": score, "interpretation": f"Fundamentos: {reading}", "pe": pe, "pvp": pvp, "dividend_yield": dy, "ev_ebitda": evebitda, "net_margin": margin, "current_liquidity": liquidity, "roic": roic, "roe": roe, "daily_liquidity": daily_liquidity, "debt_equity": debt, "revenue_growth_5y": growth}
+    return result
+
+
+def b3_market_cache() -> dict:
+    path = Path("market_cache.json")
+    if path.exists() and os.environ.get("DAILY_REVIEW", "").lower() != "true":
+        return json.loads(path.read_text(encoding="utf-8"))
+    year = datetime.now(UTC).year
+    url = f"https://bvmf.bmfbovespa.com.br/InstDados/SerHist/COTAHIST_A{year}.ZIP"
+    request = urllib.request.Request(url, headers={"User-Agent": "Scanner-B3-iPad/1.0"})
+    with urllib.request.urlopen(request, timeout=180) as response:
+        archive = zipfile.ZipFile(io.BytesIO(response.read()))
+    histories, names = {}, {}
+    with archive.open(archive.namelist()[0]) as source:
+        for raw in source:
+            line = raw.decode("latin-1")
+            if line[:2] != "01" or line[24:27] != "010": continue
+            ticker = line[12:24].strip()
+            if not ticker or ticker.endswith("F") or not ticker[-1:].isdigit(): continue
+            row = {"date": int(datetime.strptime(line[2:10], "%Y%m%d").replace(tzinfo=UTC).timestamp()), "open": int(line[56:69]) / 100, "high": int(line[69:82]) / 100, "low": int(line[82:95]) / 100, "close": int(line[108:121]) / 100, "volume": int(line[170:188]) / 100}
+            histories.setdefault(ticker, []).append(row); names[ticker] = line[27:39].strip()
+    liquid = sorted(histories, key=lambda ticker: sum(row["volume"] for row in histories[ticker][-20:]) / max(1, len(histories[ticker][-20:])), reverse=True)
+    cache = {"updated_at": datetime.now(UTC).isoformat(), "assets": [{"ticker": ticker, "company": names[ticker], "daily": histories[ticker][-100:]} for ticker in liquid[:80] if len(histories[ticker]) >= 35]}
+    path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    return cache
+
+
+items, errors = [], []
+market = b3_market_cache()
+fundamentals = fetch_fundamentals()
+universe = market["assets"]
+for asset in universe:
+    symbol, name, daily = asset["ticker"], asset["company"], asset["daily"]
     try:
-        items.append(evaluate(symbol, name, fetch_history(symbol, "3mo", "1d"), fetch_history(symbol, "5d", "1h")))
+        try: hourly = fetch_history(symbol, "5d", "1h") if symbol in {row[0] for row in ASSETS} else []
+        except Exception: hourly = []
+        items.append(evaluate(symbol, name, daily, hourly, fundamentals.get(symbol)))
     except Exception as error:
         errors.append(f"{symbol}: {error}")
 items.sort(key=lambda row: (row["signal"] != "COMPRA", -row["score"]))
 payload = {"mode": "PRODUÇÃO ASSISTIDA", "data_status": "DADOS ONLINE", "updated_at": datetime.now(UTC).isoformat(), "items": items, "errors": errors}
 payload["universe_size"] = len(items)
 payload["requested_universe_size"] = len(universe)
+payload["sources"] = ["B3 oficial (diário)", "brapi (60 min quando disponível)", "Fundamentus (fundamentos)"]
 payload["universe_mode"] = "AMPLIADO" if len(items) > len(ASSETS) else "GRATUITO LIMITADO"
 Path("signals.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
