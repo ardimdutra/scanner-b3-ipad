@@ -1,0 +1,11 @@
+{
+  "name": "Scanner B3 — Swing",
+  "short_name": "Scanner B3",
+  "description": "Scanner de oportunidades de swing trade no mercado fracionário da B3.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "orientation": "any"
+}
