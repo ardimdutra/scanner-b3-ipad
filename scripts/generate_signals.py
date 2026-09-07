@@ -290,7 +290,7 @@ universe = market["assets"]
 for asset in universe:
     symbol, name, daily = asset["ticker"], asset["company"], asset["daily"]
     try:
-        try: hourly = fetch_history(symbol, "5d", "1h") if symbol in {row[0] for row in ASSETS} else []
+        try: hourly = fetch_history(symbol, "1mo", "1h") if symbol in {row[0] for row in ASSETS} else []
         except Exception: hourly = []
         items.append(evaluate(symbol, name, daily, hourly, fundamentals.get(symbol)))
     except Exception as error:
