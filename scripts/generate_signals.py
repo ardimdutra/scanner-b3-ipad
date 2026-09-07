@@ -1,5 +1,6 @@
 import json
 import math
+import os
 import time
 import urllib.request
 from datetime import UTC, datetime
@@ -13,11 +14,15 @@ ASSETS = (
     ("MGLU3", "Magazine Luiza ON"),
 )
 BUDGETS = (20, 30, 50, 100)
+TOKEN = os.environ.get("BRAPI_TOKEN", "").strip()
 
 
 def fetch_history(ticker: str, period: str, interval: str) -> list[dict]:
     url = f"https://brapi.dev/api/quote/{ticker}?range={period}&interval={interval}&fundamental=false"
-    request = urllib.request.Request(url, headers={"User-Agent": "Scanner-B3-iPad/1.0"})
+    headers = {"User-Agent": "Scanner-B3-iPad/1.0"}
+    if TOKEN:
+        headers["Authorization"] = f"Bearer {TOKEN}"
+    request = urllib.request.Request(url, headers=headers)
     for attempt in range(3):
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
@@ -105,6 +110,8 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
     ]
     def chart_rows(rows: list[dict], limit: int, include_stochastic: bool = False) -> list[dict]:
         chart_closes = [row["close"] for row in rows]
+        chart_ema9 = ema_series(chart_closes, 9)
+        chart_ema21 = ema_series(chart_closes, 21)
         fast = ema_series(chart_closes, 12)
         slow = ema_series(chart_closes, 26)
         macd_lines = [a - b for a, b in zip(fast, slow)]
@@ -112,6 +119,9 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
         raw_k: list[float | None] = [None] * len(rows)
         smooth_k: list[float | None] = [None] * len(rows)
         smooth_d: list[float | None] = [None] * len(rows)
+        bollinger_mid: list[float | None] = [None] * len(rows)
+        bollinger_upper: list[float | None] = [None] * len(rows)
+        bollinger_lower: list[float | None] = [None] * len(rows)
         if include_stochastic:
             valid_raw: list[float] = []
             valid_smooth: list[float] = []
@@ -126,6 +136,11 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
                 smooth_k[index] = smooth
                 valid_smooth.append(smooth)
                 smooth_d[index] = sma(valid_smooth, 3)
+            for index in range(19, len(rows)):
+                sample = chart_closes[index - 19 : index + 1]
+                middle = sum(sample) / 20
+                deviation = (sum((value - middle) ** 2 for value in sample) / 20) ** 0.5
+                bollinger_mid[index], bollinger_upper[index], bollinger_lower[index] = middle, middle + 2 * deviation, middle - 2 * deviation
         start = max(0, len(rows) - limit)
         result = []
         for index in range(start, len(rows)):
@@ -138,6 +153,10 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
                 "macd_histogram": round(macd_lines[index] - signal_lines[index], 4),
                 "stochastic_k": round(smooth_k[index], 2) if smooth_k[index] is not None else None,
                 "stochastic_d": round(smooth_d[index], 2) if smooth_d[index] is not None else None,
+                "ema9": round(chart_ema9[index], 2), "ema21": round(chart_ema21[index], 2),
+                "bollinger_mid": round(bollinger_mid[index], 2) if bollinger_mid[index] is not None else None,
+                "bollinger_upper": round(bollinger_upper[index], 2) if bollinger_upper[index] is not None else None,
+                "bollinger_lower": round(bollinger_lower[index], 2) if bollinger_lower[index] is not None else None,
             })
         return result
     return {
@@ -172,15 +191,78 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
     }
 
 
+def available_assets() -> tuple[tuple[str, str], ...]:
+    if not TOKEN:
+        return ASSETS
+    url = "https://brapi.dev/api/quote/list?sortBy=volume&sortOrder=desc&limit=24&type=stock"
+    request = urllib.request.Request(url, headers={"Authorization": f"Bearer {TOKEN}", "User-Agent": "Scanner-B3-iPad/1.0"})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        stocks = json.load(response).get("stocks", [])
+    return tuple((row["stock"], row.get("name") or row["stock"]) for row in stocks if row.get("stock"))
+
+
 items = []
 errors = []
-for symbol, name in ASSETS:
+universe = available_assets()
+for symbol, name in universe:
     try:
         items.append(evaluate(symbol, name, fetch_history(symbol, "3mo", "1d"), fetch_history(symbol, "5d", "1h")))
     except Exception as error:
         errors.append(f"{symbol}: {error}")
 items.sort(key=lambda row: (row["signal"] != "COMPRA", -row["score"]))
 payload = {"mode": "PRODUÇÃO ASSISTIDA", "data_status": "DADOS ONLINE", "updated_at": datetime.now(UTC).isoformat(), "items": items, "errors": errors}
+payload["universe_size"] = len(universe)
+payload["universe_mode"] = "AMPLIADO" if TOKEN else "GRATUITO LIMITADO"
 Path("signals.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def update_tracking(opportunities: list[dict]) -> None:
+    path = Path("tracking.json")
+    try:
+        state = json.loads(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        state = {"operations": [], "reviews": []}
+    now = datetime.now(UTC)
+    today = now.date().isoformat()
+    by_ticker = {row["ticker"]: row for row in opportunities}
+    review_mode = os.environ.get("DAILY_REVIEW", "").lower() == "true"
+    for operation in state["operations"]:
+        quote = by_ticker.get(operation["ticker"])
+        if not quote or operation["status"] != "ABERTA":
+            continue
+        direction = 1 if operation["side"] == "COMPRA" else -1
+        operation["current_price"] = quote["price"]
+        operation["result_percent"] = round(direction * (quote["price"] / operation["entry_price"] - 1) * 100, 2)
+        if not review_mode:
+            continue
+        candle = quote["charts"]["daily"][-1]
+        hit_stop = candle["low"] <= operation["stop"] if direction == 1 else candle["high"] >= operation["stop"]
+        hit_target = candle["high"] >= operation["target"] if direction == 1 else candle["low"] <= operation["target"]
+        if hit_stop and hit_target:
+            operation["status"], operation["assessment"] = "REVISÃO MANUAL", "AMBÍGUA"
+        elif hit_stop:
+            operation["status"], operation["exit_price"], operation["assessment"] = "ENCERRADA", operation["stop"], "INCORRETA"
+        elif hit_target:
+            operation["trailing_active"], operation["assessment"] = True, "CORRETA"
+            operation["stop"] = round(max(operation["stop"], quote["price"] * .97), 2) if direction == 1 else round(min(operation["stop"], quote["price"] * 1.03), 2)
+        else:
+            operation["assessment"] = "CORRETA" if operation["result_percent"] > 0 else "INCORRETA" if operation["result_percent"] < 0 else "NEUTRA"
+        operation["last_review_at"] = now.isoformat()
+        review_key = f'{today}:{operation["ticker"]}:{operation["opened_at"]}'
+        if not any(row.get("key") == review_key for row in state["reviews"]):
+            state["reviews"].append({"key": review_key, "date": today, "ticker": operation["ticker"], "side": operation["side"], "result_percent": operation["result_percent"], "assessment": operation["assessment"], "status": operation["status"]})
+    open_tickers = {row["ticker"] for row in state["operations"] if row["status"] == "ABERTA"}
+    for quote in opportunities:
+        if quote["signal"] not in ("COMPRA", "VENDA") or quote["ticker"] in open_tickers:
+            continue
+        state["operations"].append({"ticker": quote["ticker"], "side": quote["signal"], "status": "ABERTA", "opened_at": now.isoformat(), "entry_price": quote["price"], "current_price": quote["price"], "stop": quote["stop"], "target": quote["target"], "result_percent": 0, "assessment": "EM ACOMPANHAMENTO", "trailing_active": False})
+    state["updated_at"] = now.isoformat()
+    state["review_time"] = "18:00 America/Sao_Paulo"
+    state["disclaimer"] = "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
+    state["reviews"] = state["reviews"][-500:]
+    path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+update_tracking(items)
 if not items:
     raise SystemExit("Nenhum ativo pôde ser atualizado")
