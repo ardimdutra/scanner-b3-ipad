@@ -32,7 +32,7 @@ function card(item) {
 }
 
 function drawCandles(canvas, candles) {
-  if (!candles?.length) return;
+  if (!candles?.length) { const context = canvas.getContext('2d'); const width = canvas.clientWidth, ratio = window.devicePixelRatio || 1; canvas.style.height='170px'; canvas.width=width*ratio; canvas.height=170*ratio; context.scale(ratio,ratio); context.fillStyle='#091526'; context.fillRect(0,0,width,170); context.fillStyle='#7890ad'; context.font='12px -apple-system, sans-serif'; context.textAlign='center'; context.fillText('60 MIN NÃO DISPONÍVEL PARA ESTE ATIVO',width/2,72); context.font='10px -apple-system, sans-serif'; context.fillText('Sem confirmação intradiária · não constitui entrada',width/2,94); return; }
   const hourly = canvas.dataset.frame === 'hourly';
   const ratio = window.devicePixelRatio || 1, width = canvas.clientWidth, height = hourly ? 390 : 320, pad = 12;
   canvas.style.height = `${height}px`;
