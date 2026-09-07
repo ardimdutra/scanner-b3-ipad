@@ -81,7 +81,7 @@ async function loadSignals() {
       const sells = [...payload.items].sort((a, b) => a.score - b.score).slice(0, 10);
       signals.innerHTML = `<h3 class="rank-title">10 melhores leituras compradoras</h3>${buys.map(card).join('')}<h3 class="rank-title sell-rank">10 melhores leituras vendedoras</h3>${sells.map(card).join('')}`;
     } else signals.innerHTML = payload.items.map(card).join('');
-    document.querySelector('#universe-note').textContent = payload.universe_mode === 'AMPLIADO' ? `${payload.universe_size} ativos líquidos examinados · exibindo até 10 em cada direção` : `Universo gratuito limitado a ${payload.universe_size} ativos; não representa toda a B3`;
+    document.querySelector('#universe-note').textContent = payload.universe_mode === 'AMPLIADO' ? `${payload.universe_size} ativos líquidos examinados · exibindo até 10 em cada direção` : `${payload.requested_universe_size || payload.universe_size} ativos identificados; o plano atual forneceu histórico completo para ${payload.universe_size}. Não representa toda a B3`;
     renderCharts();
     for (const type of ['COMPRA', 'AGUARDAR', 'VENDA']) {
       const id = type === 'COMPRA' ? 'buy-count' : type === 'VENDA' ? 'sell-count' : 'wait-count';
