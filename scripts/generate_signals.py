@@ -103,6 +103,8 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
         f"Volume: {volume_ratio:.2f}x a média de 20 períodos",
         f"60 min: {'confirma compra' if hourly_buy else 'confirma venda' if hourly_sell else 'não confirma entrada'}",
     ]
+    def chart_rows(rows: list[dict], limit: int) -> list[dict]:
+        return [{"date": row.get("date"), "open": round(row.get("open") or row["close"], 2), "high": round(row.get("high") or row["close"], 2), "low": round(row.get("low") or row["close"], 2), "close": round(row["close"], 2), "volume": row.get("volume") or 0} for row in rows[-limit:]]
     return {
         "ticker": ticker,
         "execution_ticker": f"{ticker}F",
@@ -121,7 +123,15 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
             "daily_macd": round(daily_line, 4), "daily_signal": round(daily_signal, 4), "daily_histogram": round(daily_hist, 4),
             "hourly_macd": round(hour_line, 4), "hourly_signal": round(hour_signal, 4), "hourly_histogram": round(hour_hist, 4),
             "stochastic_k": round(stoch_k, 1), "stochastic_d": round(stoch_d, 1), "volume_ratio": round(volume_ratio, 2),
+            "ema9": round(ema9, 2), "ema21": round(ema21, 2),
         },
+        "states": {
+            "daily_trend": "POSITIVA" if daily_up else "NEGATIVA" if daily_down else "LATERAL",
+            "daily_macd": "COMPRADOR" if daily_macd_buy else "VENDEDOR" if daily_macd_sell else "NEUTRO",
+            "hourly_confirmation": "COMPRA" if hourly_buy else "VENDA" if hourly_sell else "NÃO CONFIRMA",
+            "volume": "CONFIRMA" if volume_confirms else "ABAIXO DA MÉDIA",
+        },
+        "charts": {"daily": chart_rows(daily, 30), "hourly": chart_rows(hourly, 30)},
         "timeframe": "Diário + confirmação 60 min",
         "data_status": "DADOS ONLINE",
     }
