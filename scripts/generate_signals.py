@@ -103,8 +103,43 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
         f"Volume: {volume_ratio:.2f}x a média de 20 períodos",
         f"60 min: {'confirma compra' if hourly_buy else 'confirma venda' if hourly_sell else 'não confirma entrada'}",
     ]
-    def chart_rows(rows: list[dict], limit: int) -> list[dict]:
-        return [{"date": row.get("date"), "open": round(row.get("open") or row["close"], 2), "high": round(row.get("high") or row["close"], 2), "low": round(row.get("low") or row["close"], 2), "close": round(row["close"], 2), "volume": row.get("volume") or 0} for row in rows[-limit:]]
+    def chart_rows(rows: list[dict], limit: int, include_stochastic: bool = False) -> list[dict]:
+        chart_closes = [row["close"] for row in rows]
+        fast = ema_series(chart_closes, 12)
+        slow = ema_series(chart_closes, 26)
+        macd_lines = [a - b for a, b in zip(fast, slow)]
+        signal_lines = ema_series(macd_lines, 9)
+        raw_k: list[float | None] = [None] * len(rows)
+        smooth_k: list[float | None] = [None] * len(rows)
+        smooth_d: list[float | None] = [None] * len(rows)
+        if include_stochastic:
+            valid_raw: list[float] = []
+            valid_smooth: list[float] = []
+            for index in range(13, len(rows)):
+                window = rows[index - 13 : index + 1]
+                high = max(row["high"] for row in window)
+                low = min(row["low"] for row in window)
+                value = 50 if high == low else (rows[index]["close"] - low) / (high - low) * 100
+                raw_k[index] = value
+                valid_raw.append(value)
+                smooth = sma(valid_raw, 3)
+                smooth_k[index] = smooth
+                valid_smooth.append(smooth)
+                smooth_d[index] = sma(valid_smooth, 3)
+        start = max(0, len(rows) - limit)
+        result = []
+        for index in range(start, len(rows)):
+            row = rows[index]
+            result.append({
+                "date": row.get("date"), "open": round(row.get("open") or row["close"], 2),
+                "high": round(row.get("high") or row["close"], 2), "low": round(row.get("low") or row["close"], 2),
+                "close": round(row["close"], 2), "volume": row.get("volume") or 0,
+                "macd": round(macd_lines[index], 4), "macd_signal": round(signal_lines[index], 4),
+                "macd_histogram": round(macd_lines[index] - signal_lines[index], 4),
+                "stochastic_k": round(smooth_k[index], 2) if smooth_k[index] is not None else None,
+                "stochastic_d": round(smooth_d[index], 2) if smooth_d[index] is not None else None,
+            })
+        return result
     return {
         "ticker": ticker,
         "execution_ticker": f"{ticker}F",
@@ -131,7 +166,7 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict]) -
             "hourly_confirmation": "COMPRA" if hourly_buy else "VENDA" if hourly_sell else "NÃO CONFIRMA",
             "volume": "CONFIRMA" if volume_confirms else "ABAIXO DA MÉDIA",
         },
-        "charts": {"daily": chart_rows(daily, 30), "hourly": chart_rows(hourly, 30)},
+        "charts": {"daily": chart_rows(daily, 30), "hourly": chart_rows(hourly, 30, True)},
         "timeframe": "Diário + confirmação 60 min",
         "data_status": "DADOS ONLINE",
     }
