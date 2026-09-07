@@ -11,6 +11,8 @@ const indicator = (label, value, detail, state) => `<div class="indicator"><smal
 function card(item) {
   const affordable = Object.entries(item.quantities).filter(([, quantity]) => quantity > 0).pop();
   const budget = affordable ? `Até ${affordable[1]} ação(ões) com R$ ${affordable[0]}` : 'Acima dos orçamentos definidos';
+  const f = item.fundamentals || {};
+  const metric = (label, value, suffix = '') => `<div><small>${label}</small><b>${Number.isFinite(value) ? value.toLocaleString('pt-BR', {maximumFractionDigits:2}) + suffix : '—'}</b></div>`;
   return `<article class="signal-card">
     <div class="card-top"><div><span class="ticker">${item.ticker}</span><span class="fractional">Fracionário: ${item.execution_ticker || item.ticker + 'F'}</span><span class="company">${item.company}</span></div><span class="badge ${item.signal}">${item.signal}</span></div>
     <div class="price">${money(item.price)}</div><div class="confidence">Confiança do modelo: ${item.confidence}% · risco ${item.risk_percent}%</div>
@@ -21,9 +23,10 @@ function card(item) {
       ${indicator('CONFIRMAÇÃO · 60 MIN', item.states.hourly_confirmation, `MACD hist. ${item.indicators.hourly_histogram}`, item.states.hourly_confirmation)}
       ${indicator('ESTOCÁSTICO · 14,3,3', `K ${item.indicators.stochastic_k} · D ${item.indicators.stochastic_d}`, item.indicators.stochastic_k > item.indicators.stochastic_d ? 'K acima de D' : 'K abaixo de D', item.states.hourly_confirmation)}
     </div>
+    <div class="fundamental-strip"><span>FUNDAMENTOS · FUNDAMENTUS</span>${metric('P/L', f.pe)}${metric('P/VP', f.pvp)}${metric('ROE', f.roe, '%')}${metric('ROIC', f.roic, '%')}${metric('DÍV./PL', f.debt_equity)}${metric('CRESC. REC. 5A', f.revenue_growth_5y, '%')}</div>
     <div class="charts"><figure><figcaption>DIÁRIO · CANDLE + MME 9/21 + MACD + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="daily"></canvas></figure><figure><figcaption>60 MIN · CANDLE + BOLLINGER 20,2 + MACD + ESTOCÁSTICO + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="hourly"></canvas></figure></div>
     <div class="levels"><div><small>STOP</small><b>${money(item.stop)}</b></div><div><small>ALVO</small><b>${money(item.target)}</b></div><div><small>VALOR JUSTO</small><b>${money(item.fair_value)}</b></div></div>
-    <div class="reasons">${item.reasons.join(' · ')}</div>
+    <div class="reasons">${item.reasons.join(' · ')}</div><div class="source-line">Fontes: diário ${item.sources?.daily || '—'} · 60 min ${item.sources?.hourly || '—'} · fundamentos ${item.sources?.fundamentals || '—'}</div>
     <div class="card-foot"><span class="budget">${budget}</span><button class="outline" data-ticker="${item.ticker}">Registrar</button></div>
   </article>`;
 }
