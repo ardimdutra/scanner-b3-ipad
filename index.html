@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Scanner B3">
+  <title>Scanner B3 — Swing</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S3</span><div><strong>Scanner B3</strong><small>Swing · mercado fracionário</small></div></div>
+    <div class="mode"><span></span>SIMULADOR</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">RADAR DO DIA</p><h1>Decisão clara,<br>risco visível.</h1></div>
+      <div class="hero-copy"><p>Contexto diário com confirmação em 60 minutos. Nenhuma ordem é enviada automaticamente.</p><button id="refresh" class="primary">Atualizar análise</button></div>
+    </section>
+
+    <section class="summary" aria-label="Resumo dos sinais">
+      <article><span id="buy-count">—</span><small>compras</small></article>
+      <article><span id="wait-count">—</span><small>em observação</small></article>
+      <article><span id="sell-count">—</span><small>vendas</small></article>
+      <article class="stamp"><span id="data-status">ONLINE</span><small id="updated-at">aguardando atualização</small></article>
+    </section>
+
+    <section class="section-head"><div><p class="eyebrow">OPORTUNIDADES</p><h2>Sinais analisados</h2></div><div class="legend"><i class="dot buy"></i>Compra <i class="dot wait"></i>Aguardar <i class="dot sell"></i>Venda</div></section>
+    <section id="signals" class="signal-grid" aria-live="polite"><div class="loading">Calculando leitura de mercado…</div></section>
+
+    <section class="method">
+      <div><p class="eyebrow">MÉTODO</p><h2>Uma tese, duas escalas</h2></div>
+      <ol><li><b>Diário</b><span>Define tendência, força do MACD e confirmação por volume.</span></li><li><b>60 minutos</b><span>Valida o momento de entrada com MACD e estocástico.</span></li><li><b>Gestão</b><span>Expõe preço, stop, alvo, valor justo e quantidade acessível.</span></li></ol>
+    </section>
+  </main>
+
+  <dialog id="decision-dialog">
+    <form id="decision-form" method="dialog">
+      <button class="close" value="cancel" aria-label="Fechar">×</button>
+      <p class="eyebrow">REGISTRAR DECISÃO</p><h2 id="dialog-title">Ativo</h2>
+      <input type="hidden" id="ticker" name="ticker">
+      <fieldset><legend>O que você fez?</legend><label><input type="radio" name="status" value="executed" required> Executei como indicado</label><label><input type="radio" name="status" value="changed"> Executei de outra forma</label><label><input type="radio" name="status" value="skipped"> Não executei</label></fieldset>
+      <div class="form-row"><label>Preço real<input name="actual_price" inputmode="decimal" placeholder="R$ 0,00"></label><label>Quantidade<input name="quantity" inputmode="numeric" placeholder="0"></label></div>
+      <label>Motivo ou observação<textarea name="reason" rows="3" placeholder="Registre o contexto da decisão"></textarea></label>
+      <button class="primary wide" type="submit">Salvar decisão</button><p id="form-status" role="status"></p>
+    </form>
+  </dialog>
+
+  <footer><span>Scanner B3 · apoio à decisão manual no MT5</span><span>Não constitui recomendação de investimento.</span></footer>
+  <script src="./scanner-client.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
