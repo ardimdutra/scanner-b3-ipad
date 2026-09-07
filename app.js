@@ -18,15 +18,9 @@ function card(item) {
 async function loadSignals() {
   signals.innerHTML = '<div class="loading">Calculando leitura de mercado…</div>';
   try {
-    let payload;
-    try {
-      const response = await fetch('./api/signals');
-      if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) throw new Error('API remota ausente');
-      payload = await response.json();
-    } catch (_) {
-      const items = await window.scanB3();
-      payload = { items, data_status: 'DADOS ONLINE', updated_at: new Date().toISOString() };
-    }
+    const response = await fetch(`./signals.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error('Arquivo de análise indisponível');
+    const payload = await response.json();
     signals.innerHTML = payload.items.map(card).join('');
     for (const type of ['COMPRA', 'AGUARDAR', 'VENDA']) {
       const id = type === 'COMPRA' ? 'buy-count' : type === 'VENDA' ? 'sell-count' : 'wait-count';
@@ -35,7 +29,7 @@ async function loadSignals() {
     document.querySelector('#data-status').textContent = payload.data_status === 'DADOS ONLINE' ? 'ONLINE' : 'CONTINGÊNCIA';
     document.querySelector('#updated-at').textContent = `atualizado ${new Date(payload.updated_at).toLocaleString('pt-BR')}`;
   } catch (_) {
-    signals.innerHTML = '<div class="loading">Não foi possível carregar a análise. Verifique se o servidor está ativo.</div>';
+    signals.innerHTML = '<div class="loading">A atualização automática ainda não foi concluída. Tente novamente em alguns minutos.</div>';
   }
 }
 
