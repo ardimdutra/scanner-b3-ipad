@@ -211,8 +211,9 @@ for symbol, name in universe:
         errors.append(f"{symbol}: {error}")
 items.sort(key=lambda row: (row["signal"] != "COMPRA", -row["score"]))
 payload = {"mode": "PRODUÇÃO ASSISTIDA", "data_status": "DADOS ONLINE", "updated_at": datetime.now(UTC).isoformat(), "items": items, "errors": errors}
-payload["universe_size"] = len(universe)
-payload["universe_mode"] = "AMPLIADO" if TOKEN else "GRATUITO LIMITADO"
+payload["universe_size"] = len(items)
+payload["requested_universe_size"] = len(universe)
+payload["universe_mode"] = "AMPLIADO" if len(items) > len(ASSETS) else "GRATUITO LIMITADO"
 Path("signals.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
