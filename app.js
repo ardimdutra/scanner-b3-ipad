@@ -1,5 +1,6 @@
 const money = value => value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 const signals = document.querySelector('#signals');
+const tracking = document.querySelector('#tracking');
 const dialog = document.querySelector('#decision-dialog');
 const form = document.querySelector('#decision-form');
 let currentItems = [];
@@ -20,7 +21,7 @@ function card(item) {
       ${indicator('CONFIRMAÇÃO · 60 MIN', item.states.hourly_confirmation, `MACD hist. ${item.indicators.hourly_histogram}`, item.states.hourly_confirmation)}
       ${indicator('ESTOCÁSTICO · 14,3,3', `K ${item.indicators.stochastic_k} · D ${item.indicators.stochastic_d}`, item.indicators.stochastic_k > item.indicators.stochastic_d ? 'K acima de D' : 'K abaixo de D', item.states.hourly_confirmation)}
     </div>
-    <div class="charts"><figure><figcaption>DIÁRIO · CANDLE + MACD + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="daily"></canvas></figure><figure><figcaption>60 MIN · CANDLE + MACD + ESTOCÁSTICO + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="hourly"></canvas></figure></div>
+    <div class="charts"><figure><figcaption>DIÁRIO · CANDLE + MME 9/21 + MACD + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="daily"></canvas></figure><figure><figcaption>60 MIN · CANDLE + BOLLINGER 20,2 + MACD + ESTOCÁSTICO + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="hourly"></canvas></figure></div>
     <div class="levels"><div><small>STOP</small><b>${money(item.stop)}</b></div><div><small>ALVO</small><b>${money(item.target)}</b></div><div><small>VALOR JUSTO</small><b>${money(item.fair_value)}</b></div></div>
     <div class="reasons">${item.reasons.join(' · ')}</div>
     <div class="card-foot"><span class="budget">${budget}</span><button class="outline" data-ticker="${item.ticker}">Registrar</button></div>
@@ -47,6 +48,9 @@ function drawCandles(canvas, candles) {
   [0.25, 0.5, 0.75].forEach(step => { const gridY = pricePanel.top + (pricePanel.bottom-pricePanel.top)*step; context.beginPath(); context.moveTo(0, gridY); context.lineTo(width, gridY); context.stroke(); });
   const slot = width / candles.length, body = Math.max(2, slot * .55);
   candles.forEach((row, index) => { const x = slot * index + slot / 2, color = row.close >= row.open ? '#4bd6c5' : '#ff6e7a'; context.strokeStyle = color; context.fillStyle = color; context.beginPath(); context.moveTo(x, y(row.high)); context.lineTo(x, y(row.low)); context.stroke(); const top = Math.min(y(row.open), y(row.close)); context.fillRect(x - body / 2, top, body, Math.max(2, Math.abs(y(row.open) - y(row.close)))); });
+  const drawPriceLine = (key, color, dashed = false) => { context.strokeStyle=color; context.lineWidth=1.25; context.setLineDash(dashed?[4,3]:[]); context.beginPath(); let started=false; candles.forEach((row,index)=>{const value=row[key]; if(value===null||!Number.isFinite(value))return; const x=index*slot+slot/2, pointY=y(value); if(!started){context.moveTo(x,pointY);started=true;}else context.lineTo(x,pointY);}); context.stroke(); context.setLineDash([]); };
+  if (hourly) { drawPriceLine('bollinger_upper','#6ba8ff',true); drawPriceLine('bollinger_mid','#7890ad'); drawPriceLine('bollinger_lower','#6ba8ff',true); }
+  else { drawPriceLine('ema9','#4bd6c5'); drawPriceLine('ema21','#ffbf5f'); }
   const drawOscillator = (panel, keys, colors, fixedRange = null) => {
     const values = candles.flatMap(row => keys.map(key => row[key])).filter(value => value !== null && Number.isFinite(value));
     const min = fixedRange ? fixedRange[0] : Math.min(0, ...values), max = fixedRange ? fixedRange[1] : Math.max(0, ...values), range = max - min || 1;
@@ -72,7 +76,12 @@ async function loadSignals() {
     if (!response.ok) throw new Error('Arquivo de análise indisponível');
     const payload = await response.json();
     currentItems = payload.items;
-    signals.innerHTML = payload.items.map(card).join('');
+    if (payload.universe_size > 4) {
+      const buys = [...payload.items].sort((a, b) => b.score - a.score).slice(0, 10);
+      const sells = [...payload.items].sort((a, b) => a.score - b.score).slice(0, 10);
+      signals.innerHTML = `<h3 class="rank-title">10 melhores leituras compradoras</h3>${buys.map(card).join('')}<h3 class="rank-title sell-rank">10 melhores leituras vendedoras</h3>${sells.map(card).join('')}`;
+    } else signals.innerHTML = payload.items.map(card).join('');
+    document.querySelector('#universe-note').textContent = payload.universe_mode === 'AMPLIADO' ? `${payload.universe_size} ativos líquidos examinados · exibindo até 10 em cada direção` : `Universo gratuito limitado a ${payload.universe_size} ativos; não representa toda a B3`;
     renderCharts();
     for (const type of ['COMPRA', 'AGUARDAR', 'VENDA']) {
       const id = type === 'COMPRA' ? 'buy-count' : type === 'VENDA' ? 'sell-count' : 'wait-count';
@@ -83,6 +92,19 @@ async function loadSignals() {
   } catch (_) {
     signals.innerHTML = '<div class="loading">A atualização automática ainda não foi concluída. Tente novamente em alguns minutos.</div>';
   }
+}
+
+async function loadTracking() {
+  try {
+    const response = await fetch(`./tracking.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error();
+    const payload = await response.json();
+    const operations = [...payload.operations].sort((a, b) => b.opened_at.localeCompare(a.opened_at));
+    tracking.innerHTML = operations.length ? operations.map(operation => {
+      const resultClass = operation.result_percent > 0 ? 'positive' : operation.result_percent < 0 ? 'negative' : 'neutral';
+      return `<article class="track-card"><div><span class="ticker">${operation.ticker}</span><span class="badge ${operation.side}">${operation.side}</span></div><strong class="track-result ${resultClass}">${operation.result_percent > 0 ? '+' : ''}${operation.result_percent.toFixed(2)}%</strong><dl><div><dt>Entrada</dt><dd>${money(operation.entry_price)}</dd></div><div><dt>Atual</dt><dd>${money(operation.current_price)}</dd></div><div><dt>Stop</dt><dd>${money(operation.stop)}</dd></div><div><dt>Alvo</dt><dd>${money(operation.target)}</dd></div></dl><footer><span>${operation.status}${operation.trailing_active ? ' · trailing ativo' : ''}</span><b class="${stateClass(operation.assessment)}">${operation.assessment}</b></footer></article>`;
+    }).join('') : '<div class="loading">Nenhuma entrada atingiu todos os filtros até agora.</div>';
+  } catch (_) { tracking.innerHTML = '<div class="loading">O histórico começará a ser exibido na próxima atualização.</div>'; }
 }
 
 signals.addEventListener('click', event => {
@@ -113,7 +135,8 @@ form.addEventListener('submit', async event => {
   if (saved) setTimeout(() => dialog.close(), 900);
 });
 
-document.querySelector('#refresh').addEventListener('click', loadSignals);
+document.querySelector('#refresh').addEventListener('click', () => { loadSignals(); loadTracking(); });
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
 window.addEventListener('resize', () => requestAnimationFrame(renderCharts));
 loadSignals();
+loadTracking();
