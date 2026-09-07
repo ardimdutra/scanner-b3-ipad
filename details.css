@@ -15,3 +15,18 @@
 .charts canvas { width:100%; height:145px; display:block; }
 @media(max-width:900px) { .indicator-grid { grid-template-columns:repeat(2,1fr); } }
 @media(max-width:560px) { .fractional { display:block; margin:6px 0 0; width:max-content; } .indicator-grid,.charts { grid-template-columns:1fr; } }
+.universe-note { margin:.45rem 0 0; color:var(--muted); font-size:.86rem; }
+.rank-title { margin:1rem 0 0; padding:.8rem 0; border-top:1px solid #20314a; color:#d9e5f5; font-size:1rem; letter-spacing:.04em; }
+.rank-title:first-child { border-top:0; }
+.sell-rank { margin-top:2.5rem; }
+.tracking-head { margin-top:4rem; }
+.tracking-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.track-card { padding:1.15rem; border:1px solid #20314a; border-radius:16px; background:#0b1829; }
+.track-card>div:first-child,.track-card footer { display:flex; align-items:center; justify-content:space-between; }
+.track-result { display:block; margin:.7rem 0; font-size:1.75rem; }
+.track-card dl { display:grid; grid-template-columns:repeat(4,1fr); gap:.55rem; margin:0; }
+.track-card dl div { padding:.55rem; background:#07111f; border-radius:8px; }
+.track-card dt { font-size:.65rem; color:var(--muted); text-transform:uppercase; }
+.track-card dd { margin:.2rem 0 0; font-weight:650; }
+.track-card footer { margin-top:.8rem; padding-top:.7rem; border-top:1px solid #20314a; font-size:.75rem; color:var(--muted); }
+@media(max-width:760px) { .tracking-grid { grid-template-columns:1fr; } .track-card dl { grid-template-columns:repeat(2,1fr); } }
