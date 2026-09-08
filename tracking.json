@@ -10,8 +10,9 @@
       "stop": 32.67,
       "target": 38.55,
       "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "assessment": "NEUTRA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
     },
     {
       "ticker": "BEEF3",
@@ -23,8 +24,9 @@
       "stop": 3.65,
       "target": 4.55,
       "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "assessment": "NEUTRA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
     },
     {
       "ticker": "ITSA4",
@@ -36,8 +38,9 @@
       "stop": 13.55,
       "target": 14.75,
       "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "assessment": "NEUTRA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
     },
     {
       "ticker": "RAIL3",
@@ -49,12 +52,50 @@
       "stop": 13.94,
       "target": 15.76,
       "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "assessment": "NEUTRA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
     }
   ],
-  "reviews": [],
-  "updated_at": "2026-09-08T20:25:15.894531+00:00",
+  "reviews": [
+    {
+      "key": "2026-09-08:TEND3:2026-09-08T09:14:27.274074+00:00",
+      "date": "2026-09-08",
+      "ticker": "TEND3",
+      "side": "COMPRA",
+      "result_percent": 0.0,
+      "assessment": "NEUTRA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-08:BEEF3:2026-09-08T09:14:27.274074+00:00",
+      "date": "2026-09-08",
+      "ticker": "BEEF3",
+      "side": "COMPRA",
+      "result_percent": 0.0,
+      "assessment": "NEUTRA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-08:ITSA4:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-09-08",
+      "ticker": "ITSA4",
+      "side": "COMPRA",
+      "result_percent": 0.0,
+      "assessment": "NEUTRA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-08:RAIL3:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-09-08",
+      "ticker": "RAIL3",
+      "side": "COMPRA",
+      "result_percent": 0.0,
+      "assessment": "NEUTRA",
+      "status": "ABERTA"
+    }
+  ],
+  "updated_at": "2026-09-08T21:03:17.022495+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
