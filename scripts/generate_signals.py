@@ -96,6 +96,10 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | 
 
     fundamental = fundamental or {}
     fundamental_score = fundamental.get("score", 0)
+    buy_blocks = [daily_up, daily_macd_buy, volume_confirms, hourly_buy, fundamental_score > 0]
+    sell_blocks = [daily_down, daily_macd_sell, volume_confirms, hourly_sell, fundamental_score < 0]
+    buy_strength = int(daily_up) * 25 + int(daily_macd_buy) * 20 + int(volume_confirms) * 10 + int(hourly_buy) * 30 + max(0, min(15, fundamental_score * 3))
+    sell_strength = int(daily_down) * 25 + int(daily_macd_sell) * 20 + int(volume_confirms) * 10 + int(hourly_sell) * 30 + max(0, min(15, -fundamental_score * 3))
     if daily_up and daily_macd_buy and hourly_buy and fundamental_score >= -1:
         signal, score = "COMPRA", 5 + int(volume_confirms)
     elif daily_down and daily_macd_sell and hourly_sell:
@@ -116,6 +120,19 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | 
         f"60 min: {'confirma compra' if hourly_buy else 'confirma venda' if hourly_sell else 'não confirma entrada' if has_hourly else 'histórico indisponível na fonte atual'}",
         fundamental.get("interpretation", "Fundamentos: ainda não disponíveis para esta empresa"),
     ]
+    if daily_up and daily_macd_buy:
+        technical_reading = "A estrutura diária é altista e o MACD reforça continuidade compradora"
+    elif daily_down and daily_macd_sell:
+        technical_reading = "A estrutura diária é baixista e o MACD reforça pressão vendedora"
+    else:
+        technical_reading = "Tendência e momentum diário ainda não formam uma tese convergente"
+    volume_reading = "com participação acima da média" if volume_confirms else "mas com volume insuficiente para validar força"
+    if hourly_buy: timing = "O gráfico de 60 minutos confirma timing de compra."
+    elif hourly_sell: timing = "O gráfico de 60 minutos confirma timing de venda."
+    elif has_hourly: timing = "O gráfico de 60 minutos diverge ou ainda não confirma entrada."
+    else: timing = "Sem histórico de 60 minutos, a leitura permanece candidata e não entrada confirmada."
+    fundamental_reading = fundamental.get("interpretation", "Fundamentos ainda não disponíveis").removeprefix("Fundamentos: ")
+    analysis = f"{technical_reading}, {volume_reading}. {timing} Na camada fundamentalista, {fundamental_reading}."
     def chart_rows(rows: list[dict], limit: int, include_stochastic: bool = False) -> list[dict]:
         chart_closes = [row["close"] for row in rows]
         chart_ema9 = ema_series(chart_closes, 9)
@@ -195,6 +212,8 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | 
         },
         "charts": {"daily": chart_rows(daily, 30), "hourly": chart_rows(hourly, 30, True) if has_hourly else []},
         "fundamentals": fundamental,
+        "analysis": analysis,
+        "ranking": {"buy_strength": buy_strength, "sell_strength": sell_strength, "buy_blocks": sum(buy_blocks), "sell_blocks": sum(sell_blocks), "total_blocks": 5, "hourly_available": has_hourly},
         "sources": {"daily": "B3 oficial", "hourly": "brapi" if has_hourly else "indisponível", "fundamentals": "Fundamentus" if fundamental else "indisponível"},
         "timeframe": "Diário + confirmação 60 min",
         "data_status": "DADOS ONLINE",

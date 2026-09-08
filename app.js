@@ -1,6 +1,8 @@
 const money = value => value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 const signals = document.querySelector('#signals');
 const tracking = document.querySelector('#tracking');
+const buyRanking = document.querySelector('#buy-ranking');
+const sellRanking = document.querySelector('#sell-ranking');
 const dialog = document.querySelector('#decision-dialog');
 const form = document.querySelector('#decision-form');
 let currentItems = [];
@@ -13,7 +15,7 @@ function card(item) {
   const budget = affordable ? `Até ${affordable[1]} ação(ões) com R$ ${affordable[0]}` : 'Acima dos orçamentos definidos';
   const f = item.fundamentals || {};
   const metric = (label, value, suffix = '') => `<div><small>${label}</small><b>${Number.isFinite(value) ? value.toLocaleString('pt-BR', {maximumFractionDigits:2}) + suffix : '—'}</b></div>`;
-  return `<article class="signal-card">
+  return `<article class="signal-card" id="asset-${item.ticker}">
     <div class="card-top"><div><span class="ticker">${item.ticker}</span><span class="fractional">Fracionário: ${item.execution_ticker || item.ticker + 'F'}</span><span class="company">${item.company}</span></div><span class="badge ${item.signal}">${item.signal}</span></div>
     <div class="price">${money(item.price)}</div><div class="confidence">Confiança do modelo: ${item.confidence}% · risco ${item.risk_percent}%</div>
     <div class="indicator-grid">
@@ -26,9 +28,17 @@ function card(item) {
     <div class="fundamental-strip"><span>FUNDAMENTOS · FUNDAMENTUS</span>${metric('P/L', f.pe)}${metric('P/VP', f.pvp)}${metric('ROE', f.roe, '%')}${metric('ROIC', f.roic, '%')}${metric('DÍV./PL', f.debt_equity)}${metric('CRESC. REC. 5A', f.revenue_growth_5y, '%')}</div>
     <div class="charts"><figure><figcaption>DIÁRIO · CANDLE + MME 9/21 + MACD + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="daily"></canvas></figure><figure><figcaption>60 MIN · CANDLE + BOLLINGER 20,2 + MACD + ESTOCÁSTICO + VOLUME</figcaption><canvas data-ticker="${item.ticker}" data-frame="hourly"></canvas></figure></div>
     <div class="levels"><div><small>STOP</small><b>${money(item.stop)}</b></div><div><small>ALVO</small><b>${money(item.target)}</b></div><div><small>VALOR JUSTO</small><b>${money(item.fair_value)}</b></div></div>
-    <div class="reasons">${item.reasons.join(' · ')}</div><div class="source-line">Fontes: diário ${item.sources?.daily || '—'} · 60 min ${item.sources?.hourly || '—'} · fundamentos ${item.sources?.fundamentals || '—'}</div>
+    <div class="interpretation"><small>LEITURA INTEGRADA</small><p>${item.analysis || item.reasons.join(' · ')}</p></div><div class="source-line">Fontes: diário ${item.sources?.daily || '—'} · 60 min ${item.sources?.hourly || '—'} · fundamentos ${item.sources?.fundamentals || '—'}</div>
     <div class="card-foot"><span class="budget">${budget}</span><button class="outline" data-ticker="${item.ticker}">Registrar</button></div>
   </article>`;
+}
+
+function leaderRow(item, side) {
+  const rank = item.ranking || {};
+  const strength = side === 'buy' ? rank.buy_strength || 0 : rank.sell_strength || 0;
+  const blocks = side === 'buy' ? rank.buy_blocks || 0 : rank.sell_blocks || 0;
+  const intraday = rank.hourly_available ? item.states.hourly_confirmation : 'SEM 60 MIN';
+  return `<a class="leader-row" href="#asset-${item.ticker}"><span class="leader-position"></span><div><b>${item.ticker}</b><small>${blocks}/5 blocos · ${intraday}</small></div><div class="strength"><strong>${strength}</strong><span><i style="width:${strength}%"></i></span></div></a>`;
 }
 
 function drawCandles(canvas, candles) {
@@ -80,9 +90,12 @@ async function loadSignals() {
     const payload = await response.json();
     currentItems = payload.items;
     if (payload.universe_size > 4) {
-      const buys = [...payload.items].sort((a, b) => b.score - a.score).slice(0, 10);
-      const sells = [...payload.items].sort((a, b) => a.score - b.score).slice(0, 10);
-      signals.innerHTML = `<h3 class="rank-title">10 melhores leituras compradoras</h3>${buys.map(card).join('')}<h3 class="rank-title sell-rank">10 melhores leituras vendedoras</h3>${sells.map(card).join('')}`;
+      const buys = [...payload.items].sort((a, b) => (b.ranking?.buy_strength || 0) - (a.ranking?.buy_strength || 0)).slice(0, 10);
+      const sells = [...payload.items].sort((a, b) => (b.ranking?.sell_strength || 0) - (a.ranking?.sell_strength || 0)).slice(0, 10);
+      buyRanking.innerHTML = buys.map(item => leaderRow(item, 'buy')).join('');
+      sellRanking.innerHTML = sells.map(item => leaderRow(item, 'sell')).join('');
+      const detailed = [...new Map([...buys, ...sells].map(item => [item.ticker, item])).values()];
+      signals.innerHTML = detailed.map(card).join('');
     } else signals.innerHTML = payload.items.map(card).join('');
     document.querySelector('#universe-note').textContent = payload.universe_mode === 'AMPLIADO' ? `${payload.universe_size} ativos líquidos examinados · exibindo até 10 em cada direção` : `${payload.requested_universe_size || payload.universe_size} ativos identificados; o plano atual forneceu histórico completo para ${payload.universe_size}. Não representa toda a B3`;
     renderCharts();

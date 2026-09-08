@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./details.css">
 </head>
-<body>
+<body id="top">
   <header class="topbar">
     <div class="brand"><span class="brand-mark">S3</span><div><strong>Scanner B3</strong><small>Swing · mercado fracionário</small></div></div>
     <div class="mode"><span></span>SIMULADOR</div>
@@ -21,7 +21,7 @@
   <main>
     <section class="hero">
       <div><p class="eyebrow">RADAR DO DIA</p><h1>Decisão clara,<br>risco visível.</h1></div>
-      <div class="hero-copy"><p>Contexto diário com confirmação em 60 minutos. Nenhuma ordem é enviada automaticamente.</p><button id="refresh" class="primary">Atualizar análise</button></div>
+      <div class="hero-copy"><p>Contexto diário com confirmação em 60 minutos. Nenhuma ordem é enviada automaticamente.</p><div class="hero-actions"><button id="refresh" class="primary">Atualizar análise</button><a href="#revisoes" class="outline nav-review">Ver revisões do modelo</a></div></div>
     </section>
 
     <section class="summary" aria-label="Resumo dos sinais">
@@ -32,9 +32,11 @@
     </section>
 
     <section class="section-head"><div><p class="eyebrow">OPORTUNIDADES</p><h2>Ranking diário</h2><p id="universe-note" class="universe-note"></p></div><div class="legend"><i class="dot buy"></i>Compra <i class="dot wait"></i>Aguardar <i class="dot sell"></i>Venda</div></section>
+    <section class="leaderboards"><article><header><div><small>FORÇA COMPRADORA</small><h3>Melhores compras</h3></div><span>0–100</span></header><div id="buy-ranking" class="leader-list"></div></article><article class="sell-board"><header><div><small>FORÇA VENDEDORA</small><h3>Melhores vendas</h3></div><span>0–100</span></header><div id="sell-ranking" class="leader-list"></div></article></section>
+    <section class="section-head details-head"><div><p class="eyebrow">LEITURA COMPLETA</p><h2>Fundamentos, gráficos e níveis</h2></div></section>
     <section id="signals" class="signal-grid" aria-live="polite"><div class="loading">Calculando leitura de mercado…</div></section>
 
-    <section class="section-head tracking-head"><div><p class="eyebrow">BACKTEST PROSPECTIVO</p><h2>Operações indicadas pelo modelo</h2><p class="universe-note">Carteira exclusivamente simulada · revisão automática em dias úteis às 18h</p></div></section>
+    <section id="revisoes" class="section-head tracking-head"><div><p class="eyebrow">BACKTEST PROSPECTIVO</p><h2>Revisões das indicações do modelo</h2><p class="universe-note">Carteira exclusivamente simulada · revisão automática em dias úteis às 18h</p></div><a href="#top" class="outline">Voltar ao ranking</a></section>
     <section id="tracking" class="tracking-grid" aria-live="polite"><div class="loading">Carregando acompanhamento…</div></section>
 
     <section class="method">
