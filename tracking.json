@@ -1,7 +1,34 @@
 {
-  "operations": [],
+  "operations": [
+    {
+      "ticker": "TEND3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-08T09:14:27.274074+00:00",
+      "entry_price": 34.63,
+      "current_price": 34.63,
+      "stop": 32.67,
+      "target": 38.55,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "BEEF3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-08T09:14:27.274074+00:00",
+      "entry_price": 3.95,
+      "current_price": 3.95,
+      "stop": 3.65,
+      "target": 4.55,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    }
+  ],
   "reviews": [],
-  "updated_at": "2026-09-08T09:05:40.732590+00:00",
+  "updated_at": "2026-09-08T09:14:27.274074+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
