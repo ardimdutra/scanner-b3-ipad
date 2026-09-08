@@ -25,10 +25,36 @@
       "result_percent": 0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
+    },
+    {
+      "ticker": "ITSA4",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-08T13:28:24.697656+00:00",
+      "entry_price": 13.95,
+      "current_price": 13.95,
+      "stop": 13.55,
+      "target": 14.75,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "RAIL3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-08T13:28:24.697656+00:00",
+      "entry_price": 14.55,
+      "current_price": 14.55,
+      "stop": 13.94,
+      "target": 15.76,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
     }
   ],
   "reviews": [],
-  "updated_at": "2026-09-08T12:32:18.192137+00:00",
+  "updated_at": "2026-09-08T13:28:24.697656+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
