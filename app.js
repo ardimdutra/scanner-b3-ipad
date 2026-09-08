@@ -90,14 +90,16 @@ async function loadSignals() {
     const payload = await response.json();
     currentItems = payload.items;
     if (payload.universe_size > 4) {
-      const buys = [...payload.items].sort((a, b) => (b.ranking?.buy_strength || 0) - (a.ranking?.buy_strength || 0)).slice(0, 10);
-      const sells = [...payload.items].sort((a, b) => (b.ranking?.sell_strength || 0) - (a.ranking?.sell_strength || 0)).slice(0, 10);
+      const intradayItems = payload.items.filter(item => item.ranking?.hourly_available);
+      const buys = [...intradayItems].sort((a, b) => (b.ranking?.buy_strength || 0) - (a.ranking?.buy_strength || 0)).slice(0, 10);
+      const sells = [...intradayItems].sort((a, b) => (b.ranking?.sell_strength || 0) - (a.ranking?.sell_strength || 0)).slice(0, 10);
       buyRanking.innerHTML = buys.map(item => leaderRow(item, 'buy')).join('');
       sellRanking.innerHTML = sells.map(item => leaderRow(item, 'sell')).join('');
       const detailed = [...new Map([...buys, ...sells].map(item => [item.ticker, item])).values()];
       signals.innerHTML = detailed.map(card).join('');
     } else signals.innerHTML = payload.items.map(card).join('');
-    document.querySelector('#universe-note').textContent = payload.universe_mode === 'AMPLIADO' ? `${payload.universe_size} ativos líquidos examinados · exibindo até 10 em cada direção` : `${payload.requested_universe_size || payload.universe_size} ativos identificados; o plano atual forneceu histórico completo para ${payload.universe_size}. Não representa toda a B3`;
+    const intradayCount = payload.items.filter(item => item.ranking?.hourly_available).length;
+    document.querySelector('#universe-note').textContent = `${payload.universe_size} ativos examinados no diário · ${intradayCount} candidatos com série de 60 minutos validada · ranking limitado aos que possuem ambos os tempos`;
     renderCharts();
     for (const type of ['COMPRA', 'AGUARDAR', 'VENDA']) {
       const id = type === 'COMPRA' ? 'buy-count' : type === 'VENDA' ? 'sell-count' : 'wait-count';

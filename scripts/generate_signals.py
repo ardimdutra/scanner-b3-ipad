@@ -38,6 +38,30 @@ def fetch_history(ticker: str, period: str, interval: str) -> list[dict]:
     return []
 
 
+def fetch_yahoo_hourly(ticker: str) -> list[dict]:
+    last_error = None
+    for host in ("query2.finance.yahoo.com", "query1.finance.yahoo.com"):
+        try:
+            url = f"https://{host}/v8/finance/chart/{ticker}.SA?range=1mo&interval=60m"
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 Scanner-B3-iPad"})
+            with urllib.request.urlopen(request, timeout=35) as response:
+                chart = json.load(response)["chart"]["result"][0]
+            timestamps = chart.get("timestamp", [])
+            quote = chart["indicators"]["quote"][0]
+            rows = []
+            for index, timestamp in enumerate(timestamps):
+                values = {key: quote.get(key, [None] * len(timestamps))[index] for key in ("open", "high", "low", "close", "volume")}
+                if all(values[key] is not None for key in ("open", "high", "low", "close")):
+                    rows.append({"date": timestamp, **values})
+            if len(rows) >= 30:
+                return rows
+        except Exception as error:
+            last_error = error
+    if last_error:
+        raise last_error
+    return []
+
+
 def ema_series(values: list[float], period: int) -> list[float]:
     factor = 2 / (period + 1)
     result = [values[0]]
@@ -70,7 +94,7 @@ def stochastic_14_3_3(candles: list[dict]) -> tuple[float, float]:
     return smooth_k_series[-1], sma(smooth_k_series, 3)
 
 
-def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | None, fundamental: dict | None = None) -> dict:
+def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | None, fundamental: dict | None = None, hourly_source: str | None = None) -> dict:
     hourly = hourly or []
     closes = [row["close"] for row in daily]
     hourly_closes = [row["close"] for row in hourly]
@@ -214,7 +238,7 @@ def evaluate(ticker: str, company: str, daily: list[dict], hourly: list[dict] | 
         "fundamentals": fundamental,
         "analysis": analysis,
         "ranking": {"buy_strength": buy_strength, "sell_strength": sell_strength, "buy_blocks": sum(buy_blocks), "sell_blocks": sum(sell_blocks), "total_blocks": 5, "hourly_available": has_hourly},
-        "sources": {"daily": "B3 oficial", "hourly": "brapi" if has_hourly else "indisponível", "fundamentals": "Fundamentus" if fundamental else "indisponível"},
+        "sources": {"daily": "B3 oficial", "hourly": hourly_source if has_hourly else "indisponível", "fundamentals": "Fundamentus" if fundamental else "indisponível"},
         "timeframe": "Diário + confirmação 60 min",
         "data_status": "DADOS ONLINE",
     }
@@ -302,23 +326,46 @@ def b3_market_cache() -> dict:
     return cache
 
 
+def is_equity_ticker(ticker: str) -> bool:
+    return (len(ticker) == 5 and ticker[:4].isalpha() and ticker[-1] in "3456") or (len(ticker) == 6 and ticker[:4].isalpha() and ticker.endswith("11"))
+
+
 items, errors = [], []
 market = b3_market_cache()
 fundamentals = fetch_fundamentals()
-universe = market["assets"]
+universe = [asset for asset in market["assets"] if is_equity_ticker(asset["ticker"])]
+assets_by_ticker = {asset["ticker"]: asset for asset in universe}
 for asset in universe:
     symbol, name, daily = asset["ticker"], asset["company"], asset["daily"]
     try:
-        try: hourly = fetch_history(symbol, "1mo", "1h") if symbol in {row[0] for row in ASSETS} else []
-        except Exception: hourly = []
-        items.append(evaluate(symbol, name, daily, hourly, fundamentals.get(symbol)))
+        items.append(evaluate(symbol, name, daily, [], fundamentals.get(symbol)))
     except Exception as error:
         errors.append(f"{symbol}: {error}")
+pre_buy = sorted(items, key=lambda row: row["ranking"]["buy_strength"], reverse=True)[:15]
+pre_sell = sorted(items, key=lambda row: row["ranking"]["sell_strength"], reverse=True)[:15]
+candidates = {row["ticker"] for row in pre_buy + pre_sell}
+base_symbols = {row[0] for row in ASSETS}
+for index, symbol in enumerate(candidates):
+    asset = assets_by_ticker[symbol]
+    hourly, source = [], None
+    if symbol in base_symbols:
+        try:
+            hourly, source = fetch_history(symbol, "1mo", "1h"), "brapi"
+        except Exception:
+            pass
+    if len(hourly) < 30:
+        try:
+            hourly, source = fetch_yahoo_hourly(symbol), "Yahoo Finance"
+            time.sleep(.15)
+        except Exception as error:
+            errors.append(f"{symbol} 60min: {error}")
+    refreshed = evaluate(symbol, asset["company"], asset["daily"], hourly, fundamentals.get(symbol), source)
+    items[items.index(next(row for row in items if row["ticker"] == symbol))] = refreshed
 items.sort(key=lambda row: (row["signal"] != "COMPRA", -row["score"]))
 payload = {"mode": "PRODUÇÃO ASSISTIDA", "data_status": "DADOS ONLINE", "updated_at": datetime.now(UTC).isoformat(), "items": items, "errors": errors}
 payload["universe_size"] = len(items)
 payload["requested_universe_size"] = len(universe)
-payload["sources"] = ["B3 oficial (diário)", "brapi (60 min quando disponível)", "Fundamentus (fundamentos)"]
+payload["sources"] = ["B3 oficial (diário)", "brapi + Yahoo Finance (60 min validado)", "Fundamentus (fundamentos)"]
 payload["universe_mode"] = "AMPLIADO" if len(items) > len(ASSETS) else "GRATUITO LIMITADO"
 Path("signals.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
