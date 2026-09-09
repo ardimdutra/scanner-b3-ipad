@@ -3,16 +3,17 @@
     {
       "ticker": "TEND3",
       "side": "COMPRA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-08T09:14:27.274074+00:00",
       "entry_price": 34.63,
-      "current_price": 34.63,
+      "current_price": 33.63,
       "stop": 32.67,
       "target": 38.55,
-      "result_percent": 0.0,
-      "assessment": "NEUTRA",
+      "result_percent": -2.89,
+      "assessment": "INCORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
+      "last_review_at": "2026-09-09T21:03:10.654348+00:00",
+      "exit_price": 32.67
     },
     {
       "ticker": "BEEF3",
@@ -31,16 +32,17 @@
     {
       "ticker": "ITSA4",
       "side": "COMPRA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-08T13:28:24.697656+00:00",
       "entry_price": 13.95,
-      "current_price": 13.95,
+      "current_price": 13.21,
       "stop": 13.55,
       "target": 14.75,
-      "result_percent": 0.0,
-      "assessment": "NEUTRA",
+      "result_percent": -5.3,
+      "assessment": "INCORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
+      "last_review_at": "2026-09-09T21:03:10.654348+00:00",
+      "exit_price": 13.55
     },
     {
       "ticker": "RAIL3",
@@ -54,31 +56,74 @@
       "result_percent": 0.0,
       "assessment": "NEUTRA",
       "trailing_active": false,
-      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
+      "last_review_at": "2026-09-09T21:03:10.654348+00:00"
     },
     {
       "ticker": "PETR3",
       "side": "COMPRA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-09T13:28:00.732046+00:00",
       "entry_price": 52.01,
-      "current_price": 52.01,
+      "current_price": 46.53,
       "stop": 49.68,
       "target": 56.67,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -10.54,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 49.68,
+      "last_review_at": "2026-09-09T21:03:10.654348+00:00"
     },
     {
       "ticker": "PETR4",
       "side": "COMPRA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-09T15:26:36.202295+00:00",
       "entry_price": 47.11,
-      "current_price": 47.11,
+      "current_price": 41.66,
       "stop": 45.04,
       "target": 51.24,
-      "result_percent": 0.0,
+      "result_percent": -11.57,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 45.04,
+      "last_review_at": "2026-09-09T21:03:10.654348+00:00"
+    },
+    {
+      "ticker": "PETR4",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-09T21:03:10.654348+00:00",
+      "entry_price": 41.66,
+      "current_price": 41.66,
+      "stop": 44.99,
+      "target": 34.99,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "PETR3",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-09T21:03:10.654348+00:00",
+      "entry_price": 46.53,
+      "current_price": 46.53,
+      "stop": 50.25,
+      "target": 39.09,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "NATU3",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-09T21:03:10.654348+00:00",
+      "entry_price": 7.61,
+      "current_price": 7.61,
+      "stop": 8.22,
+      "target": 6.39,
+      "result_percent": 0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
     }
@@ -119,9 +164,54 @@
       "result_percent": 0.0,
       "assessment": "NEUTRA",
       "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-09:TEND3:2026-09-08T09:14:27.274074+00:00",
+      "date": "2026-09-09",
+      "ticker": "TEND3",
+      "side": "COMPRA",
+      "result_percent": -2.89,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-09:ITSA4:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-09-09",
+      "ticker": "ITSA4",
+      "side": "COMPRA",
+      "result_percent": -5.3,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-09:RAIL3:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-09-09",
+      "ticker": "RAIL3",
+      "side": "COMPRA",
+      "result_percent": 0.0,
+      "assessment": "NEUTRA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-09:PETR3:2026-09-09T13:28:00.732046+00:00",
+      "date": "2026-09-09",
+      "ticker": "PETR3",
+      "side": "COMPRA",
+      "result_percent": -10.54,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-09:PETR4:2026-09-09T15:26:36.202295+00:00",
+      "date": "2026-09-09",
+      "ticker": "PETR4",
+      "side": "COMPRA",
+      "result_percent": -11.57,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-09T20:25:58.624591+00:00",
+  "updated_at": "2026-09-09T21:03:10.654348+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
