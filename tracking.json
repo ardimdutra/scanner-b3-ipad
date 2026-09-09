@@ -65,7 +65,7 @@
       "current_price": 52.01,
       "stop": 49.68,
       "target": 56.67,
-      "result_percent": 0,
+      "result_percent": 0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
     }
@@ -108,7 +108,7 @@
       "status": "ABERTA"
     }
   ],
-  "updated_at": "2026-09-09T13:28:00.732046+00:00",
+  "updated_at": "2026-09-09T14:26:45.762822+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
