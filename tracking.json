@@ -68,6 +68,19 @@
       "result_percent": 0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
+    },
+    {
+      "ticker": "PETR4",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-09T15:26:36.202295+00:00",
+      "entry_price": 47.11,
+      "current_price": 47.11,
+      "stop": 45.04,
+      "target": 51.24,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
     }
   ],
   "reviews": [
@@ -108,7 +121,7 @@
       "status": "ABERTA"
     }
   ],
-  "updated_at": "2026-09-09T14:26:45.762822+00:00",
+  "updated_at": "2026-09-09T15:26:36.202295+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
