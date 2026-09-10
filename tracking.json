@@ -240,6 +240,32 @@
       "current_price": 28.53,
       "stop": 26.25,
       "target": 33.09,
+      "result_percent": 0.0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "AXIA3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T19:21:38.215228+00:00",
+      "entry_price": 53.05,
+      "current_price": 53.05,
+      "stop": 49.73,
+      "target": 59.69,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "VALE3",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T19:21:38.215228+00:00",
+      "entry_price": 71.41,
+      "current_price": 71.41,
+      "stop": 77.12,
+      "target": 59.98,
       "result_percent": 0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
@@ -328,7 +354,7 @@
       "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-10T17:24:18.970660+00:00",
+  "updated_at": "2026-09-10T19:21:38.215228+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
