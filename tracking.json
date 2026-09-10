@@ -27,7 +27,7 @@
       "result_percent": 0.0,
       "assessment": "NEUTRA",
       "trailing_active": false,
-      "last_review_at": "2026-09-08T21:03:17.022495+00:00"
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "ITSA4",
@@ -50,13 +50,13 @@
       "status": "ABERTA",
       "opened_at": "2026-09-08T13:28:24.697656+00:00",
       "entry_price": 14.55,
-      "current_price": 14.55,
+      "current_price": 14.5,
       "stop": 13.94,
       "target": 15.76,
-      "result_percent": 0.0,
-      "assessment": "NEUTRA",
+      "result_percent": -0.34,
+      "assessment": "INCORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-09T21:03:10.654348+00:00"
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "PETR3",
@@ -91,28 +91,32 @@
     {
       "ticker": "PETR4",
       "side": "VENDA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-09T21:03:10.654348+00:00",
       "entry_price": 41.66,
-      "current_price": 41.66,
+      "current_price": 48.42,
       "stop": 44.99,
       "target": 34.99,
-      "result_percent": -0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -16.23,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 44.99,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "PETR3",
       "side": "VENDA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-09T21:03:10.654348+00:00",
       "entry_price": 46.53,
-      "current_price": 46.53,
+      "current_price": 53.69,
       "stop": 50.25,
       "target": 39.09,
-      "result_percent": -0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -15.39,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 50.25,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "NATU3",
@@ -133,12 +137,13 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T13:25:00.618476+00:00",
       "entry_price": 36.99,
-      "current_price": 36.99,
+      "current_price": 37.95,
       "stop": 34.03,
       "target": 42.91,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": 2.6,
+      "assessment": "CORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "USIM5",
@@ -159,12 +164,13 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T14:26:07.574585+00:00",
       "entry_price": 8.49,
-      "current_price": 8.49,
+      "current_price": 9.2,
       "stop": 7.81,
       "target": 9.85,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": 8.36,
+      "assessment": "CORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "UGPA3",
@@ -172,12 +178,13 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 36.73,
-      "current_price": 36.73,
+      "current_price": 38.4,
       "stop": 33.79,
       "target": 42.61,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": 4.55,
+      "assessment": "CORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "MULT3",
@@ -185,12 +192,13 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 30.34,
-      "current_price": 30.34,
+      "current_price": 29.87,
       "stop": 27.91,
       "target": 35.19,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -1.55,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "EQTL3",
@@ -198,38 +206,43 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 38.43,
-      "current_price": 38.43,
+      "current_price": 38.81,
       "stop": 35.36,
       "target": 44.58,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": 0.99,
+      "assessment": "CORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "BBSE3",
       "side": "VENDA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 38.38,
-      "current_price": 38.38,
+      "current_price": 40.91,
       "stop": 41.45,
       "target": 32.24,
-      "result_percent": -0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -6.59,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 41.45,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "GGBR4",
       "side": "VENDA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 22.94,
-      "current_price": 22.94,
+      "current_price": 25.41,
       "stop": 24.78,
       "target": 19.27,
-      "result_percent": -0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -10.77,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 24.78,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "ALOS3",
@@ -237,12 +250,13 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T17:24:18.970660+00:00",
       "entry_price": 28.53,
-      "current_price": 28.53,
+      "current_price": 28.52,
       "stop": 26.25,
       "target": 33.09,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": -0.04,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "AXIA3",
@@ -250,23 +264,65 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T19:21:38.215228+00:00",
       "entry_price": 53.05,
-      "current_price": 53.05,
+      "current_price": 55.08,
       "stop": 49.73,
       "target": 59.69,
-      "result_percent": 0.0,
-      "assessment": "EM ACOMPANHAMENTO",
-      "trailing_active": false
+      "result_percent": 3.83,
+      "assessment": "CORRETA",
+      "trailing_active": false,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
     },
     {
       "ticker": "VALE3",
       "side": "VENDA",
-      "status": "ABERTA",
+      "status": "ENCERRADA",
       "opened_at": "2026-09-10T19:21:38.215228+00:00",
       "entry_price": 71.41,
-      "current_price": 71.41,
+      "current_price": 79.1,
       "stop": 77.12,
       "target": 59.98,
-      "result_percent": -0.0,
+      "result_percent": -10.77,
+      "assessment": "INCORRETA",
+      "trailing_active": false,
+      "exit_price": 77.12,
+      "last_review_at": "2026-09-10T21:03:08.751599+00:00"
+    },
+    {
+      "ticker": "CPFE3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T21:03:08.751599+00:00",
+      "entry_price": 46.0,
+      "current_price": 46.0,
+      "stop": 44.48,
+      "target": 49.05,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "PETR4",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T21:03:08.751599+00:00",
+      "entry_price": 48.42,
+      "current_price": 48.42,
+      "stop": 46.41,
+      "target": 52.45,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "ABEV3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T21:03:08.751599+00:00",
+      "entry_price": 15.58,
+      "current_price": 15.58,
+      "stop": 15.19,
+      "target": 16.36,
+      "result_percent": 0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
     }
@@ -352,9 +408,135 @@
       "result_percent": -11.57,
       "assessment": "INCORRETA",
       "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-10:BEEF3:2026-09-08T09:14:27.274074+00:00",
+      "date": "2026-09-10",
+      "ticker": "BEEF3",
+      "side": "COMPRA",
+      "result_percent": 0.0,
+      "assessment": "NEUTRA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:RAIL3:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-09-10",
+      "ticker": "RAIL3",
+      "side": "COMPRA",
+      "result_percent": -0.34,
+      "assessment": "INCORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:PETR4:2026-09-09T21:03:10.654348+00:00",
+      "date": "2026-09-10",
+      "ticker": "PETR4",
+      "side": "VENDA",
+      "result_percent": -16.23,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-10:PETR3:2026-09-09T21:03:10.654348+00:00",
+      "date": "2026-09-10",
+      "ticker": "PETR3",
+      "side": "VENDA",
+      "result_percent": -15.39,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-10:VBBR3:2026-09-10T13:25:00.618476+00:00",
+      "date": "2026-09-10",
+      "ticker": "VBBR3",
+      "side": "COMPRA",
+      "result_percent": 2.6,
+      "assessment": "CORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:ASAI3:2026-09-10T14:26:07.574585+00:00",
+      "date": "2026-09-10",
+      "ticker": "ASAI3",
+      "side": "COMPRA",
+      "result_percent": 8.36,
+      "assessment": "CORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:UGPA3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-09-10",
+      "ticker": "UGPA3",
+      "side": "COMPRA",
+      "result_percent": 4.55,
+      "assessment": "CORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:MULT3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-09-10",
+      "ticker": "MULT3",
+      "side": "COMPRA",
+      "result_percent": -1.55,
+      "assessment": "INCORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:EQTL3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-09-10",
+      "ticker": "EQTL3",
+      "side": "COMPRA",
+      "result_percent": 0.99,
+      "assessment": "CORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:BBSE3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-09-10",
+      "ticker": "BBSE3",
+      "side": "VENDA",
+      "result_percent": -6.59,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-10:GGBR4:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-09-10",
+      "ticker": "GGBR4",
+      "side": "VENDA",
+      "result_percent": -10.77,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
+    },
+    {
+      "key": "2026-09-10:ALOS3:2026-09-10T17:24:18.970660+00:00",
+      "date": "2026-09-10",
+      "ticker": "ALOS3",
+      "side": "COMPRA",
+      "result_percent": -0.04,
+      "assessment": "INCORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:AXIA3:2026-09-10T19:21:38.215228+00:00",
+      "date": "2026-09-10",
+      "ticker": "AXIA3",
+      "side": "COMPRA",
+      "result_percent": 3.83,
+      "assessment": "CORRETA",
+      "status": "ABERTA"
+    },
+    {
+      "key": "2026-09-10:VALE3:2026-09-10T19:21:38.215228+00:00",
+      "date": "2026-09-10",
+      "ticker": "VALE3",
+      "side": "VENDA",
+      "result_percent": -10.77,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-10T20:23:46.741230+00:00",
+  "updated_at": "2026-09-10T21:03:08.751599+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
