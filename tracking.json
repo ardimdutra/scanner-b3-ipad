@@ -126,6 +126,32 @@
       "result_percent": -0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
+    },
+    {
+      "ticker": "VBBR3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T13:25:00.618476+00:00",
+      "entry_price": 36.99,
+      "current_price": 36.99,
+      "stop": 34.03,
+      "target": 42.91,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "USIM5",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T13:25:00.618476+00:00",
+      "entry_price": 7.12,
+      "current_price": 7.12,
+      "stop": 7.69,
+      "target": 5.98,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
     }
   ],
   "reviews": [
@@ -211,7 +237,7 @@
       "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-10T12:32:03.597512+00:00",
+  "updated_at": "2026-09-10T13:25:00.618476+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
