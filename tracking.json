@@ -165,6 +165,71 @@
       "result_percent": 0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
+    },
+    {
+      "ticker": "UGPA3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T16:25:20.954946+00:00",
+      "entry_price": 36.73,
+      "current_price": 36.73,
+      "stop": 33.79,
+      "target": 42.61,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "MULT3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T16:25:20.954946+00:00",
+      "entry_price": 30.34,
+      "current_price": 30.34,
+      "stop": 27.91,
+      "target": 35.19,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "EQTL3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T16:25:20.954946+00:00",
+      "entry_price": 38.43,
+      "current_price": 38.43,
+      "stop": 35.36,
+      "target": 44.58,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "BBSE3",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T16:25:20.954946+00:00",
+      "entry_price": 38.38,
+      "current_price": 38.38,
+      "stop": 41.45,
+      "target": 32.24,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "GGBR4",
+      "side": "VENDA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T16:25:20.954946+00:00",
+      "entry_price": 22.94,
+      "current_price": 22.94,
+      "stop": 24.78,
+      "target": 19.27,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
     }
   ],
   "reviews": [
@@ -250,7 +315,7 @@
       "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-10T15:26:22.338046+00:00",
+  "updated_at": "2026-09-10T16:25:20.954946+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
