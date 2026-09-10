@@ -136,7 +136,7 @@
       "current_price": 36.99,
       "stop": 34.03,
       "target": 42.91,
-      "result_percent": 0,
+      "result_percent": 0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
     },
@@ -149,6 +149,19 @@
       "current_price": 7.12,
       "stop": 7.69,
       "target": 5.98,
+      "result_percent": -0.0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
+    },
+    {
+      "ticker": "ASAI3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-10T14:26:07.574585+00:00",
+      "entry_price": 8.49,
+      "current_price": 8.49,
+      "stop": 7.81,
+      "target": 9.85,
       "result_percent": 0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
@@ -237,7 +250,7 @@
       "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-10T13:25:00.618476+00:00",
+  "updated_at": "2026-09-10T14:26:07.574585+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
