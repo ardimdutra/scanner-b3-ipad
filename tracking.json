@@ -325,6 +325,19 @@
       "result_percent": 0.0,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false
+    },
+    {
+      "ticker": "CYRE3",
+      "side": "COMPRA",
+      "status": "ABERTA",
+      "opened_at": "2026-09-11T17:24:07.984905+00:00",
+      "entry_price": 25.11,
+      "current_price": 25.11,
+      "stop": 23.78,
+      "target": 27.77,
+      "result_percent": 0,
+      "assessment": "EM ACOMPANHAMENTO",
+      "trailing_active": false
     }
   ],
   "reviews": [
@@ -536,7 +549,7 @@
       "status": "ENCERRADA"
     }
   ],
-  "updated_at": "2026-09-11T16:26:17.250063+00:00",
+  "updated_at": "2026-09-11T17:24:07.984905+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação retrospectiva; não representa operação executada nem garantia de resultado."
 }
