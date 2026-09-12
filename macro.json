@@ -1,0 +1,52 @@
+{
+  "updated_at": "2026-09-12T12:45:40.590932+00:00",
+  "selic": 14.0,
+  "selic_reference_date": "16/09/2026",
+  "ipca_12m": 4.22,
+  "real_rate_estimate": 9.38,
+  "regime": "JUROS REAIS ELEVADOS",
+  "interpretation": "O prêmio da renda fixa pós-fixada é elevado. Liquidez e proteção do capital devem ocupar o núcleo; bolsa exige seleção por qualidade, geração de caixa e preço.",
+  "categories": [
+    {
+      "name": "Reserva e liquidez",
+      "priority": "ALTA",
+      "instruments": "Tesouro Selic; CDB com liquidez diária próximo ou acima de 100% do CDI",
+      "rationale": "Captura juros altos com baixa oscilação e disponibilidade."
+    },
+    {
+      "name": "Renda fixa tributariamente eficiente",
+      "priority": "ALTA",
+      "instruments": "LCI/LCA cobertas pelo FGC, comparadas pela taxa líquida equivalente ao CDB",
+      "rationale": "A isenção pode superar CDBs nominais maiores; respeitar carência e emissor."
+    },
+    {
+      "name": "Proteção de longo prazo",
+      "priority": "MÉDIA",
+      "instruments": "Tesouro IPCA+ com vencimento compatível com o objetivo",
+      "rationale": "Trava juro real, mas sofre marcação a mercado antes do vencimento."
+    },
+    {
+      "name": "Ações e dividendos",
+      "priority": "SELETIVA",
+      "instruments": "Empresas líquidas, lucrativas, pouco alavancadas e com dividendos recorrentes",
+      "rationale": "Precisam oferecer retorno esperado superior ao juro real e suportar custo de capital alto."
+    },
+    {
+      "name": "FIIs e crédito privado",
+      "priority": "SELETIVA",
+      "instruments": "Fundos com desconto patrimonial, vacância controlada e crédito de qualidade",
+      "rationale": "Rendimentos não eliminam risco de mercado, liquidez e crédito."
+    },
+    {
+      "name": "Diversificação internacional",
+      "priority": "ESTRATÉGICA",
+      "instruments": "ETFs amplos e exposição cambial em parcela compatível com o perfil",
+      "rationale": "Reduz concentração em Brasil, juros locais e risco fiscal."
+    }
+  ],
+  "sources": [
+    "Banco Central do Brasil — SGS 432 e 433",
+    "Tesouro Direto",
+    "Portal do Investidor/CVM"
+  ]
+}
