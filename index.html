@@ -21,7 +21,7 @@
   <main>
     <section class="hero">
       <div><p class="eyebrow">RADAR DO DIA</p><h1>Decisão clara,<br>risco visível.</h1></div>
-      <div class="hero-copy"><p>Contexto diário com confirmação em 60 minutos. Nenhuma ordem é enviada automaticamente.</p><div class="hero-actions"><button id="refresh" class="primary">Atualizar análise</button><a href="#revisoes" class="outline nav-review">Ver revisões do modelo</a></div></div>
+      <div class="hero-copy"><p>Contexto diário com confirmação em 60 minutos. Nenhuma ordem é enviada automaticamente.</p><div class="hero-actions"><button id="refresh" class="primary">Atualizar análise</button><a href="#revisoes" class="outline nav-review">Revisões</a><a href="#dividendos" class="outline nav-review">Dividendos</a><a href="#macro" class="outline nav-review">Cenário macro</a></div></div>
     </section>
 
     <section class="summary" aria-label="Resumo dos sinais">
@@ -37,7 +37,14 @@
     <section id="signals" class="signal-grid" aria-live="polite"><div class="loading">Calculando leitura de mercado…</div></section>
 
     <section id="revisoes" class="section-head tracking-head"><div><p class="eyebrow">BACKTEST PROSPECTIVO</p><h2>Revisões das indicações do modelo</h2><p class="universe-note">Carteira exclusivamente simulada · revisão automática em dias úteis às 18h</p></div><a href="#top" class="outline">Voltar ao ranking</a></section>
+    <section id="performance" class="performance-grid"></section>
     <section id="tracking" class="tracking-grid" aria-live="polite"><div class="loading">Carregando acompanhamento…</div></section>
+
+    <section id="dividendos" class="section-head tracking-head"><div><p class="eyebrow">RENDA VARIÁVEL · PROVENTOS</p><h2>Ranking de dividendos</h2><p class="universe-note">Valor efetivamente distribuído por ação nos últimos 12 meses e frequência histórica estimada</p></div><a href="#top" class="outline">Voltar ao topo</a></section>
+    <section id="dividend-ranking" class="dividend-grid"><div class="loading">Carregando proventos…</div></section>
+
+    <section id="macro" class="section-head tracking-head"><div><p class="eyebrow">ALOCAÇÃO POR CLASSES</p><h2>Leitura macroeconômica</h2><p class="universe-note">Comparação educacional entre renda fixa, ações e diversificação</p></div><a href="#top" class="outline">Voltar ao topo</a></section>
+    <section id="macro-panel"><div class="loading">Carregando cenário macro…</div></section>
 
     <section class="method">
       <div><p class="eyebrow">MÉTODO</p><h2>Uma tese, duas escalas</h2></div>

@@ -3,6 +3,9 @@ const signals = document.querySelector('#signals');
 const tracking = document.querySelector('#tracking');
 const buyRanking = document.querySelector('#buy-ranking');
 const sellRanking = document.querySelector('#sell-ranking');
+const performance = document.querySelector('#performance');
+const dividendRanking = document.querySelector('#dividend-ranking');
+const macroPanel = document.querySelector('#macro-panel');
 const dialog = document.querySelector('#decision-dialog');
 const form = document.querySelector('#decision-form');
 let currentItems = [];
@@ -117,12 +120,31 @@ async function loadTracking() {
     const response = await fetch(`./tracking.json?v=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error();
     const payload = await response.json();
+    const stats = payload.performance || {};
+    performance.innerHTML = `<article><small>RESULTADO REALIZADO · V2</small><strong class="${(stats.realized_result || 0) >= 0 ? 'positive' : 'negative'}">${money(stats.realized_result || 0)}</strong><span>Capital de referência: R$ 1.000 por operação</span></article><article><small>RESULTADO EM ABERTO · V2</small><strong class="${(stats.open_result || 0) >= 0 ? 'positive' : 'negative'}">${money(stats.open_result || 0)}</strong><span>${stats.open_operations || 0} operação(ões) válida(s)</span></article><article><small>AMOSTRA AUDITÁVEL</small><strong>${stats.closed_operations || 0}</strong><span>${stats.correct || 0} corretas · ${stats.incorrect || 0} incorretas</span></article><article><small>HISTÓRICO LEGADO</small><strong>${stats.legacy_operations || 0}</strong><span>Excluído das estatísticas da metodologia V2</span></article>`;
     const operations = [...payload.operations].sort((a, b) => b.opened_at.localeCompare(a.opened_at));
     tracking.innerHTML = operations.length ? operations.map(operation => {
       const resultClass = operation.result_percent > 0 ? 'positive' : operation.result_percent < 0 ? 'negative' : 'neutral';
-      return `<article class="track-card"><div><span class="ticker">${operation.ticker}</span><span class="badge ${operation.side}">${operation.side}</span></div><strong class="track-result ${resultClass}">${operation.result_percent > 0 ? '+' : ''}${operation.result_percent.toFixed(2)}%</strong><dl><div><dt>Entrada</dt><dd>${money(operation.entry_price)}</dd></div><div><dt>Atual</dt><dd>${money(operation.current_price)}</dd></div><div><dt>Stop</dt><dd>${money(operation.stop)}</dd></div><div><dt>Alvo</dt><dd>${money(operation.target)}</dd></div></dl><footer><span>${operation.status}${operation.trailing_active ? ' · trailing ativo' : ''}</span><b class="${stateClass(operation.assessment)}">${operation.assessment}</b></footer></article>`;
+      const legacy = operation.method_version === 'v1-legado';
+      return `<article class="track-card ${legacy ? 'legacy' : ''}"><div><span class="ticker">${operation.ticker}</span><span class="badge ${operation.side}">${operation.side}</span></div><div class="dual-result"><strong class="track-result ${resultClass}">${operation.result_percent > 0 ? '+' : ''}${operation.result_percent.toFixed(2)}%</strong><div><small>RESULTADO FINANCEIRO</small><b class="${resultClass}">${money(operation.financial_result || 0)}</b><span>${operation.quantity_reference || 0} ações · referência R$ 1.000</span></div></div><dl><div><dt>Entrada</dt><dd>${money(operation.entry_price)}</dd></div><div><dt>${operation.status === 'ENCERRADA' ? 'Saída' : 'Atual'}</dt><dd>${money(operation.status === 'ENCERRADA' ? operation.exit_price : operation.current_price)}</dd></div><div><dt>Stop</dt><dd>${money(operation.stop)}</dd></div><div><dt>Alvo</dt><dd>${money(operation.target)}</dd></div></dl>${legacy ? '<p class="legacy-note">Legado não auditável: a regra antiga podia considerar extremos anteriores à entrada.</p>' : ''}<footer><span>${operation.status}${operation.trailing_active ? ' · trailing ativo' : ''}</span><b class="${stateClass(operation.assessment)}">${operation.assessment}</b></footer></article>`;
     }).join('') : '<div class="loading">Nenhuma entrada atingiu todos os filtros até agora.</div>';
   } catch (_) { tracking.innerHTML = '<div class="loading">O histórico começará a ser exibido na próxima atualização.</div>'; }
+}
+
+async function loadDividends() {
+  try {
+    const response = await fetch(`./dividends.json?v=${Date.now()}`, { cache: 'no-store' });
+    const payload = await response.json();
+    dividendRanking.innerHTML = payload.items.map((item, index) => `<article class="dividend-card"><span class="rank-number">${String(index + 1).padStart(2, '0')}</span><div><b>${item.ticker}</b><small>${item.company}</small></div><div><small>12 MESES / AÇÃO</small><strong>${money(item.amount_per_share_12m)}</strong></div><div><small>YIELD HISTÓRICO</small><strong>${item.yield_12m.toFixed(2)}%</strong></div><div><small>FREQUÊNCIA ESTIMADA</small><strong>${item.cadence}</strong><span>${item.payments_12m} pagamento(s) em 12 meses</span></div><div><small>ÚLTIMO PAGAMENTO</small><strong>${item.last_payment ? money(item.last_payment.amount) : '—'}</strong><span>${item.last_payment?.date || 'sem registro'}</span></div></article>`).join('');
+  } catch (_) { dividendRanking.innerHTML = '<div class="loading">Ranking de dividendos temporariamente indisponível.</div>'; }
+}
+
+async function loadMacro() {
+  try {
+    const response = await fetch(`./macro.json?v=${Date.now()}`, { cache: 'no-store' });
+    const payload = await response.json();
+    macroPanel.innerHTML = `<div class="macro-summary"><div><small>SELIC META</small><strong>${payload.selic.toFixed(2)}%</strong><span>Referência ${payload.selic_reference_date}</span></div><div><small>IPCA · 12 MESES</small><strong>${payload.ipca_12m.toFixed(2)}%</strong><span>acumulado composto</span></div><div><small>JURO REAL APROX.</small><strong>${payload.real_rate_estimate.toFixed(2)}%</strong><span>Selic descontada do IPCA</span></div><article><small>${payload.regime}</small><p>${payload.interpretation}</p></article></div><div class="allocation-grid">${payload.categories.map(category => `<article><span class="priority">${category.priority}</span><h3>${category.name}</h3><b>${category.instruments}</b><p>${category.rationale}</p></article>`).join('')}</div><p class="macro-note">Leitura geral, não recomendação personalizada. A escolha depende de prazo, liquidez, tributação, risco de crédito e perfil do investidor.</p>`;
+  } catch (_) { macroPanel.innerHTML = '<div class="loading">Cenário macroeconômico temporariamente indisponível.</div>'; }
 }
 
 signals.addEventListener('click', event => {
@@ -153,8 +175,10 @@ form.addEventListener('submit', async event => {
   if (saved) setTimeout(() => dialog.close(), 900);
 });
 
-document.querySelector('#refresh').addEventListener('click', () => { loadSignals(); loadTracking(); });
+document.querySelector('#refresh').addEventListener('click', () => { loadSignals(); loadTracking(); loadDividends(); loadMacro(); });
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
 window.addEventListener('resize', () => requestAnimationFrame(renderCharts));
 loadSignals();
 loadTracking();
+loadDividends();
+loadMacro();
