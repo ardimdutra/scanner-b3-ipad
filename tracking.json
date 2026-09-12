@@ -34,7 +34,10 @@
       "trailing_active": false,
       "last_review_at": "2026-09-10T21:03:08.751599+00:00",
       "method_version": "v1-legado",
-      "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo"
+      "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
+      "quantity_reference": 253,
+      "pnl_per_share": 0.0,
+      "financial_result": 0.0
     },
     {
       "ticker": "ITSA4",
@@ -168,7 +171,10 @@
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
-      "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo"
+      "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
+      "quantity_reference": 131,
+      "pnl_per_share": -0.0,
+      "financial_result": -0.0
     },
     {
       "ticker": "VBBR3",
@@ -396,7 +402,10 @@
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
-      "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo"
+      "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
+      "quantity_reference": 21,
+      "pnl_per_share": 0.0,
+      "financial_result": 0.0
     },
     {
       "ticker": "PETR4",
@@ -899,7 +908,7 @@
       "status": "ABERTA"
     }
   ],
-  "updated_at": "2026-09-12T12:45:46.568498+00:00",
+  "updated_at": "2026-09-12T12:49:01.693673+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
@@ -908,56 +917,56 @@
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789153200,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "PRIO3": {
       "side": "COMPRA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "CYRE3": {
       "side": "COMPRA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "TOTS3": {
       "side": "COMPRA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "CSMG3": {
       "side": "VENDA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "POMO4": {
       "side": "VENDA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "LREN3": {
       "side": "VENDA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     },
     "VIVT3": {
       "side": "VENDA",
       "confirmations": 1,
       "first_seen": "2026-09-12T12:45:46.568498+00:00",
       "last_bar": 1789156800,
-      "last_seen": "2026-09-12T12:45:46.568498+00:00"
+      "last_seen": "2026-09-12T12:49:01.693673+00:00"
     }
   },
   "signal_log": [
