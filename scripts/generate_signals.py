@@ -466,7 +466,9 @@ def update_tracking(opportunities: list[dict]) -> None:
             result_price = quote["price"]
             operation["current_price"] = result_price
         else:
-            continue
+            # Preserve a financial result for legacy operations even when the
+            # ticker is no longer present in today's screened universe.
+            result_price = operation.get("current_price", operation["entry_price"])
         operation["result_percent"] = round(direction * (result_price / operation["entry_price"] - 1) * 100, 2)
         quantity = operation.setdefault("quantity_reference", math.floor(1000 / operation["entry_price"]))
         operation["pnl_per_share"] = round(direction * (result_price - operation["entry_price"]), 2)
