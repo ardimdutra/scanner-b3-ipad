@@ -47,38 +47,43 @@ function leaderRow(item, side) {
 function drawCandles(canvas, candles) {
   if (!candles?.length) { const context = canvas.getContext('2d'); const width = canvas.clientWidth, ratio = window.devicePixelRatio || 1; canvas.style.height='170px'; canvas.width=width*ratio; canvas.height=170*ratio; context.scale(ratio,ratio); context.fillStyle='#091526'; context.fillRect(0,0,width,170); context.fillStyle='#7890ad'; context.font='12px -apple-system, sans-serif'; context.textAlign='center'; context.fillText('60 MIN NÃO DISPONÍVEL PARA ESTE ATIVO',width/2,72); context.font='10px -apple-system, sans-serif'; context.fillText('Sem confirmação intradiária · não constitui entrada',width/2,94); return; }
   const hourly = canvas.dataset.frame === 'hourly';
-  const ratio = window.devicePixelRatio || 1, width = canvas.clientWidth, height = hourly ? 390 : 320, pad = 12;
+  const ratio = window.devicePixelRatio || 1, width = canvas.clientWidth, height = hourly ? 390 : 320;
   canvas.style.height = `${height}px`;
   canvas.width = width * ratio; canvas.height = height * ratio;
   const context = canvas.getContext('2d'); context.scale(ratio, ratio); context.clearRect(0, 0, width, height);
   context.font = '9px -apple-system, sans-serif'; context.textBaseline = 'top';
+  const plotLeft = 4, plotRight = Math.max(plotLeft + 1, width - 43);
   const pricePanel = { top: 16, bottom: hourly ? 172 : 160 };
   const macdPanel = { top: pricePanel.bottom + 22, bottom: pricePanel.bottom + 86 };
   const stochPanel = hourly ? { top: macdPanel.bottom + 22, bottom: macdPanel.bottom + 82 } : null;
   const volumePanel = { top: (stochPanel?.bottom || macdPanel.bottom) + 22, bottom: height - 8 };
-  const panelLine = (label, y) => { context.fillStyle = '#7890ad'; context.fillText(label, 3, y - 13); context.strokeStyle = '#20314a'; context.beginPath(); context.moveTo(0, y); context.lineTo(width, y); context.stroke(); };
+  const panelLine = (label, y) => { context.fillStyle = '#7890ad'; context.fillText(label, plotLeft, y - 13); context.strokeStyle = '#20314a'; context.beginPath(); context.moveTo(plotLeft, y); context.lineTo(plotRight, y); context.stroke(); };
   panelLine('PREÇO', pricePanel.top); panelLine('MACD 12,26,9', macdPanel.top); if (stochPanel) panelLine('ESTOCÁSTICO 14,3,3', stochPanel.top); panelLine('VOLUME', volumePanel.top);
   const high = Math.max(...candles.map(row => row.high)), low = Math.min(...candles.map(row => row.low)), spread = high - low || 1;
   const y = value => pricePanel.top + (high - value) / spread * (pricePanel.bottom - pricePanel.top);
   context.strokeStyle = '#20314a';
-  [0.25, 0.5, 0.75].forEach(step => { const gridY = pricePanel.top + (pricePanel.bottom-pricePanel.top)*step; context.beginPath(); context.moveTo(0, gridY); context.lineTo(width, gridY); context.stroke(); });
-  const slot = width / candles.length, body = Math.max(2, slot * .55);
-  candles.forEach((row, index) => { const x = slot * index + slot / 2, color = row.close >= row.open ? '#4bd6c5' : '#ff6e7a'; context.strokeStyle = color; context.fillStyle = color; context.beginPath(); context.moveTo(x, y(row.high)); context.lineTo(x, y(row.low)); context.stroke(); const top = Math.min(y(row.open), y(row.close)); context.fillRect(x - body / 2, top, body, Math.max(2, Math.abs(y(row.open) - y(row.close)))); });
-  const drawPriceLine = (key, color, dashed = false) => { context.strokeStyle=color; context.lineWidth=1.25; context.setLineDash(dashed?[4,3]:[]); context.beginPath(); let started=false; candles.forEach((row,index)=>{const value=row[key]; if(value===null||!Number.isFinite(value))return; const x=index*slot+slot/2, pointY=y(value); if(!started){context.moveTo(x,pointY);started=true;}else context.lineTo(x,pointY);}); context.stroke(); context.setLineDash([]); };
+  [0, 0.25, 0.5, 0.75, 1].forEach(step => { const gridY = pricePanel.top + (pricePanel.bottom-pricePanel.top)*step; context.beginPath(); context.moveTo(plotLeft, gridY); context.lineTo(plotRight, gridY); context.stroke(); context.fillStyle='#7890ad'; context.textAlign='right'; context.fillText((high-spread*step).toFixed(2),width-2,gridY-5); });
+  const slot = (plotRight - plotLeft) / candles.length, body = Math.max(2, slot * .55);
+  const xAt = index => plotLeft + slot * index + slot / 2;
+  candles.forEach((row, index) => { const x = xAt(index), color = row.close >= row.open ? '#4bd6c5' : '#ff6e7a'; context.strokeStyle = color; context.fillStyle = color; context.beginPath(); context.moveTo(x, y(row.high)); context.lineTo(x, y(row.low)); context.stroke(); const top = Math.min(y(row.open), y(row.close)); context.fillRect(x - body / 2, top, body, Math.max(2, Math.abs(y(row.open) - y(row.close)))); });
+  const drawPriceLine = (key, color, dashed = false) => { context.strokeStyle=color; context.lineWidth=1.25; context.setLineDash(dashed?[4,3]:[]); context.beginPath(); let started=false; candles.forEach((row,index)=>{const value=row[key]; if(value===null||!Number.isFinite(value))return; const x=xAt(index), pointY=y(value); if(!started){context.moveTo(x,pointY);started=true;}else context.lineTo(x,pointY);}); context.stroke(); context.setLineDash([]); };
   if (hourly) { drawPriceLine('bollinger_upper','#6ba8ff',true); drawPriceLine('bollinger_mid','#7890ad'); drawPriceLine('bollinger_lower','#6ba8ff',true); }
   else { drawPriceLine('ema9','#4bd6c5'); drawPriceLine('ema21','#ffbf5f'); }
   const drawOscillator = (panel, keys, colors, fixedRange = null) => {
     const values = candles.flatMap(row => keys.map(key => row[key])).filter(value => value !== null && Number.isFinite(value));
     const min = fixedRange ? fixedRange[0] : Math.min(0, ...values), max = fixedRange ? fixedRange[1] : Math.max(0, ...values), range = max - min || 1;
     const scaleY = value => panel.top + (max - value) / range * (panel.bottom - panel.top);
-    if (!fixedRange) { const zero = scaleY(0); context.strokeStyle = '#31445d'; context.beginPath(); context.moveTo(0, zero); context.lineTo(width, zero); context.stroke(); candles.forEach((row,index) => { const value=row.macd_histogram; context.fillStyle=value>=0?'#285f59':'#69313b'; const barY=scaleY(value); context.fillRect(index*slot+slot*.25,Math.min(zero,barY),slot*.5,Math.max(1,Math.abs(zero-barY))); }); }
-    if (fixedRange) [20,80].forEach(level => { context.setLineDash([3,3]); context.strokeStyle='#31445d'; context.beginPath(); context.moveTo(0,scaleY(level)); context.lineTo(width,scaleY(level)); context.stroke(); context.setLineDash([]); });
-    keys.forEach((key,keyIndex) => { context.strokeStyle=colors[keyIndex]; context.lineWidth=1.4; context.beginPath(); let started=false; candles.forEach((row,index) => { const value=row[key]; if(value===null||!Number.isFinite(value)) return; const x=index*slot+slot/2, pointY=scaleY(value); if(!started){context.moveTo(x,pointY);started=true;}else context.lineTo(x,pointY); }); context.stroke(); });
+    if (!fixedRange) { const zero = scaleY(0); context.strokeStyle = '#31445d'; context.beginPath(); context.moveTo(plotLeft, zero); context.lineTo(plotRight, zero); context.stroke(); candles.forEach((row,index) => { const value=row.macd_histogram; context.fillStyle=value>=0?'#285f59':'#69313b'; const barY=scaleY(value); context.fillRect(xAt(index)-slot*.25,Math.min(zero,barY),slot*.5,Math.max(1,Math.abs(zero-barY))); }); }
+    if (fixedRange) [20,80].forEach(level => { context.setLineDash([3,3]); context.strokeStyle='#31445d'; context.beginPath(); context.moveTo(plotLeft,scaleY(level)); context.lineTo(plotRight,scaleY(level)); context.stroke(); context.setLineDash([]); });
+    keys.forEach((key,keyIndex) => { context.strokeStyle=colors[keyIndex]; context.lineWidth=1.4; context.beginPath(); let started=false; candles.forEach((row,index) => { const value=row[key]; if(value===null||!Number.isFinite(value)) return; const x=xAt(index), pointY=scaleY(value); if(!started){context.moveTo(x,pointY);started=true;}else context.lineTo(x,pointY); }); context.stroke(); });
   };
   drawOscillator(macdPanel, ['macd','macd_signal'], ['#6ba8ff','#ffbf5f']);
   if (stochPanel) drawOscillator(stochPanel, ['stochastic_k','stochastic_d'], ['#4bd6c5','#ffbf5f'], [0,100]);
   const maxVolume = Math.max(...candles.map(row => row.volume || 0), 1);
-  candles.forEach((row,index) => { const barHeight=(row.volume||0)/maxVolume*(volumePanel.bottom-volumePanel.top); context.fillStyle=row.close>=row.open?'#285f59':'#69313b'; context.fillRect(index*slot+slot*.2,volumePanel.bottom-barHeight,slot*.6,barHeight); });
+  candles.forEach((row,index) => { const barHeight=(row.volume||0)/maxVolume*(volumePanel.bottom-volumePanel.top); context.fillStyle=row.close>=row.open?'#285f59':'#69313b'; context.fillRect(xAt(index)-slot*.3,volumePanel.bottom-barHeight,slot*.6,barHeight); });
+  context.fillStyle='#7890ad'; context.textAlign='left';
+  const labelDate = value => new Date(value*1000).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',timeZone:'UTC'});
+  [0, Math.floor((candles.length-1)/2), candles.length-1].forEach((index, position) => { context.textAlign=position===0?'left':position===2?'right':'center'; context.fillText(labelDate(candles[index].date),xAt(index),height-8); });
 }
 
 function renderCharts() {
