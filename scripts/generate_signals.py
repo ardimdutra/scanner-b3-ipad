@@ -18,6 +18,7 @@ ASSETS = (
 )
 BUDGETS = (20, 30, 50, 100)
 TOKEN = os.environ.get("BRAPI_TOKEN", "").strip()
+MARKET_CACHE_VERSION = 2
 
 
 def fetch_history(ticker: str, period: str, interval: str) -> list[dict]:
@@ -305,7 +306,9 @@ def fetch_fundamentals() -> dict[str, dict]:
 def b3_market_cache() -> dict:
     path = Path("market_cache.json")
     if path.exists() and os.environ.get("DAILY_REVIEW", "").lower() != "true":
-        return json.loads(path.read_text(encoding="utf-8"))
+        cached = json.loads(path.read_text(encoding="utf-8"))
+        if cached.get("version") == MARKET_CACHE_VERSION:
+            return cached
     year = datetime.now(UTC).year
     url = f"https://bvmf.bmfbovespa.com.br/InstDados/SerHist/COTAHIST_A{year}.ZIP"
     request = urllib.request.Request(url, headers={"User-Agent": "Scanner-B3-iPad/1.0"})
@@ -315,13 +318,14 @@ def b3_market_cache() -> dict:
     with archive.open(archive.namelist()[0]) as source:
         for raw in source:
             line = raw.decode("latin-1")
-            if line[:2] != "01" or line[24:27] != "010": continue
+            if line[:2] != "01" or line[10:12] != "02" or line[24:27] != "010": continue
             ticker = line[12:24].strip()
             if not ticker or ticker.endswith("F") or not ticker[-1:].isdigit(): continue
             row = {"date": int(datetime.strptime(line[2:10], "%Y%m%d").replace(tzinfo=UTC).timestamp()), "open": int(line[56:69]) / 100, "high": int(line[69:82]) / 100, "low": int(line[82:95]) / 100, "close": int(line[108:121]) / 100, "volume": int(line[170:188]) / 100}
-            histories.setdefault(ticker, []).append(row); names[ticker] = line[27:39].strip()
+            histories.setdefault(ticker, {})[row["date"]] = row; names[ticker] = line[27:39].strip()
+    histories = {ticker: sorted(rows.values(), key=lambda row: row["date"]) for ticker, rows in histories.items()}
     liquid = sorted(histories, key=lambda ticker: sum(row["volume"] for row in histories[ticker][-20:]) / max(1, len(histories[ticker][-20:])), reverse=True)
-    cache = {"updated_at": datetime.now(UTC).isoformat(), "assets": [{"ticker": ticker, "company": names[ticker], "daily": histories[ticker][-100:]} for ticker in liquid[:80] if len(histories[ticker]) >= 35]}
+    cache = {"version": MARKET_CACHE_VERSION, "updated_at": datetime.now(UTC).isoformat(), "assets": [{"ticker": ticker, "company": names[ticker], "daily": histories[ticker][-100:]} for ticker in liquid[:80] if len(histories[ticker]) >= 35]}
     path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
     return cache
 
