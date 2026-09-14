@@ -26,18 +26,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-08T09:14:27.274074+00:00",
       "entry_price": 3.95,
-      "current_price": 4.12,
+      "current_price": 4.11,
       "stop": 3.65,
       "target": 4.55,
-      "result_percent": 4.3,
+      "result_percent": 4.05,
       "assessment": "NEUTRA",
       "trailing_active": false,
       "last_review_at": "2026-09-10T21:03:08.751599+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 253,
-      "pnl_per_share": 0.17,
-      "financial_result": 43.01
+      "pnl_per_share": 0.16,
+      "financial_result": 40.48
     },
     {
       "ticker": "ITSA4",
@@ -164,17 +164,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-09T21:03:10.654348+00:00",
       "entry_price": 7.61,
-      "current_price": 8.11,
+      "current_price": 8.06,
       "stop": 8.22,
       "target": 6.39,
-      "result_percent": -6.57,
+      "result_percent": -5.91,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 131,
-      "pnl_per_share": -0.5,
-      "financial_result": -65.5
+      "pnl_per_share": -0.45,
+      "financial_result": -58.95
     },
     {
       "ticker": "VBBR3",
@@ -182,18 +182,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T13:25:00.618476+00:00",
       "entry_price": 36.99,
-      "current_price": 37.94,
+      "current_price": 37.84,
       "stop": 34.03,
       "target": 42.91,
-      "result_percent": 2.57,
+      "result_percent": 2.3,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-09-11T21:02:38.127420+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 27,
-      "pnl_per_share": 0.95,
-      "financial_result": 25.65
+      "pnl_per_share": 0.85,
+      "financial_result": 22.95
     },
     {
       "ticker": "USIM5",
@@ -506,17 +506,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 33.0,
-      "current_price": 33.63,
+      "current_price": 33.8,
       "stop": 30.36,
       "target": 38.28,
-      "result_percent": 1.91,
+      "result_percent": 2.42,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 30,
-      "pnl_per_share": 0.63,
-      "financial_result": 18.9
+      "pnl_per_share": 0.8,
+      "financial_result": 24.0
     },
     {
       "ticker": "CSMG3",
@@ -524,17 +524,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 56.68,
-      "current_price": 57.03,
+      "current_price": 57.07,
       "stop": 61.21,
       "target": 47.61,
-      "result_percent": -0.62,
+      "result_percent": -0.69,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 17,
-      "pnl_per_share": -0.35,
-      "financial_result": -5.95
+      "pnl_per_share": -0.39,
+      "financial_result": -6.63
     },
     {
       "ticker": "POMO4",
@@ -542,17 +542,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 4.58,
-      "current_price": 4.46,
+      "current_price": 4.44,
       "stop": 4.95,
       "target": 3.85,
-      "result_percent": 2.62,
+      "result_percent": 3.06,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 218,
-      "pnl_per_share": 0.12,
-      "financial_result": 26.16
+      "pnl_per_share": 0.14,
+      "financial_result": 30.52
     },
     {
       "ticker": "LREN3",
@@ -560,17 +560,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 11.45,
-      "current_price": 11.31,
+      "current_price": 11.27,
       "stop": 12.37,
       "target": 9.62,
-      "result_percent": 1.22,
+      "result_percent": 1.57,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 87,
-      "pnl_per_share": 0.14,
-      "financial_result": 12.18
+      "pnl_per_share": 0.18,
+      "financial_result": 15.66
     },
     {
       "ticker": "VIVT3",
@@ -578,17 +578,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 30.46,
-      "current_price": 30.49,
+      "current_price": 30.5,
       "stop": 32.9,
       "target": 25.59,
-      "result_percent": -0.1,
+      "result_percent": -0.13,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 32,
-      "pnl_per_share": -0.03,
-      "financial_result": -0.96
+      "pnl_per_share": -0.04,
+      "financial_result": -1.28
     }
   ],
   "reviews": [
@@ -908,32 +908,10 @@
       "status": "ABERTA"
     }
   ],
-  "updated_at": "2026-09-14T17:27:32.613775+00:00",
+  "updated_at": "2026-09-14T18:32:43.345498+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
-  "candidates": {
-    "BEEF3": {
-      "side": "COMPRA",
-      "confirmations": 1,
-      "first_seen": "2026-09-14T17:27:32.613775+00:00",
-      "last_bar": 1789405943,
-      "last_seen": "2026-09-14T17:27:32.613775+00:00"
-    },
-    "COGN3": {
-      "side": "COMPRA",
-      "confirmations": 1,
-      "first_seen": "2026-09-14T17:27:32.613775+00:00",
-      "last_bar": 1789405949,
-      "last_seen": "2026-09-14T17:27:32.613775+00:00"
-    },
-    "SAPR11": {
-      "side": "COMPRA",
-      "confirmations": 1,
-      "first_seen": "2026-09-14T17:27:32.613775+00:00",
-      "last_bar": 1789405949,
-      "last_seen": "2026-09-14T17:27:32.613775+00:00"
-    }
-  },
+  "candidates": {},
   "signal_log": [
     {
       "key": "VALE3:COMPRA:1789153200",
