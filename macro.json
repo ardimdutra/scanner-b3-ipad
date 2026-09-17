@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-16T21:02:47.851754+00:00",
-  "selic": 14.0,
-  "selic_reference_date": "16/09/2026",
+  "updated_at": "2026-09-17T14:30:08.563320+00:00",
+  "selic": 13.75,
+  "selic_reference_date": "04/11/2026",
   "ipca_12m": 4.22,
-  "real_rate_estimate": 9.38,
+  "real_rate_estimate": 9.14,
   "regime": "JUROS REAIS ELEVADOS",
   "interpretation": "O prêmio da renda fixa pós-fixada é elevado. Liquidez e proteção do capital devem ocupar o núcleo; bolsa exige seleção por qualidade, geração de caixa e preço.",
   "categories": [
