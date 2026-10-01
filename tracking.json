@@ -12,7 +12,7 @@
       "result_percent": -5.66,
       "assessment": "INCORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 32.67,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
@@ -32,7 +32,7 @@
       "result_percent": -0.76,
       "assessment": "NEUTRA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 253,
@@ -51,7 +51,7 @@
       "result_percent": -2.87,
       "assessment": "INCORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 13.55,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
@@ -71,7 +71,7 @@
       "result_percent": 11.96,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 68,
@@ -91,7 +91,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 49.68,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 19,
@@ -111,7 +111,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 45.04,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 21,
@@ -131,7 +131,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 44.99,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 24,
@@ -151,7 +151,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 50.25,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 21,
@@ -175,7 +175,7 @@
       "quantity_reference": 131,
       "pnl_per_share": 0.86,
       "financial_result": 112.66,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "VBBR3",
@@ -189,7 +189,7 @@
       "result_percent": 2.62,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 27,
@@ -209,7 +209,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 7.69,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 140,
@@ -228,7 +228,7 @@
       "result_percent": 28.74,
       "assessment": "CORRETA",
       "trailing_active": true,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 117,
@@ -247,7 +247,7 @@
       "result_percent": 4.41,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 27,
@@ -266,7 +266,7 @@
       "result_percent": 4.55,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 32,
@@ -285,7 +285,7 @@
       "result_percent": 3.49,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 26,
@@ -305,7 +305,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 41.45,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 26,
@@ -325,7 +325,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 24.78,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 43,
@@ -344,7 +344,7 @@
       "result_percent": 0.84,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 35,
@@ -363,7 +363,7 @@
       "result_percent": 3.3,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 18,
@@ -383,7 +383,7 @@
       "assessment": "INCORRETA",
       "trailing_active": false,
       "exit_price": 77.12,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 14,
@@ -407,7 +407,7 @@
       "quantity_reference": 21,
       "pnl_per_share": -1.5,
       "financial_result": -31.5,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "PETR4",
@@ -421,7 +421,7 @@
       "result_percent": 1.4,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
@@ -440,7 +440,7 @@
       "result_percent": -1.41,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 64,
@@ -459,7 +459,7 @@
       "result_percent": 8.04,
       "assessment": "CORRETA",
       "trailing_active": false,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 39,
@@ -483,7 +483,7 @@
       "quantity_reference": 12,
       "pnl_per_share": -8.46,
       "financial_result": -101.52,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "PRIO3",
@@ -502,7 +502,7 @@
       "quantity_reference": 15,
       "pnl_per_share": -3.29,
       "financial_result": -49.35,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "TOTS3",
@@ -521,7 +521,7 @@
       "quantity_reference": 30,
       "pnl_per_share": 0.43,
       "financial_result": 12.9,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "CSMG3",
@@ -540,7 +540,7 @@
       "quantity_reference": 17,
       "pnl_per_share": 0.37,
       "financial_result": 6.29,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "POMO4",
@@ -559,7 +559,7 @@
       "quantity_reference": 218,
       "pnl_per_share": 0.4,
       "financial_result": 87.2,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "LREN3",
@@ -578,7 +578,7 @@
       "quantity_reference": 87,
       "pnl_per_share": 0.1,
       "financial_result": 8.7,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "VIVT3",
@@ -597,7 +597,7 @@
       "quantity_reference": 32,
       "pnl_per_share": 0.86,
       "financial_result": 27.52,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "SAPR11",
@@ -617,7 +617,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789084800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "COGN3",
@@ -637,7 +637,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789084800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 2.23,
       "closed_at": "2026-09-18T13:00:00+00:00"
     },
@@ -659,7 +659,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789084800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 3.7,
       "closed_at": "2026-09-17T15:00:00+00:00"
     },
@@ -681,7 +681,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789344000,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "MBRF3",
@@ -701,7 +701,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789344000,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "PCAR3",
@@ -721,7 +721,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1773100800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "IGTI11",
@@ -741,7 +741,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789430400,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "TEND3",
@@ -761,7 +761,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789430400,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 28.11,
       "closed_at": "2026-09-25T13:00:00+00:00"
     },
@@ -783,7 +783,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789430400,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "SBSP3",
@@ -803,7 +803,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789430400,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "ISAE4",
@@ -823,7 +823,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789516800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "CMIG4",
@@ -843,7 +843,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789603200,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "BRAV3",
@@ -863,7 +863,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789603200,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 18.17,
       "closed_at": "2026-09-29T14:00:00+00:00"
     },
@@ -885,7 +885,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789603200,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "PETR3",
@@ -905,7 +905,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789689600,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "RENT3",
@@ -925,7 +925,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789689600,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "CPLE3",
@@ -945,7 +945,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789689600,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "USIM5",
@@ -965,7 +965,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789948800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "PSSA3",
@@ -985,7 +985,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789948800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "VAMO3",
@@ -1005,7 +1005,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1789948800,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "ECOR3",
@@ -1025,7 +1025,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1790121600,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00",
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00",
       "exit_price": 8.57,
       "closed_at": "2026-09-28T15:00:00+00:00"
     },
@@ -1047,7 +1047,7 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1790121600,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     },
     {
       "ticker": "CEAB3",
@@ -1067,604 +1067,10 @@
       "method_version": "v2",
       "confirmation_bars": 2,
       "daily_thesis_date": 1790294400,
-      "last_review_at": "2026-09-30T00:01:41.296972+00:00"
+      "last_review_at": "2026-10-01T00:15:06.970024+00:00"
     }
   ],
   "reviews": [
-    {
-      "key": "2026-09-15:VBBR3:2026-09-10T13:25:00.618476+00:00",
-      "date": "2026-09-15",
-      "ticker": "VBBR3",
-      "side": "COMPRA",
-      "result_percent": 4.79,
-      "financial_result": 47.79,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:USIM5:2026-09-10T13:25:00.618476+00:00",
-      "date": "2026-09-15",
-      "ticker": "USIM5",
-      "side": "VENDA",
-      "result_percent": -8.01,
-      "financial_result": -79.8,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:ASAI3:2026-09-10T14:26:07.574585+00:00",
-      "date": "2026-09-15",
-      "ticker": "ASAI3",
-      "side": "COMPRA",
-      "result_percent": 13.43,
-      "financial_result": 133.38,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:UGPA3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-15",
-      "ticker": "UGPA3",
-      "side": "COMPRA",
-      "result_percent": 4.63,
-      "financial_result": 45.9,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:MULT3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-15",
-      "ticker": "MULT3",
-      "side": "COMPRA",
-      "result_percent": -0.49,
-      "financial_result": -4.8,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:EQTL3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-15",
-      "ticker": "EQTL3",
-      "side": "COMPRA",
-      "result_percent": 2.73,
-      "financial_result": 27.3,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:BBSE3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-15",
-      "ticker": "BBSE3",
-      "side": "VENDA",
-      "result_percent": -8.0,
-      "financial_result": -79.82,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:GGBR4:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-15",
-      "ticker": "GGBR4",
-      "side": "VENDA",
-      "result_percent": -8.02,
-      "financial_result": -79.12,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:ALOS3:2026-09-10T17:24:18.970660+00:00",
-      "date": "2026-09-15",
-      "ticker": "ALOS3",
-      "side": "COMPRA",
-      "result_percent": -0.32,
-      "financial_result": -3.15,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:AXIA3:2026-09-10T19:21:38.215228+00:00",
-      "date": "2026-09-15",
-      "ticker": "AXIA3",
-      "side": "COMPRA",
-      "result_percent": 3.56,
-      "financial_result": 34.02,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:VALE3:2026-09-10T19:21:38.215228+00:00",
-      "date": "2026-09-15",
-      "ticker": "VALE3",
-      "side": "VENDA",
-      "result_percent": -8.0,
-      "financial_result": -79.94,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:CPFE3:2026-09-10T21:03:08.751599+00:00",
-      "date": "2026-09-15",
-      "ticker": "CPFE3",
-      "side": "COMPRA",
-      "result_percent": -2.76,
-      "financial_result": -26.67,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:PETR4:2026-09-10T21:03:08.751599+00:00",
-      "date": "2026-09-15",
-      "ticker": "PETR4",
-      "side": "COMPRA",
-      "result_percent": 4.15,
-      "financial_result": 40.2,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:ABEV3:2026-09-10T21:03:08.751599+00:00",
-      "date": "2026-09-15",
-      "ticker": "ABEV3",
-      "side": "COMPRA",
-      "result_percent": 0.96,
-      "financial_result": 9.6,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:CYRE3:2026-09-11T17:24:07.984905+00:00",
-      "date": "2026-09-15",
-      "ticker": "CYRE3",
-      "side": "COMPRA",
-      "result_percent": 0.88,
-      "financial_result": 8.58,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:VALE3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "VALE3",
-      "side": "COMPRA",
-      "result_percent": -4.4,
-      "financial_result": -41.28,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:PRIO3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "PRIO3",
-      "side": "COMPRA",
-      "result_percent": -0.44,
-      "financial_result": -4.2,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:TOTS3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "TOTS3",
-      "side": "COMPRA",
-      "result_percent": 2.52,
-      "financial_result": 24.9,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:CSMG3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "CSMG3",
-      "side": "VENDA",
-      "result_percent": -0.34,
-      "financial_result": -3.23,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:POMO4:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "POMO4",
-      "side": "VENDA",
-      "result_percent": 3.28,
-      "financial_result": 32.7,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:LREN3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "LREN3",
-      "side": "VENDA",
-      "result_percent": 2.62,
-      "financial_result": 26.1,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:VIVT3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-15",
-      "ticker": "VIVT3",
-      "side": "VENDA",
-      "result_percent": -0.16,
-      "financial_result": -1.6,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-15:SAPR11:2026-09-14T20:00:00+00:00",
-      "date": "2026-09-15",
-      "ticker": "SAPR11",
-      "side": "COMPRA",
-      "result_percent": -1.12,
-      "financial_result": -10.92,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v2"
-    },
-    {
-      "key": "2026-09-15:COGN3:2026-09-15T14:14:08+00:00",
-      "date": "2026-09-15",
-      "ticker": "COGN3",
-      "side": "COMPRA",
-      "result_percent": 2.58,
-      "financial_result": 25.74,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v2"
-    },
-    {
-      "key": "2026-09-15:VAMO3:2026-09-15T15:12:26+00:00",
-      "date": "2026-09-15",
-      "ticker": "VAMO3",
-      "side": "COMPRA",
-      "result_percent": -0.31,
-      "financial_result": -3.07,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v2"
-    },
-    {
-      "key": "2026-09-16:TEND3:2026-09-08T09:14:27.274074+00:00",
-      "date": "2026-09-16",
-      "ticker": "TEND3",
-      "side": "COMPRA",
-      "result_percent": -5.66,
-      "financial_result": -54.88,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:BEEF3:2026-09-08T09:14:27.274074+00:00",
-      "date": "2026-09-16",
-      "ticker": "BEEF3",
-      "side": "COMPRA",
-      "result_percent": 2.28,
-      "financial_result": 22.77,
-      "assessment": "NEUTRA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:ITSA4:2026-09-08T13:28:24.697656+00:00",
-      "date": "2026-09-16",
-      "ticker": "ITSA4",
-      "side": "COMPRA",
-      "result_percent": -2.87,
-      "financial_result": -28.4,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:RAIL3:2026-09-08T13:28:24.697656+00:00",
-      "date": "2026-09-16",
-      "ticker": "RAIL3",
-      "side": "COMPRA",
-      "result_percent": 1.03,
-      "financial_result": 10.2,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:PETR3:2026-09-09T13:28:00.732046+00:00",
-      "date": "2026-09-16",
-      "ticker": "PETR3",
-      "side": "COMPRA",
-      "result_percent": -4.48,
-      "financial_result": -44.27,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:PETR4:2026-09-09T15:26:36.202295+00:00",
-      "date": "2026-09-16",
-      "ticker": "PETR4",
-      "side": "COMPRA",
-      "result_percent": -4.39,
-      "financial_result": -43.47,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:PETR4:2026-09-09T21:03:10.654348+00:00",
-      "date": "2026-09-16",
-      "ticker": "PETR4",
-      "side": "VENDA",
-      "result_percent": -7.99,
-      "financial_result": -79.92,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:PETR3:2026-09-09T21:03:10.654348+00:00",
-      "date": "2026-09-16",
-      "ticker": "PETR3",
-      "side": "VENDA",
-      "result_percent": -7.99,
-      "financial_result": -78.12,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:NATU3:2026-09-09T21:03:10.654348+00:00",
-      "date": "2026-09-16",
-      "ticker": "NATU3",
-      "side": "VENDA",
-      "result_percent": -4.07,
-      "financial_result": -40.61,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:VBBR3:2026-09-10T13:25:00.618476+00:00",
-      "date": "2026-09-16",
-      "ticker": "VBBR3",
-      "side": "COMPRA",
-      "result_percent": 5.6,
-      "financial_result": 55.89,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:USIM5:2026-09-10T13:25:00.618476+00:00",
-      "date": "2026-09-16",
-      "ticker": "USIM5",
-      "side": "VENDA",
-      "result_percent": -8.01,
-      "financial_result": -79.8,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:ASAI3:2026-09-10T14:26:07.574585+00:00",
-      "date": "2026-09-16",
-      "ticker": "ASAI3",
-      "side": "COMPRA",
-      "result_percent": 18.96,
-      "financial_result": 188.37,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:UGPA3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-16",
-      "ticker": "UGPA3",
-      "side": "COMPRA",
-      "result_percent": 5.99,
-      "financial_result": 59.4,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:MULT3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-16",
-      "ticker": "MULT3",
-      "side": "COMPRA",
-      "result_percent": -0.92,
-      "financial_result": -8.96,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:EQTL3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-16",
-      "ticker": "EQTL3",
-      "side": "COMPRA",
-      "result_percent": 2.89,
-      "financial_result": 28.86,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:BBSE3:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-16",
-      "ticker": "BBSE3",
-      "side": "VENDA",
-      "result_percent": -8.0,
-      "financial_result": -79.82,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:GGBR4:2026-09-10T16:25:20.954946+00:00",
-      "date": "2026-09-16",
-      "ticker": "GGBR4",
-      "side": "VENDA",
-      "result_percent": -8.02,
-      "financial_result": -79.12,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:ALOS3:2026-09-10T17:24:18.970660+00:00",
-      "date": "2026-09-16",
-      "ticker": "ALOS3",
-      "side": "COMPRA",
-      "result_percent": 0.0,
-      "financial_result": 0.0,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:AXIA3:2026-09-10T19:21:38.215228+00:00",
-      "date": "2026-09-16",
-      "ticker": "AXIA3",
-      "side": "COMPRA",
-      "result_percent": 3.56,
-      "financial_result": 34.02,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:VALE3:2026-09-10T19:21:38.215228+00:00",
-      "date": "2026-09-16",
-      "ticker": "VALE3",
-      "side": "VENDA",
-      "result_percent": -8.0,
-      "financial_result": -79.94,
-      "assessment": "INCORRETA",
-      "status": "ENCERRADA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:CPFE3:2026-09-10T21:03:08.751599+00:00",
-      "date": "2026-09-16",
-      "ticker": "CPFE3",
-      "side": "COMPRA",
-      "result_percent": -2.78,
-      "financial_result": -26.88,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:PETR4:2026-09-10T21:03:08.751599+00:00",
-      "date": "2026-09-16",
-      "ticker": "PETR4",
-      "side": "COMPRA",
-      "result_percent": 0.76,
-      "financial_result": 7.4,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:ABEV3:2026-09-10T21:03:08.751599+00:00",
-      "date": "2026-09-16",
-      "ticker": "ABEV3",
-      "side": "COMPRA",
-      "result_percent": 0.32,
-      "financial_result": 3.2,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:CYRE3:2026-09-11T17:24:07.984905+00:00",
-      "date": "2026-09-16",
-      "ticker": "CYRE3",
-      "side": "COMPRA",
-      "result_percent": 3.15,
-      "financial_result": 30.81,
-      "assessment": "CORRETA",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:VALE3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-16",
-      "ticker": "VALE3",
-      "side": "COMPRA",
-      "result_percent": -4.64,
-      "financial_result": -43.56,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:PRIO3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-16",
-      "ticker": "PRIO3",
-      "side": "COMPRA",
-      "result_percent": -2.51,
-      "financial_result": -24.15,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:TOTS3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-16",
-      "ticker": "TOTS3",
-      "side": "COMPRA",
-      "result_percent": 2.52,
-      "financial_result": 24.9,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:CSMG3:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-16",
-      "ticker": "CSMG3",
-      "side": "VENDA",
-      "result_percent": -1.01,
-      "financial_result": -9.69,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
-    {
-      "key": "2026-09-16:POMO4:2026-09-11T21:02:38.127420+00:00",
-      "date": "2026-09-16",
-      "ticker": "POMO4",
-      "side": "VENDA",
-      "result_percent": 3.28,
-      "financial_result": 32.7,
-      "assessment": "EM ACOMPANHAMENTO",
-      "status": "ABERTA",
-      "method_version": "v1-legado"
-    },
     {
       "key": "2026-09-16:LREN3:2026-09-11T21:02:38.127420+00:00",
       "date": "2026-09-16",
@@ -6570,9 +5976,603 @@
       "assessment": "EM ACOMPANHAMENTO",
       "status": "ABERTA",
       "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:TEND3:2026-09-08T09:14:27.274074+00:00",
+      "date": "2026-10-01",
+      "ticker": "TEND3",
+      "side": "COMPRA",
+      "result_percent": -5.66,
+      "financial_result": -54.88,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:BEEF3:2026-09-08T09:14:27.274074+00:00",
+      "date": "2026-10-01",
+      "ticker": "BEEF3",
+      "side": "COMPRA",
+      "result_percent": -0.76,
+      "financial_result": -7.59,
+      "assessment": "NEUTRA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:ITSA4:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-10-01",
+      "ticker": "ITSA4",
+      "side": "COMPRA",
+      "result_percent": -2.87,
+      "financial_result": -28.4,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:RAIL3:2026-09-08T13:28:24.697656+00:00",
+      "date": "2026-10-01",
+      "ticker": "RAIL3",
+      "side": "COMPRA",
+      "result_percent": 11.96,
+      "financial_result": 118.32,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:PETR3:2026-09-09T13:28:00.732046+00:00",
+      "date": "2026-10-01",
+      "ticker": "PETR3",
+      "side": "COMPRA",
+      "result_percent": -4.48,
+      "financial_result": -44.27,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:PETR4:2026-09-09T15:26:36.202295+00:00",
+      "date": "2026-10-01",
+      "ticker": "PETR4",
+      "side": "COMPRA",
+      "result_percent": -4.39,
+      "financial_result": -43.47,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:PETR4:2026-09-09T21:03:10.654348+00:00",
+      "date": "2026-10-01",
+      "ticker": "PETR4",
+      "side": "VENDA",
+      "result_percent": -7.99,
+      "financial_result": -79.92,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:PETR3:2026-09-09T21:03:10.654348+00:00",
+      "date": "2026-10-01",
+      "ticker": "PETR3",
+      "side": "VENDA",
+      "result_percent": -7.99,
+      "financial_result": -78.12,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:NATU3:2026-09-09T21:03:10.654348+00:00",
+      "date": "2026-10-01",
+      "ticker": "NATU3",
+      "side": "VENDA",
+      "result_percent": 11.3,
+      "financial_result": 112.66,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:VBBR3:2026-09-10T13:25:00.618476+00:00",
+      "date": "2026-10-01",
+      "ticker": "VBBR3",
+      "side": "COMPRA",
+      "result_percent": 2.62,
+      "financial_result": 26.19,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:USIM5:2026-09-10T13:25:00.618476+00:00",
+      "date": "2026-10-01",
+      "ticker": "USIM5",
+      "side": "VENDA",
+      "result_percent": -8.01,
+      "financial_result": -79.8,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:ASAI3:2026-09-10T14:26:07.574585+00:00",
+      "date": "2026-10-01",
+      "ticker": "ASAI3",
+      "side": "COMPRA",
+      "result_percent": 28.74,
+      "financial_result": 285.48,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:UGPA3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-10-01",
+      "ticker": "UGPA3",
+      "side": "COMPRA",
+      "result_percent": 4.41,
+      "financial_result": 43.74,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:MULT3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-10-01",
+      "ticker": "MULT3",
+      "side": "COMPRA",
+      "result_percent": 4.55,
+      "financial_result": 44.16,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:EQTL3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-10-01",
+      "ticker": "EQTL3",
+      "side": "COMPRA",
+      "result_percent": 3.49,
+      "financial_result": 34.84,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:BBSE3:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-10-01",
+      "ticker": "BBSE3",
+      "side": "VENDA",
+      "result_percent": -8.0,
+      "financial_result": -79.82,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:GGBR4:2026-09-10T16:25:20.954946+00:00",
+      "date": "2026-10-01",
+      "ticker": "GGBR4",
+      "side": "VENDA",
+      "result_percent": -8.02,
+      "financial_result": -79.12,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:ALOS3:2026-09-10T17:24:18.970660+00:00",
+      "date": "2026-10-01",
+      "ticker": "ALOS3",
+      "side": "COMPRA",
+      "result_percent": 0.84,
+      "financial_result": 8.4,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:AXIA3:2026-09-10T19:21:38.215228+00:00",
+      "date": "2026-10-01",
+      "ticker": "AXIA3",
+      "side": "COMPRA",
+      "result_percent": 3.3,
+      "financial_result": 31.5,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:VALE3:2026-09-10T19:21:38.215228+00:00",
+      "date": "2026-10-01",
+      "ticker": "VALE3",
+      "side": "VENDA",
+      "result_percent": -8.0,
+      "financial_result": -79.94,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:CPFE3:2026-09-10T21:03:08.751599+00:00",
+      "date": "2026-10-01",
+      "ticker": "CPFE3",
+      "side": "COMPRA",
+      "result_percent": -3.26,
+      "financial_result": -31.5,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:PETR4:2026-09-10T21:03:08.751599+00:00",
+      "date": "2026-10-01",
+      "ticker": "PETR4",
+      "side": "COMPRA",
+      "result_percent": 1.4,
+      "financial_result": 13.6,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:ABEV3:2026-09-10T21:03:08.751599+00:00",
+      "date": "2026-10-01",
+      "ticker": "ABEV3",
+      "side": "COMPRA",
+      "result_percent": -1.41,
+      "financial_result": -14.08,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:CYRE3:2026-09-11T17:24:07.984905+00:00",
+      "date": "2026-10-01",
+      "ticker": "CYRE3",
+      "side": "COMPRA",
+      "result_percent": 8.04,
+      "financial_result": 78.78,
+      "assessment": "CORRETA",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:VALE3:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "VALE3",
+      "side": "COMPRA",
+      "result_percent": -10.81,
+      "financial_result": -101.52,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:PRIO3:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "PRIO3",
+      "side": "COMPRA",
+      "result_percent": -5.13,
+      "financial_result": -49.35,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:TOTS3:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "TOTS3",
+      "side": "COMPRA",
+      "result_percent": 1.3,
+      "financial_result": 12.9,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:CSMG3:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "CSMG3",
+      "side": "VENDA",
+      "result_percent": 0.65,
+      "financial_result": 6.29,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:POMO4:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "POMO4",
+      "side": "VENDA",
+      "result_percent": 8.73,
+      "financial_result": 87.2,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:LREN3:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "LREN3",
+      "side": "VENDA",
+      "result_percent": 0.87,
+      "financial_result": 8.7,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:VIVT3:2026-09-11T21:02:38.127420+00:00",
+      "date": "2026-10-01",
+      "ticker": "VIVT3",
+      "side": "VENDA",
+      "result_percent": 2.82,
+      "financial_result": 27.52,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v1-legado"
+    },
+    {
+      "key": "2026-10-01:SAPR11:2026-09-14T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "SAPR11",
+      "side": "COMPRA",
+      "result_percent": -1.12,
+      "financial_result": -10.92,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:COGN3:2026-09-15T14:14:08+00:00",
+      "date": "2026-10-01",
+      "ticker": "COGN3",
+      "side": "COMPRA",
+      "result_percent": -4.29,
+      "financial_result": -42.9,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:VAMO3:2026-09-15T15:12:26+00:00",
+      "date": "2026-10-01",
+      "ticker": "VAMO3",
+      "side": "COMPRA",
+      "result_percent": 13.85,
+      "financial_result": 138.15,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:RDOR3:2026-09-16T16:13:20+00:00",
+      "date": "2026-10-01",
+      "ticker": "RDOR3",
+      "side": "COMPRA",
+      "result_percent": 2.82,
+      "financial_result": 27.3,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:MBRF3:2026-09-16T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "MBRF3",
+      "side": "VENDA",
+      "result_percent": 1.35,
+      "financial_result": 13.34,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:PCAR3:2026-09-16T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "PCAR3",
+      "side": "VENDA",
+      "result_percent": 6.69,
+      "financial_result": 66.66,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:IGTI11:2026-09-17T17:09:56+00:00",
+      "date": "2026-10-01",
+      "ticker": "IGTI11",
+      "side": "COMPRA",
+      "result_percent": 1.36,
+      "financial_result": 13.3,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:TEND3:2026-09-17T17:10:43+00:00",
+      "date": "2026-10-01",
+      "ticker": "TEND3",
+      "side": "VENDA",
+      "result_percent": 4.81,
+      "financial_result": 46.86,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:DIRR3:2026-09-17T17:10:43+00:00",
+      "date": "2026-10-01",
+      "ticker": "DIRR3",
+      "side": "VENDA",
+      "result_percent": -3.15,
+      "financial_result": -31.31,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:SBSP3:2026-09-17T18:17:03+00:00",
+      "date": "2026-10-01",
+      "ticker": "SBSP3",
+      "side": "COMPRA",
+      "result_percent": -0.29,
+      "financial_result": -2.88,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:ISAE4:2026-09-18T19:10:03+00:00",
+      "date": "2026-10-01",
+      "ticker": "ISAE4",
+      "side": "COMPRA",
+      "result_percent": -1.91,
+      "financial_result": -18.72,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:CMIG4:2026-09-21T14:14:03+00:00",
+      "date": "2026-10-01",
+      "ticker": "CMIG4",
+      "side": "COMPRA",
+      "result_percent": -3.01,
+      "financial_result": -29.92,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:BRAV3:2026-09-21T15:11:38+00:00",
+      "date": "2026-10-01",
+      "ticker": "BRAV3",
+      "side": "VENDA",
+      "result_percent": -5.03,
+      "financial_result": -49.59,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:GOAU4:2026-09-21T18:16:22+00:00",
+      "date": "2026-10-01",
+      "ticker": "GOAU4",
+      "side": "COMPRA",
+      "result_percent": -5.5,
+      "financial_result": -54.81,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:PETR3:2026-09-22T17:12:01+00:00",
+      "date": "2026-10-01",
+      "ticker": "PETR3",
+      "side": "COMPRA",
+      "result_percent": 2.15,
+      "financial_result": 20.52,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:RENT3:2026-09-22T19:11:11+00:00",
+      "date": "2026-10-01",
+      "ticker": "RENT3",
+      "side": "COMPRA",
+      "result_percent": 7.06,
+      "financial_result": 69.42,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:CPLE3:2026-09-22T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "CPLE3",
+      "side": "COMPRA",
+      "result_percent": -2.42,
+      "financial_result": -23.79,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:USIM5:2026-09-23T19:12:22+00:00",
+      "date": "2026-10-01",
+      "ticker": "USIM5",
+      "side": "VENDA",
+      "result_percent": -0.43,
+      "financial_result": -4.29,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:PSSA3:2026-09-23T19:12:14+00:00",
+      "date": "2026-10-01",
+      "ticker": "PSSA3",
+      "side": "VENDA",
+      "result_percent": 2.1,
+      "financial_result": 20.2,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:VAMO3:2026-09-23T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "VAMO3",
+      "side": "COMPRA",
+      "result_percent": 13.46,
+      "financial_result": 134.13,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:ECOR3:2026-09-25T18:15:20+00:00",
+      "date": "2026-10-01",
+      "ticker": "ECOR3",
+      "side": "COMPRA",
+      "result_percent": -5.51,
+      "financial_result": -55.0,
+      "assessment": "INCORRETA",
+      "status": "ENCERRADA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:ENGI11:2026-09-25T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "ENGI11",
+      "side": "COMPRA",
+      "result_percent": 0.8,
+      "financial_result": 7.79,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
+    },
+    {
+      "key": "2026-10-01:CEAB3:2026-09-29T20:00:00+00:00",
+      "date": "2026-10-01",
+      "ticker": "CEAB3",
+      "side": "COMPRA",
+      "result_percent": 5.47,
+      "financial_result": 54.6,
+      "assessment": "EM ACOMPANHAMENTO",
+      "status": "ABERTA",
+      "method_version": "v2"
     }
   ],
-  "updated_at": "2026-09-30T23:52:46.763900+00:00",
+  "updated_at": "2026-10-01T00:15:06.970024+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
@@ -6581,14 +6581,14 @@
       "confirmations": 4,
       "first_seen": "2026-09-29T19:26:32.026290+00:00",
       "last_bar": 1790798400,
-      "last_seen": "2026-09-30T23:52:46.763900+00:00"
+      "last_seen": "2026-10-01T00:15:06.970024+00:00"
     },
     "PRIO3": {
       "side": "VENDA",
       "confirmations": 2,
       "first_seen": "2026-09-30T19:23:04.558693+00:00",
       "last_bar": 1790798400,
-      "last_seen": "2026-09-30T23:52:46.763900+00:00"
+      "last_seen": "2026-10-01T00:15:06.970024+00:00"
     }
   },
   "signal_log": [

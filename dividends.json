@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T00:01:41.293559+00:00",
+  "updated_at": "2026-10-01T00:15:06.966502+00:00",
   "items": [
     {
       "ticker": "POMO4",
@@ -82,13 +82,61 @@
       "source": "Yahoo Finance — eventos de dividendos"
     },
     {
+      "ticker": "DIRR3",
+      "company": "DIRECIONAL",
+      "price": 10.16,
+      "amount_per_share_12m": 1.55,
+      "yield_12m": 15.26,
+      "cadence": "semestral",
+      "payments_12m": 1,
+      "last_payment": {
+        "date": "2025-12-17",
+        "amount": 1.55
+      },
+      "history": [
+        {
+          "date": "2022-07-15",
+          "amount": 0.156021
+        },
+        {
+          "date": "2022-12-19",
+          "amount": 0.232372
+        },
+        {
+          "date": "2023-12-06",
+          "amount": 0.156667
+        },
+        {
+          "date": "2024-07-05",
+          "amount": 0.533333
+        },
+        {
+          "date": "2024-09-18",
+          "amount": 0.153333
+        },
+        {
+          "date": "2025-01-06",
+          "amount": 0.423333
+        },
+        {
+          "date": "2025-06-30",
+          "amount": 0.666667
+        },
+        {
+          "date": "2025-12-17",
+          "amount": 1.55
+        }
+      ],
+      "source": "Yahoo Finance — eventos de dividendos"
+    },
+    {
       "ticker": "CURY3",
       "company": "CURY S/A",
       "price": 28.72,
-      "amount_per_share_12m": 4.9873,
-      "yield_12m": 17.37,
+      "amount_per_share_12m": 4.3044,
+      "yield_12m": 14.99,
       "cadence": "trimestral",
-      "payments_12m": 6,
+      "payments_12m": 5,
       "last_payment": {
         "date": "2026-08-17",
         "amount": 0.616788
@@ -161,54 +209,6 @@
         {
           "date": "2026-08-17",
           "amount": 0.616788
-        }
-      ],
-      "source": "Yahoo Finance — eventos de dividendos"
-    },
-    {
-      "ticker": "DIRR3",
-      "company": "DIRECIONAL",
-      "price": 10.16,
-      "amount_per_share_12m": 1.55,
-      "yield_12m": 15.26,
-      "cadence": "semestral",
-      "payments_12m": 1,
-      "last_payment": {
-        "date": "2025-12-17",
-        "amount": 1.55
-      },
-      "history": [
-        {
-          "date": "2022-07-15",
-          "amount": 0.156021
-        },
-        {
-          "date": "2022-12-19",
-          "amount": 0.232372
-        },
-        {
-          "date": "2023-12-06",
-          "amount": 0.156667
-        },
-        {
-          "date": "2024-07-05",
-          "amount": 0.533333
-        },
-        {
-          "date": "2024-09-18",
-          "amount": 0.153333
-        },
-        {
-          "date": "2025-01-06",
-          "amount": 0.423333
-        },
-        {
-          "date": "2025-06-30",
-          "amount": 0.666667
-        },
-        {
-          "date": "2025-12-17",
-          "amount": 1.55
         }
       ],
       "source": "Yahoo Finance — eventos de dividendos"
