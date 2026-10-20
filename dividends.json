@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-14T23:32:53.764452+00:00",
+  "updated_at": "2026-10-20T00:00:40.236011+00:00",
   "items": [
     {
       "ticker": "POMO4",
       "company": "MARCOPOLO",
-      "price": 4.73,
+      "price": 4.67,
       "amount_per_share_12m": 0.9241,
-      "yield_12m": 19.54,
+      "yield_12m": 19.79,
       "cadence": "trimestral",
       "payments_12m": 3,
       "last_payment": {
@@ -84,9 +84,9 @@
     {
       "ticker": "DIRR3",
       "company": "DIRECIONAL",
-      "price": 11.93,
+      "price": 10.8,
       "amount_per_share_12m": 1.55,
-      "yield_12m": 12.99,
+      "yield_12m": 14.35,
       "cadence": "semestral",
       "payments_12m": 1,
       "last_payment": {
@@ -132,9 +132,9 @@
     {
       "ticker": "CURY3",
       "company": "CURY S/A",
-      "price": 33.57,
+      "price": 31.54,
       "amount_per_share_12m": 4.3044,
-      "yield_12m": 12.82,
+      "yield_12m": 13.65,
       "cadence": "trimestral",
       "payments_12m": 5,
       "last_payment": {
@@ -216,9 +216,9 @@
     {
       "ticker": "BBSE3",
       "company": "BBSEGURIDADE",
-      "price": 41.18,
+      "price": 41.22,
       "amount_per_share_12m": 4.5901,
-      "yield_12m": 11.15,
+      "yield_12m": 11.14,
       "cadence": "semestral",
       "payments_12m": 2,
       "last_payment": {
@@ -270,67 +270,11 @@
       "source": "Yahoo Finance — eventos de dividendos"
     },
     {
-      "ticker": "AZZA3",
-      "company": "AZZAS 2154",
-      "price": 25.3,
-      "amount_per_share_12m": 2.4762,
-      "yield_12m": 9.79,
-      "cadence": "semestral",
-      "payments_12m": 2,
-      "last_payment": {
-        "date": "2025-12-22",
-        "amount": 1.584744
-      },
-      "history": [
-        {
-          "date": "2021-12-06",
-          "amount": 0.602467
-        },
-        {
-          "date": "2022-05-02",
-          "amount": 0.455559
-        },
-        {
-          "date": "2022-07-04",
-          "amount": 0.634895
-        },
-        {
-          "date": "2022-12-19",
-          "amount": 0.745175
-        },
-        {
-          "date": "2023-07-03",
-          "amount": 0.84977
-        },
-        {
-          "date": "2023-11-13",
-          "amount": 1.082697
-        },
-        {
-          "date": "2024-07-11",
-          "amount": 0.540743
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 0.575146
-        },
-        {
-          "date": "2025-11-24",
-          "amount": 0.891458
-        },
-        {
-          "date": "2025-12-22",
-          "amount": 1.584744
-        }
-      ],
-      "source": "Yahoo Finance — eventos de dividendos"
-    },
-    {
       "ticker": "CMIG4",
       "company": "CEMIG",
-      "price": 11.9,
+      "price": 11.61,
       "amount_per_share_12m": 1.1394,
-      "yield_12m": 9.57,
+      "yield_12m": 9.81,
       "cadence": "bimestral",
       "payments_12m": 6,
       "last_payment": {
@@ -422,11 +366,99 @@
       "source": "Yahoo Finance — eventos de dividendos"
     },
     {
+      "ticker": "RDOR3",
+      "company": "REDE D OR",
+      "price": 43.35,
+      "amount_per_share_12m": 4.2077,
+      "yield_12m": 9.71,
+      "cadence": "trimestral",
+      "payments_12m": 4,
+      "last_payment": {
+        "date": "2026-09-25",
+        "amount": 0.184109
+      },
+      "history": [
+        {
+          "date": "2021-12-20",
+          "amount": 0.094389
+        },
+        {
+          "date": "2022-04-01",
+          "amount": 0.196932
+        },
+        {
+          "date": "2022-07-07",
+          "amount": 0.111132
+        },
+        {
+          "date": "2022-09-22",
+          "amount": 0.115504
+        },
+        {
+          "date": "2022-12-20",
+          "amount": 0.080205
+        },
+        {
+          "date": "2023-10-17",
+          "amount": 0.184638
+        },
+        {
+          "date": "2023-12-19",
+          "amount": 0.184639
+        },
+        {
+          "date": "2024-03-27",
+          "amount": 0.133031
+        },
+        {
+          "date": "2024-07-01",
+          "amount": 0.155994
+        },
+        {
+          "date": "2024-09-27",
+          "amount": 0.156105
+        },
+        {
+          "date": "2024-12-19",
+          "amount": 0.202583
+        },
+        {
+          "date": "2025-03-27",
+          "amount": 0.181072
+        },
+        {
+          "date": "2025-06-17",
+          "amount": 0.20392
+        },
+        {
+          "date": "2025-09-24",
+          "amount": 0.226578
+        },
+        {
+          "date": "2025-12-19",
+          "amount": 3.681114
+        },
+        {
+          "date": "2026-03-27",
+          "amount": 0.159148
+        },
+        {
+          "date": "2026-06-26",
+          "amount": 0.183353
+        },
+        {
+          "date": "2026-09-25",
+          "amount": 0.184109
+        }
+      ],
+      "source": "Yahoo Finance — eventos de dividendos"
+    },
+    {
       "ticker": "ALOS3",
       "company": "ALLOS",
-      "price": 34.8,
+      "price": 34.88,
       "amount_per_share_12m": 3.3182,
-      "yield_12m": 9.53,
+      "yield_12m": 9.51,
       "cadence": "bimestral",
       "payments_12m": 12,
       "last_payment": {
@@ -518,89 +550,57 @@
       "source": "Yahoo Finance — eventos de dividendos"
     },
     {
-      "ticker": "RDOR3",
-      "company": "REDE D OR",
-      "price": 44.53,
-      "amount_per_share_12m": 4.2077,
-      "yield_12m": 9.45,
-      "cadence": "trimestral",
-      "payments_12m": 4,
+      "ticker": "AZZA3",
+      "company": "AZZAS 2154",
+      "price": 26.5,
+      "amount_per_share_12m": 2.4762,
+      "yield_12m": 9.34,
+      "cadence": "semestral",
+      "payments_12m": 2,
       "last_payment": {
-        "date": "2026-09-25",
-        "amount": 0.184109
+        "date": "2025-12-22",
+        "amount": 1.584744
       },
       "history": [
         {
-          "date": "2021-12-20",
-          "amount": 0.094389
+          "date": "2021-12-06",
+          "amount": 0.602467
         },
         {
-          "date": "2022-04-01",
-          "amount": 0.196932
+          "date": "2022-05-02",
+          "amount": 0.455559
         },
         {
-          "date": "2022-07-07",
-          "amount": 0.111132
+          "date": "2022-07-04",
+          "amount": 0.634895
         },
         {
-          "date": "2022-09-22",
-          "amount": 0.115504
+          "date": "2022-12-19",
+          "amount": 0.745175
         },
         {
-          "date": "2022-12-20",
-          "amount": 0.080205
+          "date": "2023-07-03",
+          "amount": 0.84977
         },
         {
-          "date": "2023-10-17",
-          "amount": 0.184638
+          "date": "2023-11-13",
+          "amount": 1.082697
         },
         {
-          "date": "2023-12-19",
-          "amount": 0.184639
+          "date": "2024-07-11",
+          "amount": 0.540743
         },
         {
-          "date": "2024-03-27",
-          "amount": 0.133031
+          "date": "2024-12-09",
+          "amount": 0.575146
         },
         {
-          "date": "2024-07-01",
-          "amount": 0.155994
+          "date": "2025-11-24",
+          "amount": 0.891458
         },
         {
-          "date": "2024-09-27",
-          "amount": 0.156105
-        },
-        {
-          "date": "2024-12-19",
-          "amount": 0.202583
-        },
-        {
-          "date": "2025-03-27",
-          "amount": 0.181072
-        },
-        {
-          "date": "2025-06-17",
-          "amount": 0.20392
-        },
-        {
-          "date": "2025-09-24",
-          "amount": 0.226578
-        },
-        {
-          "date": "2025-12-19",
-          "amount": 3.681114
-        },
-        {
-          "date": "2026-03-27",
-          "amount": 0.159148
-        },
-        {
-          "date": "2026-06-26",
-          "amount": 0.183353
-        },
-        {
-          "date": "2026-09-25",
-          "amount": 0.184109
+          "date": "2025-12-22",
+          "amount": 1.584744
         }
       ],
       "source": "Yahoo Finance — eventos de dividendos"
@@ -608,9 +608,9 @@
     {
       "ticker": "VALE3",
       "company": "VALE",
-      "price": 67.16,
+      "price": 66.36,
       "amount_per_share_12m": 5.6125,
-      "yield_12m": 8.36,
+      "yield_12m": 8.46,
       "cadence": "trimestral",
       "payments_12m": 2,
       "last_payment": {
@@ -674,11 +674,147 @@
       "source": "Yahoo Finance — eventos de dividendos"
     },
     {
+      "ticker": "CYRE3",
+      "company": "CYRELA REALT",
+      "price": 32.65,
+      "amount_per_share_12m": 2.7299,
+      "yield_12m": 8.36,
+      "cadence": "semestral",
+      "payments_12m": 1,
+      "last_payment": {
+        "date": "2025-12-10",
+        "amount": 2.729921
+      },
+      "history": [
+        {
+          "date": "2022-04-25",
+          "amount": 0.564779
+        },
+        {
+          "date": "2023-05-03",
+          "amount": 0.511295
+        },
+        {
+          "date": "2023-12-12",
+          "amount": 0.333404
+        },
+        {
+          "date": "2024-04-26",
+          "amount": 0.596783
+        },
+        {
+          "date": "2025-04-28",
+          "amount": 1.069137
+        },
+        {
+          "date": "2025-12-10",
+          "amount": 2.729921
+        }
+      ],
+      "source": "Yahoo Finance — eventos de dividendos"
+    },
+    {
+      "ticker": "SANB11",
+      "company": "SANTANDER BR",
+      "price": 27.86,
+      "amount_per_share_12m": 2.3073,
+      "yield_12m": 8.28,
+      "cadence": "trimestral",
+      "payments_12m": 5,
+      "last_payment": {
+        "date": "2026-07-22",
+        "amount": 0.534694
+      },
+      "history": [
+        {
+          "date": "2022-02-11",
+          "amount": 0.804233
+        },
+        {
+          "date": "2022-04-22",
+          "amount": 0.456205
+        },
+        {
+          "date": "2022-08-15",
+          "amount": 0.45727
+        },
+        {
+          "date": "2022-10-24",
+          "amount": 0.457242
+        },
+        {
+          "date": "2023-01-27",
+          "amount": 0.457629
+        },
+        {
+          "date": "2023-04-25",
+          "amount": 0.403261
+        },
+        {
+          "date": "2023-07-21",
+          "amount": 0.403346
+        },
+        {
+          "date": "2023-10-20",
+          "amount": 0.403366
+        },
+        {
+          "date": "2024-01-22",
+          "amount": 0.402856
+        },
+        {
+          "date": "2024-04-22",
+          "amount": 0.402399
+        },
+        {
+          "date": "2024-07-22",
+          "amount": 0.4025
+        },
+        {
+          "date": "2024-10-18",
+          "amount": 0.402476
+        },
+        {
+          "date": "2025-01-23",
+          "amount": 0.402522
+        },
+        {
+          "date": "2025-04-22",
+          "amount": 0.401915
+        },
+        {
+          "date": "2025-07-18",
+          "amount": 0.53588
+        },
+        {
+          "date": "2025-10-22",
+          "amount": 0.535874
+        },
+        {
+          "date": "2026-01-05",
+          "amount": 0.166118
+        },
+        {
+          "date": "2026-01-21",
+          "amount": 0.535864
+        },
+        {
+          "date": "2026-04-22",
+          "amount": 0.534701
+        },
+        {
+          "date": "2026-07-22",
+          "amount": 0.534694
+        }
+      ],
+      "source": "Yahoo Finance — eventos de dividendos"
+    },
+    {
       "ticker": "VIVT3",
       "company": "TELEF BRASIL",
-      "price": 30.69,
+      "price": 31.84,
       "amount_per_share_12m": 2.5468,
-      "yield_12m": 8.3,
+      "yield_12m": 8.0,
       "cadence": "bimestral",
       "payments_12m": 12,
       "last_payment": {
@@ -772,9 +908,9 @@
     {
       "ticker": "TIMS3",
       "company": "TIM",
-      "price": 18.2,
+      "price": 18.77,
       "amount_per_share_12m": 1.4723,
-      "yield_12m": 8.09,
+      "yield_12m": 7.84,
       "cadence": "trimestral",
       "payments_12m": 5,
       "last_payment": {
@@ -866,147 +1002,11 @@
       "source": "Yahoo Finance — eventos de dividendos"
     },
     {
-      "ticker": "CYRE3",
-      "company": "CYRELA REALT",
-      "price": 33.91,
-      "amount_per_share_12m": 2.7299,
-      "yield_12m": 8.05,
-      "cadence": "semestral",
-      "payments_12m": 1,
-      "last_payment": {
-        "date": "2025-12-10",
-        "amount": 2.729921
-      },
-      "history": [
-        {
-          "date": "2022-04-25",
-          "amount": 0.564779
-        },
-        {
-          "date": "2023-05-03",
-          "amount": 0.511295
-        },
-        {
-          "date": "2023-12-12",
-          "amount": 0.333404
-        },
-        {
-          "date": "2024-04-26",
-          "amount": 0.596783
-        },
-        {
-          "date": "2025-04-28",
-          "amount": 1.069137
-        },
-        {
-          "date": "2025-12-10",
-          "amount": 2.729921
-        }
-      ],
-      "source": "Yahoo Finance — eventos de dividendos"
-    },
-    {
-      "ticker": "SANB11",
-      "company": "SANTANDER BR",
-      "price": 28.88,
-      "amount_per_share_12m": 2.3073,
-      "yield_12m": 7.99,
-      "cadence": "trimestral",
-      "payments_12m": 5,
-      "last_payment": {
-        "date": "2026-07-22",
-        "amount": 0.534694
-      },
-      "history": [
-        {
-          "date": "2022-02-11",
-          "amount": 0.804233
-        },
-        {
-          "date": "2022-04-22",
-          "amount": 0.456205
-        },
-        {
-          "date": "2022-08-15",
-          "amount": 0.45727
-        },
-        {
-          "date": "2022-10-24",
-          "amount": 0.457242
-        },
-        {
-          "date": "2023-01-27",
-          "amount": 0.457629
-        },
-        {
-          "date": "2023-04-25",
-          "amount": 0.403261
-        },
-        {
-          "date": "2023-07-21",
-          "amount": 0.403346
-        },
-        {
-          "date": "2023-10-20",
-          "amount": 0.403366
-        },
-        {
-          "date": "2024-01-22",
-          "amount": 0.402856
-        },
-        {
-          "date": "2024-04-22",
-          "amount": 0.402399
-        },
-        {
-          "date": "2024-07-22",
-          "amount": 0.4025
-        },
-        {
-          "date": "2024-10-18",
-          "amount": 0.402476
-        },
-        {
-          "date": "2025-01-23",
-          "amount": 0.402522
-        },
-        {
-          "date": "2025-04-22",
-          "amount": 0.401915
-        },
-        {
-          "date": "2025-07-18",
-          "amount": 0.53588
-        },
-        {
-          "date": "2025-10-22",
-          "amount": 0.535874
-        },
-        {
-          "date": "2026-01-05",
-          "amount": 0.166118
-        },
-        {
-          "date": "2026-01-21",
-          "amount": 0.535864
-        },
-        {
-          "date": "2026-04-22",
-          "amount": 0.534701
-        },
-        {
-          "date": "2026-07-22",
-          "amount": 0.534694
-        }
-      ],
-      "source": "Yahoo Finance — eventos de dividendos"
-    },
-    {
       "ticker": "CPFE3",
       "company": "CPFL ENERGIA",
-      "price": 50.6,
+      "price": 49.4,
       "amount_per_share_12m": 3.7315,
-      "yield_12m": 7.37,
+      "yield_12m": 7.55,
       "cadence": "anual",
       "payments_12m": 1,
       "last_payment": {
@@ -1040,9 +1040,9 @@
     {
       "ticker": "ITSA4",
       "company": "ITAUSA",
-      "price": 15.99,
+      "price": 15.45,
       "amount_per_share_12m": 1.1278,
-      "yield_12m": 7.05,
+      "yield_12m": 7.3,
       "cadence": "bimestral",
       "payments_12m": 7,
       "last_payment": {
