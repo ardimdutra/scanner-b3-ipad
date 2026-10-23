@@ -183,18 +183,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T13:25:00.618476+00:00",
       "entry_price": 36.99,
-      "current_price": 37.0,
+      "current_price": 36.23,
       "stop": 34.03,
       "target": 42.91,
-      "result_percent": 0.03,
+      "result_percent": -2.05,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 27,
-      "pnl_per_share": 0.01,
-      "financial_result": 0.27
+      "pnl_per_share": -0.76,
+      "financial_result": -20.52
     },
     {
       "ticker": "USIM5",
@@ -241,18 +241,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 36.73,
-      "current_price": 39.12,
+      "current_price": 38.32,
       "stop": 33.79,
       "target": 42.61,
-      "result_percent": 6.51,
+      "result_percent": 4.33,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 27,
-      "pnl_per_share": 2.39,
-      "financial_result": 64.53
+      "pnl_per_share": 1.59,
+      "financial_result": 42.93
     },
     {
       "ticker": "MULT3",
@@ -415,18 +415,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 48.42,
-      "current_price": 57.78,
+      "current_price": 58.77,
       "stop": 46.41,
       "target": 52.45,
-      "result_percent": 19.33,
+      "result_percent": 21.38,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
-      "pnl_per_share": 9.36,
-      "financial_result": 187.2
+      "pnl_per_share": 10.35,
+      "financial_result": 207.0
     },
     {
       "ticker": "ABEV3",
@@ -434,18 +434,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 15.58,
-      "current_price": 16.9,
+      "current_price": 16.85,
       "stop": 15.19,
       "target": 16.36,
-      "result_percent": 8.47,
+      "result_percent": 8.15,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 64,
-      "pnl_per_share": 1.32,
-      "financial_result": 84.48
+      "pnl_per_share": 1.27,
+      "financial_result": 81.28
     },
     {
       "ticker": "CYRE3",
@@ -472,17 +472,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 78.23,
-      "current_price": 61.49,
+      "current_price": 61.95,
       "stop": 71.97,
       "target": 90.75,
-      "result_percent": -21.4,
+      "result_percent": -20.81,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 12,
-      "pnl_per_share": -16.74,
-      "financial_result": -200.88,
+      "pnl_per_share": -16.28,
+      "financial_result": -195.36,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00"
     },
     {
@@ -510,17 +510,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 33.0,
-      "current_price": 43.75,
+      "current_price": 43.86,
       "stop": 30.36,
       "target": 38.28,
-      "result_percent": 32.58,
+      "result_percent": 32.91,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 30,
-      "pnl_per_share": 10.75,
-      "financial_result": 322.5,
+      "pnl_per_share": 10.86,
+      "financial_result": 325.8,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00"
     },
     {
@@ -567,17 +567,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 11.45,
-      "current_price": 14.41,
+      "current_price": 14.64,
       "stop": 12.37,
       "target": 9.62,
-      "result_percent": -25.85,
+      "result_percent": -27.86,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 87,
-      "pnl_per_share": -2.96,
-      "financial_result": -257.52,
+      "pnl_per_share": -3.19,
+      "financial_result": -277.53,
       "last_review_at": "2026-10-22T23:45:06.752803+00:00"
     },
     {
@@ -1113,13 +1113,13 @@
       "status": "ABERTA",
       "opened_at": "2026-10-07T20:00:00+00:00",
       "entry_price": 18.47,
-      "current_price": 18.16,
+      "current_price": 18.32,
       "stop": 18.95,
       "target": 17.51,
-      "result_percent": 1.68,
-      "pnl_per_share": 0.31,
+      "result_percent": 0.81,
+      "pnl_per_share": 0.15,
       "quantity_reference": 54,
-      "financial_result": 16.74,
+      "financial_result": 8.1,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v2",
@@ -6670,16 +6670,30 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-10-22T23:45:06.752803+00:00",
+  "updated_at": "2026-10-23T18:23:25.753742+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
-    "SANB11": {
+    "RENT3": {
+      "side": "COMPRA",
+      "confirmations": 1,
+      "first_seen": "2026-10-23T18:23:25.753742+00:00",
+      "last_bar": 1792778897,
+      "last_seen": "2026-10-23T18:23:25.753742+00:00"
+    },
+    "PETR3": {
+      "side": "COMPRA",
+      "confirmations": 1,
+      "first_seen": "2026-10-23T18:23:25.753742+00:00",
+      "last_bar": 1792778897,
+      "last_seen": "2026-10-23T18:23:25.753742+00:00"
+    },
+    "VBBR3": {
       "side": "VENDA",
       "confirmations": 1,
-      "first_seen": "2026-10-22T22:21:42.156191+00:00",
-      "last_bar": 1792699200,
-      "last_seen": "2026-10-22T23:45:06.752803+00:00"
+      "first_seen": "2026-10-23T18:23:25.753742+00:00",
+      "last_bar": 1792778897,
+      "last_seen": "2026-10-23T18:23:25.753742+00:00"
     }
   },
   "signal_log": [
@@ -9036,6 +9050,39 @@
       "buy_strength": 10,
       "sell_strength": 91,
       "daily_thesis_date": 1792454400
+    },
+    {
+      "key": "RENT3:COMPRA:1792778897",
+      "ticker": "RENT3",
+      "side": "COMPRA",
+      "bar_time": 1792778897,
+      "observed_at": "2026-10-23T18:23:25.753742+00:00",
+      "price": 52.35,
+      "buy_strength": 81,
+      "sell_strength": 0,
+      "daily_thesis_date": 1792627200
+    },
+    {
+      "key": "PETR3:COMPRA:1792778897",
+      "ticker": "PETR3",
+      "side": "COMPRA",
+      "bar_time": 1792778897,
+      "observed_at": "2026-10-23T18:23:25.753742+00:00",
+      "price": 65.81,
+      "buy_strength": 81,
+      "sell_strength": 0,
+      "daily_thesis_date": 1792627200
+    },
+    {
+      "key": "VBBR3:VENDA:1792778897",
+      "ticker": "VBBR3",
+      "side": "VENDA",
+      "bar_time": 1792778897,
+      "observed_at": "2026-10-23T18:23:25.753742+00:00",
+      "price": 36.23,
+      "buy_strength": 6,
+      "sell_strength": 75,
+      "daily_thesis_date": 1792627200
     }
   ],
   "performance": {
@@ -9045,7 +9092,7 @@
     "correct": 8,
     "incorrect": 6,
     "realized_result": 397.74,
-    "open_result": 708.41,
+    "open_result": 699.77,
     "legacy_operations": 31
   },
   "methodology": "v2: tese diária congelada, dois candles horários consecutivos e cooldown de 72 horas"
