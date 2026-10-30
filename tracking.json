@@ -434,18 +434,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 15.58,
-      "current_price": 14.58,
+      "current_price": 14.6,
       "stop": 15.19,
       "target": 16.36,
-      "result_percent": -6.42,
+      "result_percent": -6.29,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-10-30T00:30:59.507938+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 64,
-      "pnl_per_share": -1.0,
-      "financial_result": -64.0
+      "pnl_per_share": -0.98,
+      "financial_result": -62.72
     },
     {
       "ticker": "CYRE3",
@@ -472,17 +472,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 78.23,
-      "current_price": 61.84,
+      "current_price": 61.97,
       "stop": 71.97,
       "target": 90.75,
-      "result_percent": -20.95,
+      "result_percent": -20.78,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 12,
-      "pnl_per_share": -16.39,
-      "financial_result": -196.68,
+      "pnl_per_share": -16.26,
+      "financial_result": -195.12,
       "last_review_at": "2026-10-30T00:30:59.507938+00:00"
     },
     {
@@ -491,17 +491,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 64.19,
-      "current_price": 70.54,
+      "current_price": 71.49,
       "stop": 59.05,
       "target": 74.46,
-      "result_percent": 9.89,
+      "result_percent": 11.37,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 15,
-      "pnl_per_share": 6.35,
-      "financial_result": 95.25,
+      "pnl_per_share": 7.3,
+      "financial_result": 109.5,
       "last_review_at": "2026-10-30T00:30:59.507938+00:00"
     },
     {
@@ -6766,16 +6766,16 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-10-30T19:25:08.118440+00:00",
+  "updated_at": "2026-10-30T23:50:18.260591+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
     "PRIO3": {
       "side": "COMPRA",
-      "confirmations": 1,
+      "confirmations": 2,
       "first_seen": "2026-10-30T19:25:08.118440+00:00",
-      "last_bar": 1793387178,
-      "last_seen": "2026-10-30T19:25:08.118440+00:00"
+      "last_bar": 1793390400,
+      "last_seen": "2026-10-30T23:50:18.260591+00:00"
     }
   },
   "signal_log": [
@@ -9393,6 +9393,17 @@
       "bar_time": 1793387178,
       "observed_at": "2026-10-30T19:25:08.118440+00:00",
       "price": 70.54,
+      "buy_strength": 78,
+      "sell_strength": 0,
+      "daily_thesis_date": 1793232000
+    },
+    {
+      "key": "PRIO3:COMPRA:1793390400",
+      "ticker": "PRIO3",
+      "side": "COMPRA",
+      "bar_time": 1793390400,
+      "observed_at": "2026-10-30T23:50:18.260591+00:00",
+      "price": 71.49,
       "buy_strength": 78,
       "sell_strength": 0,
       "daily_thesis_date": 1793232000
