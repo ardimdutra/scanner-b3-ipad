@@ -415,18 +415,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 48.42,
-      "current_price": 52.75,
+      "current_price": 50.51,
       "stop": 46.41,
       "target": 52.45,
-      "result_percent": 8.94,
+      "result_percent": 4.32,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-10-31T00:14:23.691245+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
-      "pnl_per_share": 4.33,
-      "financial_result": 86.6
+      "pnl_per_share": 2.09,
+      "financial_result": 41.8
     },
     {
       "ticker": "ABEV3",
@@ -472,17 +472,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 78.23,
-      "current_price": 61.97,
+      "current_price": 60.58,
       "stop": 71.97,
       "target": 90.75,
-      "result_percent": -20.78,
+      "result_percent": -22.56,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 12,
-      "pnl_per_share": -16.26,
-      "financial_result": -195.12,
+      "pnl_per_share": -17.65,
+      "financial_result": -211.8,
       "last_review_at": "2026-10-31T00:14:23.691245+00:00"
     },
     {
@@ -491,17 +491,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 64.19,
-      "current_price": 71.49,
+      "current_price": 68.42,
       "stop": 59.05,
       "target": 74.46,
-      "result_percent": 11.37,
+      "result_percent": 6.59,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 15,
-      "pnl_per_share": 7.3,
-      "financial_result": 109.5,
+      "pnl_per_share": 4.23,
+      "financial_result": 63.45,
       "last_review_at": "2026-10-31T00:14:23.691245+00:00"
     },
     {
@@ -6768,16 +6768,16 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-11-02T22:47:17.839275+00:00",
+  "updated_at": "2026-11-03T20:30:54.346605+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
-    "PRIO3": {
-      "side": "COMPRA",
-      "confirmations": 2,
-      "first_seen": "2026-10-30T19:25:08.118440+00:00",
-      "last_bar": 1793390400,
-      "last_seen": "2026-11-02T22:47:17.839275+00:00"
+    "VALE3": {
+      "side": "VENDA",
+      "confirmations": 1,
+      "first_seen": "2026-11-03T20:30:54.346605+00:00",
+      "last_bar": 1793732400,
+      "last_seen": "2026-11-03T20:30:54.346605+00:00"
     }
   },
   "signal_log": [
@@ -9409,6 +9409,17 @@
       "buy_strength": 78,
       "sell_strength": 0,
       "daily_thesis_date": 1793232000
+    },
+    {
+      "key": "VALE3:VENDA:1793732400",
+      "ticker": "VALE3",
+      "side": "VENDA",
+      "bar_time": 1793732400,
+      "observed_at": "2026-11-03T20:30:54.346605+00:00",
+      "price": 60.58,
+      "buy_strength": 0,
+      "sell_strength": 81,
+      "daily_thesis_date": 1793318400
     }
   ],
   "performance": {
