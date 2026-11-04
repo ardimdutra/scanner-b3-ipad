@@ -396,17 +396,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 46.0,
-      "current_price": 41.62,
+      "current_price": 42.57,
       "stop": 44.48,
       "target": 49.05,
-      "result_percent": -9.52,
+      "result_percent": -7.46,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 21,
-      "pnl_per_share": -4.38,
-      "financial_result": -91.98,
+      "pnl_per_share": -3.43,
+      "financial_result": -72.03,
       "last_review_at": "2026-11-04T00:59:19.412504+00:00"
     },
     {
@@ -415,18 +415,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 48.42,
-      "current_price": 50.51,
+      "current_price": 46.77,
       "stop": 46.41,
       "target": 52.45,
-      "result_percent": 4.32,
+      "result_percent": -3.41,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-11-04T00:59:19.412504+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
-      "pnl_per_share": 2.09,
-      "financial_result": 41.8
+      "pnl_per_share": -1.65,
+      "financial_result": -33.0
     },
     {
       "ticker": "ABEV3",
@@ -472,17 +472,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 78.23,
-      "current_price": 60.42,
+      "current_price": 62.71,
       "stop": 71.97,
       "target": 90.75,
-      "result_percent": -22.77,
+      "result_percent": -19.84,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 12,
-      "pnl_per_share": -17.81,
-      "financial_result": -213.72,
+      "pnl_per_share": -15.52,
+      "financial_result": -186.24,
       "last_review_at": "2026-11-04T00:59:19.412504+00:00"
     },
     {
@@ -491,17 +491,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 64.19,
-      "current_price": 68.08,
+      "current_price": 62.62,
       "stop": 59.05,
       "target": 74.46,
-      "result_percent": 6.06,
+      "result_percent": -2.45,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 15,
-      "pnl_per_share": 3.89,
-      "financial_result": 58.35,
+      "pnl_per_share": -1.57,
+      "financial_result": -23.55,
       "last_review_at": "2026-11-04T00:59:19.412504+00:00"
     },
     {
@@ -586,17 +586,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 30.46,
-      "current_price": 30.08,
+      "current_price": 30.74,
       "stop": 32.9,
       "target": 25.59,
-      "result_percent": 1.25,
+      "result_percent": -0.92,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 32,
-      "pnl_per_share": 0.38,
-      "financial_result": 12.16,
+      "pnl_per_share": -0.28,
+      "financial_result": -8.96,
       "last_review_at": "2026-11-04T00:59:19.412504+00:00"
     },
     {
@@ -6768,30 +6768,16 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-11-04T00:59:19.412504+00:00",
+  "updated_at": "2026-11-04T20:49:46.292086+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
-    "VALE3": {
+    "GOAU4": {
       "side": "VENDA",
       "confirmations": 1,
-      "first_seen": "2026-11-03T20:30:54.346605+00:00",
-      "last_bar": 1793732400,
-      "last_seen": "2026-11-04T00:59:19.412504+00:00"
-    },
-    "PETR4": {
-      "side": "VENDA",
-      "confirmations": 1,
-      "first_seen": "2026-11-04T00:59:19.412504+00:00",
-      "last_bar": 1793732400,
-      "last_seen": "2026-11-04T00:59:19.412504+00:00"
-    },
-    "VIVT3": {
-      "side": "VENDA",
-      "confirmations": 1,
-      "first_seen": "2026-11-04T00:59:19.412504+00:00",
-      "last_bar": 1793736000,
-      "last_seen": "2026-11-04T00:59:19.412504+00:00"
+      "first_seen": "2026-11-04T20:49:46.292086+00:00",
+      "last_bar": 1793822400,
+      "last_seen": "2026-11-04T20:49:46.292086+00:00"
     }
   },
   "signal_log": [
@@ -9453,6 +9439,17 @@
       "bar_time": 1793736000,
       "observed_at": "2026-11-04T00:59:19.412504+00:00",
       "price": 30.08,
+      "buy_strength": 13,
+      "sell_strength": 85,
+      "daily_thesis_date": 1793664000
+    },
+    {
+      "key": "GOAU4:VENDA:1793822400",
+      "ticker": "GOAU4",
+      "side": "VENDA",
+      "bar_time": 1793822400,
+      "observed_at": "2026-11-04T20:49:46.292086+00:00",
+      "price": 11.05,
       "buy_strength": 13,
       "sell_strength": 85,
       "daily_thesis_date": 1793664000
