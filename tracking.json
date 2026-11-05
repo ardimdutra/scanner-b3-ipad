@@ -241,18 +241,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 36.73,
-      "current_price": 30.68,
+      "current_price": 30.61,
       "stop": 33.79,
       "target": 42.61,
-      "result_percent": -16.47,
+      "result_percent": -16.66,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-11-05T01:08:37.764169+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 27,
-      "pnl_per_share": -6.05,
-      "financial_result": -163.35
+      "pnl_per_share": -6.12,
+      "financial_result": -165.24
     },
     {
       "ticker": "MULT3",
@@ -415,18 +415,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 48.42,
-      "current_price": 46.77,
+      "current_price": 46.54,
       "stop": 46.41,
       "target": 52.45,
-      "result_percent": -3.41,
+      "result_percent": -3.88,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-11-05T01:08:37.764169+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
-      "pnl_per_share": -1.65,
-      "financial_result": -33.0
+      "pnl_per_share": -1.88,
+      "financial_result": -37.6
     },
     {
       "ticker": "ABEV3",
@@ -491,17 +491,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 64.19,
-      "current_price": 62.14,
+      "current_price": 62.09,
       "stop": 59.05,
       "target": 74.46,
-      "result_percent": -3.19,
+      "result_percent": -3.27,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 15,
-      "pnl_per_share": -2.05,
-      "financial_result": -30.75,
+      "pnl_per_share": -2.1,
+      "financial_result": -31.5,
       "last_review_at": "2026-11-05T01:08:37.764169+00:00"
     },
     {
@@ -548,17 +548,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 4.58,
-      "current_price": 3.54,
+      "current_price": 3.59,
       "stop": 4.95,
       "target": 3.85,
-      "result_percent": 22.71,
+      "result_percent": 21.62,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 218,
-      "pnl_per_share": 1.04,
-      "financial_result": 226.72,
+      "pnl_per_share": 0.99,
+      "financial_result": 215.82,
       "last_review_at": "2026-11-05T01:08:37.764169+00:00"
     },
     {
@@ -586,17 +586,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 30.46,
-      "current_price": 31.0,
+      "current_price": 31.13,
       "stop": 32.9,
       "target": 25.59,
-      "result_percent": -1.77,
+      "result_percent": -2.2,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 32,
-      "pnl_per_share": -0.54,
-      "financial_result": -17.28,
+      "pnl_per_share": -0.67,
+      "financial_result": -21.44,
       "last_review_at": "2026-11-05T01:08:37.764169+00:00"
     },
     {
@@ -6768,18 +6768,10 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-11-05T01:08:37.764169+00:00",
+  "updated_at": "2026-11-05T21:05:56.314789+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
-  "candidates": {
-    "GGBR4": {
-      "side": "VENDA",
-      "confirmations": 1,
-      "first_seen": "2026-11-05T01:08:37.764169+00:00",
-      "last_bar": 1793822400,
-      "last_seen": "2026-11-05T01:08:37.764169+00:00"
-    }
-  },
+  "candidates": {},
   "signal_log": [
     {
       "key": "VALE3:COMPRA:1789153200",
