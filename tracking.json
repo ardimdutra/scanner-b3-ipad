@@ -279,18 +279,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T16:25:20.954946+00:00",
       "entry_price": 38.43,
-      "current_price": 34.82,
+      "current_price": 33.93,
       "stop": 35.36,
       "target": 44.58,
-      "result_percent": -9.39,
+      "result_percent": -11.71,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-11-10T03:03:04.000218+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 26,
-      "pnl_per_share": -3.61,
-      "financial_result": -93.86
+      "pnl_per_share": -4.5,
+      "financial_result": -117.0
     },
     {
       "ticker": "BBSE3",
@@ -415,18 +415,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 48.42,
-      "current_price": 44.72,
+      "current_price": 45.28,
       "stop": 46.41,
       "target": 52.45,
-      "result_percent": -7.64,
+      "result_percent": -6.48,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-11-10T03:03:04.000218+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
-      "pnl_per_share": -3.7,
-      "financial_result": -74.0
+      "pnl_per_share": -3.14,
+      "financial_result": -62.8
     },
     {
       "ticker": "ABEV3",
@@ -472,17 +472,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 78.23,
-      "current_price": 66.24,
+      "current_price": 64.99,
       "stop": 71.97,
       "target": 90.75,
-      "result_percent": -15.33,
+      "result_percent": -16.92,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 12,
-      "pnl_per_share": -11.99,
-      "financial_result": -143.88,
+      "pnl_per_share": -13.24,
+      "financial_result": -158.88,
       "last_review_at": "2026-11-10T03:03:04.000218+00:00"
     },
     {
@@ -586,17 +586,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 30.46,
-      "current_price": 32.15,
+      "current_price": 32.52,
       "stop": 32.9,
       "target": 25.59,
-      "result_percent": -5.55,
+      "result_percent": -6.76,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 32,
-      "pnl_per_share": -1.69,
-      "financial_result": -54.08,
+      "pnl_per_share": -2.06,
+      "financial_result": -65.92,
       "last_review_at": "2026-11-10T03:03:04.000218+00:00"
     },
     {
@@ -6770,10 +6770,46 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-11-10T03:03:04.000218+00:00",
+  "updated_at": "2026-11-10T20:51:03.496574+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
-  "candidates": {},
+  "candidates": {
+    "WEGE3": {
+      "side": "COMPRA",
+      "confirmations": 1,
+      "first_seen": "2026-11-10T20:51:03.496574+00:00",
+      "last_bar": 1794340800,
+      "last_seen": "2026-11-10T20:51:03.496574+00:00"
+    },
+    "VIVT3": {
+      "side": "COMPRA",
+      "confirmations": 1,
+      "first_seen": "2026-11-10T20:51:03.496574+00:00",
+      "last_bar": 1794340800,
+      "last_seen": "2026-11-10T20:51:03.496574+00:00"
+    },
+    "ITUB4": {
+      "side": "VENDA",
+      "confirmations": 1,
+      "first_seen": "2026-11-10T20:51:03.496574+00:00",
+      "last_bar": 1794337200,
+      "last_seen": "2026-11-10T20:51:03.496574+00:00"
+    },
+    "ITUB3": {
+      "side": "VENDA",
+      "confirmations": 1,
+      "first_seen": "2026-11-10T20:51:03.496574+00:00",
+      "last_bar": 1794340800,
+      "last_seen": "2026-11-10T20:51:03.496574+00:00"
+    },
+    "CSNA3": {
+      "side": "VENDA",
+      "confirmations": 1,
+      "first_seen": "2026-11-10T20:51:03.496574+00:00",
+      "last_bar": 1794340800,
+      "last_seen": "2026-11-10T20:51:03.496574+00:00"
+    }
+  },
   "signal_log": [
     {
       "key": "VALE3:COMPRA:1789153200",
@@ -9480,6 +9516,61 @@
       "buy_strength": 13,
       "sell_strength": 85,
       "daily_thesis_date": 1793923200
+    },
+    {
+      "key": "WEGE3:COMPRA:1794340800",
+      "ticker": "WEGE3",
+      "side": "COMPRA",
+      "bar_time": 1794340800,
+      "observed_at": "2026-11-10T20:51:03.496574+00:00",
+      "price": 51.44,
+      "buy_strength": 78,
+      "sell_strength": 0,
+      "daily_thesis_date": 1794182400
+    },
+    {
+      "key": "VIVT3:COMPRA:1794340800",
+      "ticker": "VIVT3",
+      "side": "COMPRA",
+      "bar_time": 1794340800,
+      "observed_at": "2026-11-10T20:51:03.496574+00:00",
+      "price": 32.52,
+      "buy_strength": 78,
+      "sell_strength": 0,
+      "daily_thesis_date": 1794182400
+    },
+    {
+      "key": "ITUB4:VENDA:1794337200",
+      "ticker": "ITUB4",
+      "side": "VENDA",
+      "bar_time": 1794337200,
+      "observed_at": "2026-11-10T20:51:03.496574+00:00",
+      "price": 41.26,
+      "buy_strength": 0,
+      "sell_strength": 81,
+      "daily_thesis_date": 1794182400
+    },
+    {
+      "key": "ITUB3:VENDA:1794340800",
+      "ticker": "ITUB3",
+      "side": "VENDA",
+      "bar_time": 1794340800,
+      "observed_at": "2026-11-10T20:51:03.496574+00:00",
+      "price": 45.46,
+      "buy_strength": 0,
+      "sell_strength": 81,
+      "daily_thesis_date": 1794182400
+    },
+    {
+      "key": "CSNA3:VENDA:1794340800",
+      "ticker": "CSNA3",
+      "side": "VENDA",
+      "bar_time": 1794340800,
+      "observed_at": "2026-11-10T20:51:03.496574+00:00",
+      "price": 4.42,
+      "buy_strength": 10,
+      "sell_strength": 94,
+      "daily_thesis_date": 1794182400
     }
   ],
   "performance": {
