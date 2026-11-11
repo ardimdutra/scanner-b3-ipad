@@ -415,18 +415,18 @@
       "status": "ABERTA",
       "opened_at": "2026-09-10T21:03:08.751599+00:00",
       "entry_price": 48.42,
-      "current_price": 45.28,
+      "current_price": 43.8,
       "stop": 46.41,
       "target": 52.45,
-      "result_percent": -6.48,
+      "result_percent": -9.54,
       "assessment": "CORRETA",
       "trailing_active": false,
       "last_review_at": "2026-11-11T00:58:05.119775+00:00",
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 20,
-      "pnl_per_share": -3.14,
-      "financial_result": -62.8
+      "pnl_per_share": -4.62,
+      "financial_result": -92.4
     },
     {
       "ticker": "ABEV3",
@@ -472,17 +472,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 78.23,
-      "current_price": 64.9,
+      "current_price": 64.55,
       "stop": 71.97,
       "target": 90.75,
-      "result_percent": -17.04,
+      "result_percent": -17.49,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 12,
-      "pnl_per_share": -13.33,
-      "financial_result": -159.96,
+      "pnl_per_share": -13.68,
+      "financial_result": -164.16,
       "last_review_at": "2026-11-11T00:58:05.119775+00:00"
     },
     {
@@ -586,17 +586,17 @@
       "status": "ABERTA",
       "opened_at": "2026-09-11T21:02:38.127420+00:00",
       "entry_price": 30.46,
-      "current_price": 32.5,
+      "current_price": 34.25,
       "stop": 32.9,
       "target": 25.59,
-      "result_percent": -6.7,
+      "result_percent": -12.44,
       "assessment": "EM ACOMPANHAMENTO",
       "trailing_active": false,
       "method_version": "v1-legado",
       "audit_status": "NÃO AUDITÁVEL — regra antiga usava candle diário completo",
       "quantity_reference": 32,
-      "pnl_per_share": -2.04,
-      "financial_result": -65.28,
+      "pnl_per_share": -3.79,
+      "financial_result": -121.28,
       "last_review_at": "2026-11-11T00:58:05.119775+00:00"
     },
     {
@@ -6770,37 +6770,37 @@
       "method_version": "v2"
     }
   ],
-  "updated_at": "2026-11-11T00:58:05.119775+00:00",
+  "updated_at": "2026-11-11T21:26:21.499568+00:00",
   "review_time": "18:00 America/Sao_Paulo",
   "disclaimer": "Simulação com capital de referência de R$ 1.000 por operação; sem custos, impostos ou slippage. Não representa operação executada nem garantia de resultado.",
   "candidates": {
-    "WEGE3": {
-      "side": "COMPRA",
-      "confirmations": 1,
-      "first_seen": "2026-11-10T20:51:03.496574+00:00",
-      "last_bar": 1794340800,
-      "last_seen": "2026-11-11T00:58:05.119775+00:00"
-    },
-    "VIVT3": {
-      "side": "COMPRA",
-      "confirmations": 1,
-      "first_seen": "2026-11-10T20:51:03.496574+00:00",
-      "last_bar": 1794340800,
-      "last_seen": "2026-11-11T00:58:05.119775+00:00"
-    },
-    "ITUB4": {
+    "BPAC11": {
       "side": "VENDA",
       "confirmations": 1,
-      "first_seen": "2026-11-10T20:51:03.496574+00:00",
-      "last_bar": 1794337200,
-      "last_seen": "2026-11-11T00:58:05.119775+00:00"
+      "first_seen": "2026-11-11T21:26:21.499568+00:00",
+      "last_bar": 1794427200,
+      "last_seen": "2026-11-11T21:26:21.499568+00:00"
     },
-    "ITUB3": {
+    "BBAS3": {
       "side": "VENDA",
       "confirmations": 1,
-      "first_seen": "2026-11-10T20:51:03.496574+00:00",
-      "last_bar": 1794340800,
-      "last_seen": "2026-11-11T00:58:05.119775+00:00"
+      "first_seen": "2026-11-11T21:26:21.499568+00:00",
+      "last_bar": 1794427200,
+      "last_seen": "2026-11-11T21:26:21.499568+00:00"
+    },
+    "SBSP3": {
+      "side": "VENDA",
+      "confirmations": 1,
+      "first_seen": "2026-11-11T21:26:21.499568+00:00",
+      "last_bar": 1794427200,
+      "last_seen": "2026-11-11T21:26:21.499568+00:00"
+    },
+    "BBDC3": {
+      "side": "VENDA",
+      "confirmations": 1,
+      "first_seen": "2026-11-11T21:26:21.499568+00:00",
+      "last_bar": 1794427200,
+      "last_seen": "2026-11-11T21:26:21.499568+00:00"
     }
   },
   "signal_log": [
@@ -9564,6 +9564,50 @@
       "buy_strength": 10,
       "sell_strength": 94,
       "daily_thesis_date": 1794182400
+    },
+    {
+      "key": "BPAC11:VENDA:1794427200",
+      "ticker": "BPAC11",
+      "side": "VENDA",
+      "bar_time": 1794427200,
+      "observed_at": "2026-11-11T21:26:21.499568+00:00",
+      "price": 55.95,
+      "buy_strength": 0,
+      "sell_strength": 81,
+      "daily_thesis_date": 1794268800
+    },
+    {
+      "key": "BBAS3:VENDA:1794427200",
+      "ticker": "BBAS3",
+      "side": "VENDA",
+      "bar_time": 1794427200,
+      "observed_at": "2026-11-11T21:26:21.499568+00:00",
+      "price": 16.89,
+      "buy_strength": 0,
+      "sell_strength": 81,
+      "daily_thesis_date": 1794268800
+    },
+    {
+      "key": "SBSP3:VENDA:1794427200",
+      "ticker": "SBSP3",
+      "side": "VENDA",
+      "bar_time": 1794427200,
+      "observed_at": "2026-11-11T21:26:21.499568+00:00",
+      "price": 27.41,
+      "buy_strength": 6,
+      "sell_strength": 75,
+      "daily_thesis_date": 1794268800
+    },
+    {
+      "key": "BBDC3:VENDA:1794427200",
+      "ticker": "BBDC3",
+      "side": "VENDA",
+      "bar_time": 1794427200,
+      "observed_at": "2026-11-11T21:26:21.499568+00:00",
+      "price": 13.29,
+      "buy_strength": 0,
+      "sell_strength": 81,
+      "daily_thesis_date": 1794268800
     }
   ],
   "performance": {
